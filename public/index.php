@@ -22,7 +22,7 @@
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
-<body >
+<body class="font-Montserrat" >
 
         <?php require 'pages/header.php' ?>
         
