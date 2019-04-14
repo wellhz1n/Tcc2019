@@ -313,7 +313,7 @@ z-index: 10;
  }
  .bt p{
      color: white;
-     text-decoration: dashed red;
+ /* retirei o text decoration */
  }
  .bb{
     position: relative;
