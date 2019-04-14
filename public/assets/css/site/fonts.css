@@ -6,8 +6,8 @@
 --fs: 'Saira Extra Condensed', sans-serif;
 --fa: 'Arimo', sans-serif;
  --fp:'Poppins', sans-serif;
-;)
-}
+;}
+
 
 
 .font-poppins{
@@ -15,7 +15,7 @@
 }
 
 .font-Arimo{
-  font-family: var(--fa);<
+  font-family: var(--fa);
 }
 
 .font-Saira{
