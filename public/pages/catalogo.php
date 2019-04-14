@@ -9,7 +9,7 @@
                 <p>Videos</p>
              
                 <p>Teste Omega</p>
-                <p>Teste Beta</p>
+                <p>Teste beta</p>
 
 
 
