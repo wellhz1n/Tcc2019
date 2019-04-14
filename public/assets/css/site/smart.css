@@ -1,0 +1,32 @@
+.fechar{
+    height: 40px;
+    width: 40px;
+    top: 0%;
+    left: -44%;
+    border-radius:5px; 
+    background: transparent;
+    border:none;
+    box-shadow: 0 0 0 0 ;
+}
+.fechar:hover{
+
+    background:#ffff;
+}
+.mod{
+    height: 100vh;
+    width:100vw; 
+}
+.arrow{
+
+top: 38px;
+left: 44vw;  
+
+
+}
+.bt{
+    background-color: red;
+}
+.sec{
+    margin-left:-1%;
+  
+}

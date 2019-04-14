@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css?family=Arimo|Montserrat|Poppins|Raleway:700i|Saira+Extra+Condensed|Source+Sans+Pro');
+:root{
+--fm: 'Montserrat', sans-serif;
+--fsp: 'Source Sans Pro', sans-serif;
+--fr: 'Raleway', sans-serif;
+--fs: 'Saira Extra Condensed', sans-serif;
+--fa: 'Arimo', sans-serif;
+ --fp:'Poppins', sans-serif;
+;)
+}
+
+
+.font-poppins{
+  font-family: var(--fp);
+}
+
+.font-Arimo{
+  font-family: var(--fa);<
+}
+
+.font-Saira{
+  font-family: var(--fs);
+}
+
+.font-Raleway{
+  font-family: var(--fr);
+}
+.font-Source{
+  font-family: var(--fsp);
+}
+.font-Montserrat{
+  font-family: var(--fm);
+}
+/*
+perifécias do Mateus!
+========++++++==========
+(>'-')>
+<('-'<)
+^('-')^
+v('-')v
+(>'-')>
+
+
+
+(^-^)
+\(^-^)\
+\(^-^|)
+|(^-^)|
+(|^-^)|
+(/^-^)/
+
+ᕙ(`▽´)ᕗ
+
+ */
+
+.font-poppins{
+
+  font-family: var(--fp);
+
+}

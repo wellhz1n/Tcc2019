@@ -1,0 +1,353 @@
+:root{
+    --cor-fundo:rgba(70, 12, 94, 0.5);
+    --cor-white:#ffffff;
+
+
+}
+*{
+    transition: all .3s ease-in-out;
+    margin: 0px;
+    padding:0px;
+
+}
+
+head,body {
+  overflow-x: hidden;
+  margin: 0px;
+  padding:0px;
+}
+#error{
+    background-image: linear-gradient(rgba(0,0,0,.9),rgba(0,0,0,.9)) , url(https://media.giphy.com/media/LW5vBvAb48Oe9OoEKT/giphy.gif);
+
+    background-size: cover;
+    height: 100%;
+    padding:10%;
+    padding-bottom: 60%;
+    display: flex;
+    top: 0px;
+    left: 0px;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    width: 100%;
+    text-align: center;
+
+
+}
+.dropdown-menu {
+
+    background:#0e0033!important;
+
+
+}
+.dropdown-item{
+    color:white!important;
+    cursor: pointer;
+}
+.dropdown-item:hover{
+    color:black!important;
+
+}
+#link{
+    position: relative;
+    top:300px;
+    right:43%;
+    background: rgba(48, 1, 87, 0.753);
+    color: antiquewhite;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 20%;
+    transition: all .3s ease-in-out;
+
+}
+#link:hover{
+    border-radius: 10%;
+    background: rgba(88, 6, 87, 0.650);
+
+
+}
+#t-error{
+
+
+    position: relative;
+    top:150px;
+    left: 40px;
+}
+ul{
+
+
+    width: 100%;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+
+    margin: 0% 0% 0% 0%;
+
+
+}
+li{
+
+
+
+    position: relative;
+    margin-top: 10px;
+    height: 9vh;
+    width: 100%;
+ 
+}
+a{
+    position: relative;
+    height: 100%;
+    color:white !important;
+
+    top:1%;
+
+
+}
+
+ul  li:hover::after {
+    content: "";
+    position: relative;
+    top: -66px;
+    left: 2%;
+    margin-left: -15px;
+    width: 0px;
+    height:0px;
+
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #62377e;
+
+
+}
+
+.mod-container{
+height: 100vh;
+width: 100vw;
+top:0px;
+left: 0px;
+position:fixed;
+background:var(--cor-fundo);
+z-index: 2000;
+display: none;
+justify-content: center;
+align-items: center;
+text-align: center;
+transition: all .3s ease-in-out;
+
+
+
+
+}
+.mod-container:hover{
+    cursor: pointer;
+}
+.mod{
+    height: 80vh;
+    width: 50vw;
+    position: relative;
+    background: #62377e;
+    border-radius: 1    0px;
+    border: 6px solid rgba(255, 255, 255, 1);
+    color:var(--cor-white);
+    transition: all .3s ease-in-out;
+
+
+}
+
+.mod:hover{
+    cursor: default;
+}
+.about:hover{
+    cursor: pointer;
+}
+.fechar{
+position: relative;
+top: -20px;
+left: 340px;
+color:#ac2d2db9;
+height: 50px;
+width: 50px;
+background: #ffffffff;
+border-radius: 50px;
+border: solid 2px #ac2d2db9;
+font-size: 20px;
+font-weight: bolder;
+font-family: cursive;
+box-shadow: 0.3px 1px 10px 0.2px #131414;
+
+transition: all .8s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.fechar:hover{
+    transform: scale(1.1);
+
+
+}
+
+.mod-container.ativa{
+   display: flex;
+   transition: all .3s ease-in-out;
+
+   animation: anima .6s ease-in-out;
+   animation-timing-function: cubic-bezier(0.1, 1.2, 0.7, 1.0);
+
+
+}
+ .ativa .mod{
+    transition: all .3s ease-in-out;
+
+     animation: 1.5s moda ease-in-out;
+     animation-timing-function: cubic-bezier(0.1, 1.2, 0.7, 1.0);
+}
+@keyframes anima{
+
+0%{
+    transform: scaleY(.000) scaleX(0);
+
+}
+50% {
+    transform:scaleY(.005) scaleX(1);
+  }
+  100% {
+    transform:scaleY(1) scaleX(1);
+  }
+}
+@keyframes moda{
+    0%{
+
+        transform: scale(0);
+
+    }
+    50%{
+        transform: scale(0.5);
+    }
+    100%{
+        transform: scale(1.0)    }
+}
+.diferente{
+
+border-top: 2px solid red;
+
+}
+.ativo{
+
+}
+.ativo::after{
+    content: "";
+    position: relative;
+    top: -66px;
+    left: 2%;
+    margin-left: -15px;
+    width: 0px;
+    height:0px;
+
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #62377e;
+
+
+}
+
+#nav{
+
+
+
+    background: #0e0033!important;
+   
+
+}
+/*===========================SETA =============================*/
+.divdaimg{
+    padding: 0 0 20% 0;
+    margin: 0;
+
+
+}
+.img-p{
+
+position: relative;
+margin:0px;
+height: 250px;
+width: 250px;
+z-index: 10;
+
+}
+#text{
+    position: relative;
+    top:-30px;
+    z-index: 20;
+}
+
+
+
+/* =========================LAYOUT================================== */
+
+.box-complete{
+    position: relative;
+    width: 300px;
+
+    padding: 0 0 0 0;
+    margin: 0 20px 10px 20px;
+     top: 30px;
+     float: left;
+
+  
+}
+ .bt{
+
+       position: relative;
+       top:90px;
+        min-height: 200px;
+        width: 300px;
+        background: #0e0033;
+        z-index: 3;
+        text-align: center;
+    margin: 0px;
+    padding: 0px;
+
+
+
+ }
+ .bt p{
+     color: white;
+ }
+ .bb{
+    position: relative;
+    min-height: 90px;
+    padding: 0px;
+
+    width: 300px;
+    margin: 0px;
+    background: #6749b8;
+    text-align: center;
+    z-index: 2;
+ }
+ .bb a{
+     position: relative;
+     top:20px;
+     
+ }
+ .box-complete:hover .bt{
+     top:20px;
+     filter: grayscale(1);
+ }
+ .sec{
+     margin-left:12%;
+
+ }
+  @media screen and (min-width:1280px){
+
+
+
+
+    .sec{
+        margin-left:13vw;
+    
+   
+    }
+
+
+ } 
