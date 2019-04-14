@@ -232,9 +232,7 @@ transition: all .8s cubic-bezier(0.075, 0.82, 0.165, 1);
 border-top: 2px solid red;
 
 }
-.ativo{
 
-}
 .ativo::after{
     content: "";
     position: relative;
