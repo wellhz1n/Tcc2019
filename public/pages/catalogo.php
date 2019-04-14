@@ -7,7 +7,7 @@
         <div class='bt'>
             <img src=''../img/img1.jpg' alt=''>
                 <p>Videos</p>
-                <p>Teste</p>
+                <p>Teste alpha</p>
 
 
 
