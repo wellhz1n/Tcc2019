@@ -13,7 +13,7 @@
             <div class="row mt-2"></div>
             <input type="text" name="asunto" placeholder="asunto" class='form-control' />
             <div class="row mt-2"></div>
-            <textarea name="message" rows="10" cols="20" class="form-control" placeholder="Sua Sugestão"></textarea>
+            <textarea name="message" rows="5" cols="20" class="form-control" placeholder="Sua Sugestão"></textarea>
             <div class="row mt-2 offset-5 text-center">
                 
             </div>
@@ -23,7 +23,7 @@
             
         </form>
         
-        <button type="submit" class="btn btn-primary m-3">Enviar</button>
+        <button type="submit" onclick="alert('Enviado!')" class="btn btn-primary m-3">Enviar</button>
 
         </div>
     </div>
