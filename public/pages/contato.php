@@ -9,7 +9,7 @@
                     <input type="text" name="nome" placeholder="Seu Nome" class='form-control' />
                 </div>
             <div class="row mt-2"></div>
-            <input type="email" name="email" placeholder="Seu email" class='form-control' />
+            <!-- <input type="email" name="email" placeholder="Seu email" class='form-control' /> -->
             <div class="row mt-2"></div>
             <input type="text" name="asunto" placeholder="asunto" class='form-control' />
             <div class="row mt-2"></div>
