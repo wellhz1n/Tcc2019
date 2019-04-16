@@ -6,14 +6,14 @@
             <form action="pages/forms/contato.php" method="POST" class="m-0">
                 <div class="m-0 form-group">
 
-                    <input type="text" name="nome" placeholder="Seu Nome" class='form-control' />
+                    <input type="text" id="nome" name="nome" placeholder="Seu Nome" class='form-control '  />
                 </div>
             <div class="row mt-2"></div>
-            <input type="email" name="email" placeholder="Seu email" class='form-control' />
+            <input type="email" name="email" id="email" placeholder="Seu email" class='form-control' />
             <div class="row mt-2"></div>
-            <input type="text" name="asunto" placeholder="Assunto" class='form-control' />
+            <input type="text" name="asunto" id="assunto" placeholder="Assunto" class='form-control' />
             <div class="row mt-2"></div>
-            <textarea name="message" rows="5" cols="20"  class="form-control " placeholder="Sua Sugestão"></textarea>
+            <textarea name="message" rows="5" cols="20" id="mensage"  class="form-control " placeholder="Sua Sugestão"></textarea>
             <div class="row mt-2 offset-5 text-center">
                 
             </div>
