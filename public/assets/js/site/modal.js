@@ -11,12 +11,14 @@ window.onload= function (){
             console.log(modalID);
             modal.addEventListener('click', (e)=>{
             if(e.target.id == modalID  || e.target.className =='fechar')
-            {
+            {  
                 modal.classList.remove('ativa');
             }
-
+           
 
             });
+         
+
         }
 
     }

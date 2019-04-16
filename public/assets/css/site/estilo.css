@@ -1,6 +1,8 @@
 :root{
     --cor-fundo:rgba(70, 12, 94, 0.5);
     --cor-white:#ffffff;
+    --cor-base:#0e0033;
+    --cor-secundaria:#6749b8b9;
 
 
 }
@@ -8,6 +10,7 @@
     transition: all .3s ease-in-out;
     margin: 0px;
     padding:0px;
+
 
 }
 
@@ -130,7 +133,7 @@ width: 100vw;
 top:0px;
 left: 0px;
 position:fixed;
-background:var(--cor-fundo);
+background:var(--cor-secundaria);
 z-index: 2000;
 display: none;
 justify-content: center;
@@ -149,7 +152,7 @@ transition: all .3s ease-in-out;
     height: 80vh;
     width: 50vw;
     position: relative;
-    background: #62377e;
+    background: var(--cor-base);
     border-radius: 1    0px;
     border: 6px solid rgba(255, 255, 255, 1);
     color:var(--cor-white);
@@ -294,6 +297,7 @@ z-index: 10;
     margin: 0 20px 10px 20px;
      top: 30px;
      float: left;
+     border: rgb(202, 100, 100) solid 3px;
 
 
 }
@@ -332,7 +336,7 @@ z-index: 10;
 
     }
     .box-complete:hover .bt{
-        top:20px;
+        top:10px;
         filter: grayscale(1);
     }
     .sec{
@@ -350,16 +354,31 @@ z-index: 10;
 
 
     }
-
-
  }
+    @media screen and (min-width:1400px){
 
+
+       
+        .sec{
+        margin-left:10vw;
+   
+   }
+
+.ativo::after{
+    top:-10vh;
+}
+
+ul  li:hover::after{
+
+top:-10vh;
+
+}
   .arrow {
    text-align: center;
  }
 
 
-
+    }
 /*
  =================================-===================================================================
  ================================/-\=================================================================== */
@@ -373,3 +392,4 @@ z-index: 10;
 
 
  }
+    

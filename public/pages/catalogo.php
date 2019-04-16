@@ -1,7 +1,7 @@
 <section class="col-md-12  text-center  sec">
 
     <?php
-    for ($i=0; $i < 5 ; $i++) {
+    for ($i=0; $i < 6 ; $i++) {
         echo  "<div class='box-complete'>
 
         <div class='bt font-Arimo'>
