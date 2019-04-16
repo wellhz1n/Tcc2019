@@ -1,6 +1,6 @@
 
 <div class="row contato ">
-    <div class="col-6   font-Montserrat text-center  rounded  ">
+    <div class="col-md-6 col-sm-8  font-Montserrat text-center  rounded  ">
 
             <h3 class="text-primary text-center font-weight-bold"> Contato </h3>
             <form action="pages/forms/contato.php" method="POST" class="m-0">
