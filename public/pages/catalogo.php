@@ -1,13 +1,13 @@
 <section class="col-md-12  text-center  sec">
 
     <?php
-    for ($i=0; $i < 21 ; $i++) { 
+    for ($i=0; $i < 21 ; $i++) {
         echo  "<div class='box-complete'>
-        
+
         <div class='bt font-Arimo'>
             <img src=''../img/img1.jpg' alt=''>
                 <p>Videos</p>
-             
+
                 <p>Teste Omega</p>
                 <p>Teste Beta</p>
                 <p>Nao Sei 1</p>
@@ -21,10 +21,11 @@
         <div class='bb'>
             <a class='btn btn-primary'> Comprar</a>
         </div>
-        
+
     </div>";
     }
 
 
 ?>
+<iframe src="https://player.vimeo.com/video/311008428" style="height:400px; width:400px;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 </section >
