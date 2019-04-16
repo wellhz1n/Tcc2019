@@ -9,11 +9,7 @@
                     <input type="text" id="nome" name="nome" placeholder="Seu Nome" class='form-control '  />
                 </div>
             <div class="row mt-2"></div>
-<<<<<<< HEAD
-            <!-- <input type="email" name="email" placeholder="Seu email" class='form-control' /> -->
-=======
             <input type="email" name="email" id="email" placeholder="Seu email" class='form-control' />
->>>>>>> Desenvolvimento
             <div class="row mt-2"></div>
             <input type="text" name="asunto" id="assunto" placeholder="Assunto" class='form-control' />
             <div class="row mt-2"></div>
