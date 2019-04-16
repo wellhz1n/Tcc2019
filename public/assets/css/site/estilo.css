@@ -77,7 +77,7 @@ ul{
 
 
     width: 100%;
-  
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,7 +96,7 @@ li{
     margin-top: 10px;
     height: 9vh;
     width: 100%;
- 
+
 }
 a{
     position: relative;
@@ -255,7 +255,7 @@ border-top: 2px solid red;
 
 
     background: #0e0033!important;
-   
+
 
 }
 /*===========================SETA =============================*/
@@ -295,7 +295,7 @@ z-index: 10;
      top: 30px;
      float: left;
 
-  
+
 }
  .bt{
 
@@ -314,42 +314,62 @@ z-index: 10;
  }
  .bt p{
      color: white;
- /* retirei o text decoration */
- }
- .bb{
-    position: relative;
-    min-height: 90px;
-    padding: 0px;
-
-    width: 300px;
-    margin: 0px;
-    background: #6749b8;
-    text-align: center;
-    z-index: 2;
- }
- .bb a{
-     position: relative;
-     top:20px;
-     
- }
- .box-complete:hover .bt{
-     top:20px;
-     filter: grayscale(1);
- }
- .sec{
-     margin-left:12%;
-
- }
-  @media screen and (min-width:1280px){
-
-
-
-
+    }
+    .bb{
+        position: relative;
+        min-height: 90px;
+        padding: 0px;
+        
+        width: 300px;
+        margin: 0px;
+        background: #6749b8;
+        text-align: center;
+        z-index: 2;
+    }
+    .bb a{
+        position: relative;
+        top:20px;
+        
+    }
+    .box-complete:hover .bt{
+        top:20px;
+        filter: grayscale(1);
+    }
     .sec{
+        margin-left:12%;
+        
+    }
+    /* retirei o text decoration */
+    @media screen and (min-width:1280px){
+        
+        
+        
+        
+        .sec{
         margin-left:13vw;
-    
-   
+
+
     }
 
 
- } 
+ }
+
+  .arrow {
+   text-align: center;
+ }
+
+
+
+/* 
+ =================================-===================================================================
+ ================================/-\=================================================================== */
+ .contato{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    margin-top: 7%;
+
+    
+
+ }
