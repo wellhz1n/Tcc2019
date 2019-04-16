@@ -1,18 +1,11 @@
 <section class="col-md-12  text-center  sec">
 
     <?php
-    for ($i=0; $i < 21 ; $i++) {
+    for ($i=0; $i < 6 ; $i++) {
         echo  "<div class='box-complete'>
 
         <div class='bt font-Arimo'>
-            <img src=''../img/img1.jpg' alt=''>
-                <p>Videos</p>
-
-                <p>Teste Omega</p>
-                <p>Teste Beta</p>
-                <p>Nao Sei 1</p>
-                <p>Nao Sei 2</p>
-
+            <div style='padding:100% 0 0 0;position:relative;'><iframe src='https://player.vimeo.com/video/311008428?autoplay=1&loop=1&title=0&byline=0&portrait=0' style='position:absolute;top:0;left:0;width:100%;height:60%;' frameborder='0' allow='autoplay; fullscreen' allowfullscreen></iframe></div><script src='https://player.vimeo.com/api/player.js'></script>
 
 
 

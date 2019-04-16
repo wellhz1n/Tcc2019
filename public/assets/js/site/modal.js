@@ -11,12 +11,14 @@ window.onload= function (){
             console.log(modalID);
             modal.addEventListener('click', (e)=>{
             if(e.target.id == modalID  || e.target.className =='fechar')
-            {
+            {  
                 modal.classList.remove('ativa');
             }
-
+           
 
             });
+         
+
         }
 
     }
@@ -50,6 +52,46 @@ $(document).ready(function(){
 
 
     });
+
+
+    $("#nome").focusout(()=>{
+
+
+  var txt = $("#nome").val();
+  
+      txt==""?$("#nome").addClass("border-danger"):$("#nome").removeClass("border-danger");
+        
+        });
+
+        $("#email").focusout(()=>{
+
+
+            var txt = $("#email").val();
+            
+                txt==""?$("#email").addClass("border-danger"):$("#email").removeClass("border-danger");
+                  
+                  });
+                  $("#assunto").focusout(()=>{
+
+
+                    var txt = $("#assunto").val();
+                    
+                        txt==""?$("#assunto").addClass("border-danger"):$("#assunto").removeClass("border-danger");
+                          
+                          });
+                          $("#mensage").focusout(()=>{
+
+
+                            var txt = $("#mensage").val();
+                            
+                                txt==""?$("#mensage").addClass("border-danger"):$("#mensage").removeClass("border-danger");
+                                  
+                                  });
+                          
+                  
+          
+
+
 
 });
 //

@@ -1,6 +1,8 @@
 :root{
     --cor-fundo:rgba(70, 12, 94, 0.5);
     --cor-white:#ffffff;
+    --cor-base:#0e0033;
+    --cor-secundaria:#6749b8b9;
 
 
 }
@@ -8,6 +10,7 @@
     transition: all .3s ease-in-out;
     margin: 0px;
     padding:0px;
+
 
 }
 
@@ -130,7 +133,7 @@ width: 100vw;
 top:0px;
 left: 0px;
 position:fixed;
-background:var(--cor-fundo);
+background:var(--cor-secundaria);
 z-index: 2000;
 display: none;
 justify-content: center;
@@ -149,7 +152,7 @@ transition: all .3s ease-in-out;
     height: 80vh;
     width: 50vw;
     position: relative;
-    background: #62377e;
+    background: var(--cor-base);
     border-radius: 1    0px;
     border: 6px solid rgba(255, 255, 255, 1);
     color:var(--cor-white);
@@ -294,6 +297,7 @@ z-index: 10;
     margin: 0 20px 10px 20px;
      top: 30px;
      float: left;
+     border: rgb(202, 100, 100) solid 3px;
 
 
 }
@@ -301,7 +305,7 @@ z-index: 10;
 
        position: relative;
        top:90px;
-        min-height: 200px;
+       height:180px;
         width: 300px;
         background: #0e0033;
         z-index: 3;
@@ -319,7 +323,7 @@ z-index: 10;
         position: relative;
         min-height: 90px;
         padding: 0px;
-        
+
         width: 300px;
         margin: 0px;
         background: #6749b8;
@@ -329,47 +333,63 @@ z-index: 10;
     .bb a{
         position: relative;
         top:20px;
-        
+
     }
     .box-complete:hover .bt{
-        top:20px;
+        top:10px;
         filter: grayscale(1);
     }
     .sec{
         margin-left:12%;
-        
+
     }
     /* retirei o text decoration */
     @media screen and (min-width:1280px){
-        
-        
-        
-        
+
+
+
+
         .sec{
         margin-left:13vw;
 
 
     }
-
-
  }
+    @media screen and (min-width:1400px){
 
+
+       
+        .sec{
+        margin-left:10vw;
+   
+   }
+
+.ativo::after{
+    top:-10vh;
+}
+
+ul  li:hover::after{
+
+top:-10vh;
+
+}
   .arrow {
    text-align: center;
  }
 
 
-
-/* 
+    }
+/*
  =================================-===================================================================
  ================================/-\=================================================================== */
  .contato{
 
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
     margin-top: 7%;
 
-    
+
 
  }
+    
