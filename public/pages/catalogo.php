@@ -27,5 +27,4 @@
 
 
 ?>
-<iframe src="https://player.vimeo.com/video/311008428" style="height:400px; width:400px;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 </section >
