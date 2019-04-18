@@ -13,7 +13,7 @@
 
 
 
-                echo "</div>
+              
                 <div class='bb'>
                   <a class='btn btn-primary'> Comprar</a>
                 </div>
