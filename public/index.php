@@ -17,6 +17,10 @@
          <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
          <script src="assets/js/bootstrap/bootstrap.js"></script>
           <script src="assets/js/site/modal.js"></script>
+          <script src="assets/js/site/Validation.js"></script>
+          <script src="assets/js/site/Events.js"></script>
+
+
           <link rel="stylesheet" media="(max-width: 1000px)" href="assets/css/site/smart.css" />
 
 
@@ -25,17 +29,15 @@
 <body class="font-Montserrat" >
 
         <?php require 'pages/header.php' ?>
-        
 
 
 
 
-    <div  class=''>
+
 
     <?php  require load();
     ?>
 
-    </div>
 <?php require "pages/modal.php" ?>
 </body>
 </html>
