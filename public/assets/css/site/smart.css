@@ -41,14 +41,14 @@ left: 44vw;
   border-top: 0px solid transparent;
 }
 
-li {
+.itemMenu {
   position: relative;
   height: 9vh;
   width: 100%;
   margin: 0;
 }
 
-ul li:hover::after {
+ul .itemMenu:hover::after {
   content: "";
   position: relative;
   top: -66px;

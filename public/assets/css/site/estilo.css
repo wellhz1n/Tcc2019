@@ -80,7 +80,7 @@ ul {
   margin: 0% 0% 0% 0%;
 }
 
-li {
+.itemMenu {
   position: relative;
   margin-top: 10px;
   height: 9vh;
@@ -94,7 +94,7 @@ a {
   top: 1%;
 }
 
-ul li:hover::after {
+ul .itemMenu:hover::after {
   content: "";
   position: relative;
   top: -66px;
