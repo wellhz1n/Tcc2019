@@ -1,3 +1,8 @@
+@media screen and (min-width:768px) {
+  .sec {
+    margin-left: 13vw;
+  }
+}
 :root {
   --cor-fundo: rgba(70, 12, 94, 0.5);
   --cor-white: #ffffff;
@@ -223,8 +228,6 @@ ul li:hover::after {
   border-top: 15px solid #62377e;
 }
 
-/* Uau! */
-/*Qualquer coisajhiuyttr*/
 #nav {
   background: #0e0033 !important;
 }
@@ -311,8 +314,20 @@ ul li:hover::after {
 .sec {
   margin-left: 12%;
 }
+@media screen and (max-width:767px) {
+  .ativo::after {
+    content: "";
+    position: relative;
+    top: -66px;
+    left: 2%;
+    margin-left: -15px;
+  }
 
-/* retirei o text decoration */
+}
+
+
+
+
 @media screen and (min-width:1280px) {
   .sec {
     margin-left: 13vw;
