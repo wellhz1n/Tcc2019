@@ -24,7 +24,7 @@
           <script src="assets/js/site/Events.js"></script>
 
 
-          <link rel="stylesheet" media="(max-width: 1000px)" href="assets/css/site/smart.css" />
+          <link rel="stylesheet" media="(max-width: 767px)" href="assets/css/site/smart.css" />
 
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>

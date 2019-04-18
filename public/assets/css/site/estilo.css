@@ -1,3 +1,4 @@
+
 :root {
   --cor-fundo: rgba(70, 12, 94, 0.5);
   --cor-white: #ffffff;
@@ -79,7 +80,7 @@ ul {
   margin: 0% 0% 0% 0%;
 }
 
-li {
+.itemMenu {
   position: relative;
   margin-top: 10px;
   height: 9vh;
@@ -93,7 +94,7 @@ a {
   top: 1%;
 }
 
-ul li:hover::after {
+ul .itemMenu:hover::after {
   content: "";
   position: relative;
   top: -66px;
@@ -223,8 +224,6 @@ ul li:hover::after {
   border-top: 15px solid #62377e;
 }
 
-/* Uau! */
-/*Qualquer coisajhiuyttr*/
 #nav {
   background: #0e0033 !important;
 }
@@ -312,7 +311,9 @@ ul li:hover::after {
   margin-left: 12%;
 }
 
-/* retirei o text decoration */
+
+
+
 @media screen and (min-width:1280px) {
   .sec {
     margin-left: 13vw;
