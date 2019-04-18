@@ -117,14 +117,14 @@ $(document).ready(function () {
   }());
 
 });
-////Funcao Para Validacao dos Campos Qunado Possivel Separar em Outro Arquivo/////
-//
+// //Funcao Para Validacao dos Campos Qunado Possivel Separar em Outro Arquivo/////
+
 // $(window).scroll(function(){
-//
+
 //     $(".arrow").css("opacity", 1 - $(window).scrollTop() /200);
 //     $(".divdaimg").css("opacity", 0 + $(window).scrollTop() /800);
-//
-//
-//
+
+
+
 //   //250 is fade pixels
 //   });
