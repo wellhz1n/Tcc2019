@@ -18,7 +18,7 @@ window.onload = function () {
             });
 
 
-      });
+      };
 
 
     }
@@ -37,10 +37,10 @@ window.onload = function () {
             }
         });
     });
-  });
+  };
 
 
-};
+
 $(document).ready(function () {
 
     $(".arrow").click(function () {
@@ -55,30 +55,7 @@ $(document).ready(function () {
   });
 
 
-  $("#nome").focusout(() => {
 
-
-    var txt = $("#nome").val();
-
-    txt == "" ? $("#nome").addClass("border-danger") : $("#nome").removeClass("border-danger");
-
-  });
-
-  $("#email").focusout(() => {
-
-
-    var txt = $("#email").val();
-
-    txt == "" ? $("#email").addClass("border-danger") : $("#email").removeClass("border-danger");
-
-  });
-  $("#assunto").focusout(() => {
-
-
-
-
-
-    var txt = $("#mensage").val();
 
 
     Validacao();
