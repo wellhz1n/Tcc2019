@@ -28,6 +28,7 @@
                     <li class="nav-item ">
                         <a class="nav-link about"  >About</a>
                     </li>
+         </ul>
+      </div>
 
-
-	</nav>
+</nav>

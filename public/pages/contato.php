@@ -15,14 +15,14 @@
             <div class="row mt-2"></div>
             <textarea name="message" rows="5" cols="20" id="mensage"  class="form-control " placeholder="Sua Sugestão"></textarea>
             <div class="row mt-2 offset-5 text-center">
-                
+
             </div>
-            
-            
-            
-            
+
+
+
+
         </form>
-        
+
         <button type="submit" onclick="alert('Enviado!')" class="btn btn-primary m-3">Enviar</button>
 
         </div>

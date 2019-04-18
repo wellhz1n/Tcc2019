@@ -25,17 +25,15 @@
 <body class="font-Montserrat" >
 
         <?php require 'pages/header.php' ?>
-        
 
 
 
 
-    <div  class=''>
+
 
     <?php  require load();
     ?>
 
-    </div>
 <?php require "pages/modal.php" ?>
 </body>
 </html>
