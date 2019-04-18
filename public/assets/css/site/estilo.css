@@ -268,7 +268,7 @@ ul li:hover::after {
   padding: 0 0 0 0;
   margin: 0 20px 10px 20px;
   top: 30px;
-  float: left;
+  /* float: left; */
   display: inline-block;
   /* border: rgb(202, 100, 100) solid 3px; */
 }
