@@ -18,6 +18,8 @@
          <script src="assets/js/bootstrap/bootstrap.js"></script>
           <script src="assets/js/site/modal.js"></script>
           <script src="assets/js/site/Validation.js"></script>
+          <script src="assets/js/site/Events.js"></script>
+
 
           <link rel="stylesheet" media="(max-width: 767px)" href="assets/css/site/smart.css" />
 
