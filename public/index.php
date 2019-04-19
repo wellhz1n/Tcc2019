@@ -12,12 +12,11 @@
           <link rel="stylesheet" href="assets/css/site/fonts.css">
           <link rel="stylesheet" href="assets/css/site/paralax.css">
           <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-          <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+
 
 
           <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-         <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+
          <script src="assets/js/bootstrap/bootstrap.js"></script>
           <script src="assets/js/site/modal.js"></script>
           <script src="assets/js/site/Validation.js"></script>
@@ -27,7 +26,6 @@
           <link rel="stylesheet" media="(max-width: 767px)" href="assets/css/site/smart.css" />
 
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 </head>
 <body class="font-Montserrat" >
 
@@ -43,5 +41,11 @@
 <?php  require 'pages/footer.php' ?>
 <?php require "pages/modal.php" ?>
 
+
 </body>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </html>

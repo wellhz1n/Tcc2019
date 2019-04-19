@@ -9,11 +9,11 @@
         echo  "<div class='box-complete '>
 
                 <div class='bt font-Arimo'>
-                
+
 
 
                  </div>
-              
+
                 <div class='bb'>
                   <a class='btn btn-primary'> Comprar</a>
                 </div>

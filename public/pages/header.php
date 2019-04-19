@@ -26,7 +26,7 @@
                     </li>
 
                     <li class="nav-item bordaM bordaMFinal itemMenu">
-                        <a class="nav-link about"  >About</a>
+                        <a class="nav-link about">About</a>
                     </li>
          </ul>
       </div>
