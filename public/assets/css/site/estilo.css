@@ -106,6 +106,7 @@ ul .itemMenu:hover::after {
   border-right: 15px solid transparent;
   border-top: 15px solid #62377e;
 }
+/* =========================MODAL==================================================================== */
 
 .mod-container {
   height: 100vh;
@@ -249,7 +250,6 @@ ul .itemMenu:hover::after {
 }
 
 /* comentario */
-/* =========================MODAL==================================================================== */
 /* vem logo mateus */
 /* =========================LAYOUT================================== */
 .caixas {
