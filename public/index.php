@@ -7,18 +7,23 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title></title>
+    <script src="assets/js/site/modal.js"></script>
+
           <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
           <link rel="stylesheet" href="assets/css/site/estilo.css">
           <link rel="stylesheet" href="assets/css/site/fonts.css">
           <link rel="stylesheet" href="assets/css/site/paralax.css">
           <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<<<<<<< HEAD
 
+=======
+          <!-- <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script> -->
+>>>>>>> 6bf4d3f37fa797964d30c5a78e0c03122e135872
 
 
           <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css">
 
          <script src="assets/js/bootstrap/bootstrap.js"></script>
-          <script src="assets/js/site/modal.js"></script>
           <script src="assets/js/site/Validation.js"></script>
           <script src="assets/js/site/Events.js"></script>
 
@@ -38,10 +43,13 @@
 
     <?php  require load();
     ?>
-<?php  require 'pages/footer.php' ?>
 <?php require "pages/modal.php" ?>
+<<<<<<< HEAD
 
 
+=======
+<?php  require 'pages/footer.php' ?>
+>>>>>>> 6bf4d3f37fa797964d30c5a78e0c03122e135872
 </body>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
