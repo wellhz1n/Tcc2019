@@ -34,6 +34,7 @@
     <?php require "pages/modal.php" ?>
     <?php  require 'pages/footer.php' ?>
 </body>
+<!-- Nao Mudar a ordem Sempre Deixar o jquery Como o primeiro a ser puxado -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script> -->
