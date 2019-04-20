@@ -10,7 +10,8 @@ function iniciaModal(modalID) {
         modal.classList.add('ativa');
         console.log(modalID);
         modal.addEventListener('click', (e) => {
-            if (e.target.id == modalID || e.target.className == 'fechar') {
+            if (e.target.id == modalID || e.target.className == 'fechar' || e.target.className == 'x-icon') {
+                console.log("Fechou");
                 modal.classList.remove('ativa');
             }
 
