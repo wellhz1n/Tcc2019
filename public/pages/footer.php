@@ -1,6 +1,6 @@
 <!-- Footer -->
 <footer class="page-footer font-small mdb-color pt-4">
-
+<hr>
         <!-- Footer Links -->
         <div class="container text-center text-md-left">
     
@@ -83,7 +83,7 @@
             <div class="col-md-7 col-lg-8">
     
               <!--Copyright-->
-              <p class="text-center text-md-left">© 2018 Copyright:
+              <p class="text-center text-md-right ">© 2018 Copyright:
                 <a href="https://mdbootstrap.com/education/bootstrap/">
                   <strong> MDBootstrap.com</strong>
                 </a>

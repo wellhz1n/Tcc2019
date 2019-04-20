@@ -1,9 +1,9 @@
-window.onload = ()=>{
-    debbuger;
+$(document).ready( ()=>{
+
 
 //Funcao do Modal
 function iniciaModal(modalID) {
-    debbuger;
+   
     const modal = document.getElementById(modalID);
     if (modal) {
 
@@ -25,7 +25,7 @@ function iniciaModal(modalID) {
 const about = document.querySelector('.about');
 about.addEventListener('click', () => iniciaModal('modal'));
     
-};
+});
 
 
 
