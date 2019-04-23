@@ -1,6 +1,6 @@
 <div id='modal' class="mod-container  " >
     <div class="mod">
-        <button id='fechar' class="fechar" title="Fechar" ><i class="fa fa-times x-icon"></i></button>
+        <button id='fechar' class="fechar" title="Fechar" ><i  class="fa fa-times x-icon"></i></button>
         <h1>Sobre</h1>
         <h1>Desenvolvedores:</h1>
         <h3>Mateus</h3>

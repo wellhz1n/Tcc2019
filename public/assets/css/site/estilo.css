@@ -15,8 +15,13 @@ head, body {
   overflow-x: hidden;
   margin: 0px;
   padding: 0px;
+  
 }
+.corp{
 
+
+  min-height: 79vh;
+}
 #error {
   background-image: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)), url(https://media.giphy.com/media/LW5vBvAb48Oe9OoEKT/giphy.gif);
   background-size: cover;
@@ -345,3 +350,9 @@ ul .itemMenu:hover::after {
   margin-top: 7%;
 }
 /* ======================================================================================================= */
+.compra-prev{
+  height: 200px;
+  width: 200px;
+  background-color: #62377e;
+
+}

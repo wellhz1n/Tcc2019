@@ -1,14 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-</head>
-<body>
+<section class="col-12">
+<div class="row">
+
+    <div class="col-6 text-center">
+        <!-- <h1 class="text-danger">TU Nao tem DINHEIROS BLZ!</h1> -->
+        <div class="compra-prev mt-5 ml-5 " id="compra-prev">
+            
+            
+            <label for="#compra-prev">Produto</label>
+
+            
+        </div>
+    </div>
+    <div class="col-1 p-2 mt-5 text-center ">
+   
+        
+        <h5 class="float-left">Produto</h5>
+        <p>Produto legal</p>
+        <p>Produto legal</p>
+
+       
+        
+        
+        <button class="btn btn-primary">Comprar</button>
+    </div>
+
     
-</body>
-</html>
+</div>
+
+
+</section> 
+
