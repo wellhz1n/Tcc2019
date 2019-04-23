@@ -1,4 +1,4 @@
-window.onload= ()=>{
+$(document).ready( ()=>{
 
 
 
@@ -54,6 +54,6 @@ window.onload= ()=>{
             });
         }());
 
-};
+});
 
 

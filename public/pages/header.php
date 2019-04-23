@@ -15,18 +15,18 @@
             <ul  class="navbar-nav">
               <?php $page = filter_input(INPUT_GET,'page',FILTER_SANITIZE_STRING);?>
 
-                    <li class="nav-item <?php if($page=="home"||$page == null) echo "ativo"?> ">
-                        <a class="nav-link " href="?page=home" >Início</a>
+                    <li class="nav-item <?php if($page=="home"||$page == null) echo "ativo"?> itemMenu">
+                        <a class="nav-link bordaM bordaMInicio" href="?page=home" >Início</a>
                     </li>
-                    <li class="nav-item <?php if($page=="contato") echo "ativo"?>">
-                        <a class="nav-link" href='?page=contato' >Contato</a>
+                    <li class="nav-item <?php if($page=="contato") echo "ativo"?> itemMenu">
+                        <a class="nav-link bordaM" href='?page=contato' >Contato</a>
                     </li>
-                    <li class="nav-item <?php if($page=="catalogo") echo "ativo"?>">
-                        <a class="nav-link" href='?page=catalogo' >Catalogo</a>
+                    <li class="nav-item <?php if($page=="catalogo") echo "ativo"?> itemMenu">
+                        <a class="nav-link bordaM" href='?page=catalogo' >Catalogo</a>
                     </li>
 
-                    <li class="nav-item ">
-                        <a class="nav-link about"  >About</a>
+                    <li class="nav-item bordaM bordaMFinal itemMenu">
+                        <a class="nav-link about">About</a>
                     </li>
          </ul>
       </div>

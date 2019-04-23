@@ -14,11 +14,12 @@
 </section>
 
 <section id="target"  class="homec">
-  <div class="divdaimg">
+  <div class="col-12 p-5">
 
 
         <img src="assets/img/log/logo.png" title="logo" class="img-p">
       <h2 id="text">Texto para ocupar um espaço em branco </h2>
+
 
 
   </div>
@@ -33,5 +34,42 @@
 
 
 </div>
+
+</section>
+<section id="target"  class="row ">
+  
+  <div class="col-12  text-center p-5">
+
+<div class="row">
+  <div class="col-4 ">
+      <img src="assets/img/log/logo.png" title="logo" class="img-p">
+      <h2 id="text">Texto para ocupar um espaço em branco </h2>
+      
+  </div>
+  <div class="col-4 ">
+      <img src="assets/img/log/logo.png" title="logo" class="img-p">
+      <h2 id="text">Texto para ocupar um espaço em branco </h2>
+      
+  </div>
+  <div class="col-4 ">
+      <img src="assets/img/log/logo.png" title="logo" class="img-p">
+      <h2 id="text">Texto para ocupar um espaço em branco </h2>
+      
+  </div>
+  
+
+    
+</div>
+
+
+
+
+
+
+
+
+  </div>
+
+
 
 </section>

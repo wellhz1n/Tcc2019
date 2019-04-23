@@ -21,9 +21,7 @@
             <div class="row mt-2 offset-5 text-center">
 
             </div>
-
-
-
+      
 
         </form>
 

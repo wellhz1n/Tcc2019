@@ -15,8 +15,13 @@ head, body {
   overflow-x: hidden;
   margin: 0px;
   padding: 0px;
+  
 }
+.corp{
 
+
+  min-height: 79vh;
+}
 #error {
   background-image: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)), url(https://media.giphy.com/media/LW5vBvAb48Oe9OoEKT/giphy.gif);
   background-size: cover;
@@ -79,7 +84,7 @@ ul {
   margin: 0% 0% 0% 0%;
 }
 
-li {
+.itemMenu {
   position: relative;
   margin-top: 10px;
   height: 9vh;
@@ -93,7 +98,7 @@ a {
   top: 1%;
 }
 
-ul li:hover::after {
+ul .itemMenu:hover::after {
   content: "";
   position: relative;
   top: -66px;
@@ -105,6 +110,7 @@ ul li:hover::after {
   border-right: 15px solid transparent;
   border-top: 15px solid #62377e;
 }
+/* =========================MODAL==================================================================== */
 
 .mod-container {
   height: 100vh;
@@ -206,6 +212,7 @@ ul li:hover::after {
   }
 }
 
+
 .diferente {
   border-top: 2px solid red;
 }
@@ -223,8 +230,6 @@ ul li:hover::after {
   border-top: 15px solid #62377e;
 }
 
-/* Uau! */
-/*Qualquer coisajhiuyttr*/
 #nav {
   background: #0e0033 !important;
 }
@@ -250,7 +255,6 @@ ul li:hover::after {
 }
 
 /* comentario */
-/* =========================MODAL==================================================================== */
 /* vem logo mateus */
 /* =========================LAYOUT================================== */
 .caixas {
@@ -312,7 +316,6 @@ ul li:hover::after {
   margin-left: 12%;
 }
 
-/* retirei o text decoration */
 @media screen and (min-width:1280px) {
   .sec {
     margin-left: 13vw;
@@ -345,4 +348,11 @@ ul li:hover::after {
   justify-content: center;
   align-items: center;
   margin-top: 7%;
+}
+/* ======================================================================================================= */
+.compra-prev{
+  height: 200px;
+  width: 200px;
+  background-color: #62377e;
+
 }
