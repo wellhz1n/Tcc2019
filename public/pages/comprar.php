@@ -22,8 +22,9 @@
         
         
         <button class="btn btn-primary">Comprar</button>
-        <?php      
-        
+         
+
+         
    
     </div>
 
