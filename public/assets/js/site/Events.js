@@ -12,17 +12,17 @@ $(document).ready(function () {
   });
 
 
-////Animation
+//Animation
 
-//  $(window).scroll(function(){
+ $(window).scroll(function(){
 
-//    $(".arrow").css("opacity", 1 - $(window).scrollTop() /200);
-//  $(".divdaimg").css("opacity", 0 + $(window).scrollTop() /800);
+   $(".arrow").css("opacity", 1 - $(window).scrollTop() /200);
+ $(".divdaimg").css("opacity", 0 + $(window).scrollTop() /800);
 
 
 
-//   //250 is fade pixels
-//   });
+  //250 is fade pixels
+  });
 
 
 

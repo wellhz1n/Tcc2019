@@ -13,7 +13,7 @@
 
 </section>
 
-<section id="target"  class="homec">
+<section id="target"  class="homec divdaimg">
   <div class="col-12 p-5">
 
 
@@ -40,7 +40,7 @@
   
   <div class="col-12  text-center p-5">
 
-<div class="row">
+<div class="row ">
   <div class="col-4 ">
       <img src="assets/img/log/logo.png" title="logo" class="img-p">
       <h2 id="text">Texto para ocupar um espaço em branco </h2>
@@ -49,6 +49,18 @@
   <div class="col-4 ">
       <img src="assets/img/log/logo.png" title="logo" class="img-p">
       <h2 id="text">Texto para ocupar um espaço em branco </h2>
+      <?php
+      
+           //pecorrendo os registros da consulta. 
+           while($aux = mysqli_fetch_assoc($sql)) { 
+            echo "-----------------------------------------<br />"; 
+            echo "Nome:".$aux["Nome"]."<br />"; 
+            echo "Email:".$aux["Email"]."<br />"; 
+          }
+          
+          
+          ?>
+      
       
   </div>
   <div class="col-4 ">
