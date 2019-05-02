@@ -1,3 +1,8 @@
+<?php
+  if (isset($_SESSION["login"])) {?>
+
+
+
 
 <section class="row">
 
@@ -25,3 +30,10 @@
 ?>
 </section >
 </section>
+  <?php } else{ ?>
+    <div class="col-12 text-center">
+      <h1 class="mt-5"> Para ver o Catalogo faça o Login </h1>
+      <a href="?page=login" class="btn btn-primary  ">Login</a>
+  </div>
+<?php } ?>
+

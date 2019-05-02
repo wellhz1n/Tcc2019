@@ -13,6 +13,7 @@
         <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul  class="navbar-nav">
+        <?php if (!isset($_SESSION["login"]) || $_SESSION["nivel"] != 0) { ?>
               <?php $page = filter_input(INPUT_GET,'page',FILTER_SANITIZE_STRING);?>
 
                     <li class="nav-item <?php if($page=="home"||$page == null) echo "ativo"?> itemMenu">
@@ -28,6 +29,14 @@
                     <li class="nav-item bordaM bordaMFinal itemMenu">
                         <a class="nav-link about">About</a>
                     </li>
+
+                    <?php if (isset($_SESSION["login"])&& $_SESSION["nivel"]==1) { ?>
+
+                    
+                        <a class="" style="cursor: pointer;" title="Carrinho" href="?pages=carrinho" ><i class="fa fa-shopping-cart"></i></a>
+                    <?php } else{}?>
+
+
                     <?php    if (!isset($_SESSION["login"])) {?>
         
                         <li class="nav-item bordaM bordaMFinal itemMenu">
@@ -35,10 +44,27 @@
                     </li>
                     <?php } else{ ?>
                         <li class="nav-item bordaM bordaMFinal itemMenu">
-                        <a class="nav-link login" href="pages/forms/sair.php"><i class="fa fa-user"></i><?php echo $_SESSION["usuario"];?> </a>
+                        <a class="nav-link login" title="Sair" href="pages/forms/sair.php"><i class="fa fa-sign-out-alt  p-1" ></i><?php echo $_SESSION["usuario"];?> </a>
                     </li>
 
                     <?php } ?>
+
+            <?php } else {?>
+
+
+                            <?php    if (!isset($_SESSION["login"])) {?>
+                                    
+                                <li class="nav-item bordaM bordaMFinal itemMenu">
+                                <a class="nav-link login" href="?page=login"><i class="fa fa-user"></i> Log-in </a>
+                            </li>
+                            <?php } else{ ?>
+                                <li class="nav-item bordaM bordaMFinal itemMenu">
+                                <a class="nav-link login" title="Sair" href="pages/forms/sair.php"><i class="fa fa-sign-out-alt  p-1" ></i><?php echo $_SESSION["usuario"];?> </a>
+                            </li>
+
+                         <?php } ?>
+                    <?php } ?>
+
          </ul>
       </div>
 
