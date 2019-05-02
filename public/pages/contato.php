@@ -23,9 +23,9 @@
             </div>
       
 
+        <button type="submit" id="Enviar" class="btn btn-primary m-3">Enviar</button>
         </form>
 
-        <button type="submit" id="Enviar" class="btn btn-primary m-3">Enviar</button>
 
         </div>
     </div>

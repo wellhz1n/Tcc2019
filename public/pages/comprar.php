@@ -1,34 +1,40 @@
 <section class="col-12">
 <div class="row">
-
-    <div class="col-6 text-center">
-        <!-- <h1 class="text-danger">TU Nao tem DINHEIROS BLZ!</h1> -->
-        <div class="compra-prev mt-5 ml-5 " id="compra-prev">
+    <table class="table  w-100 text-center">
+        <thead class="thead-dark">
+          <tr>
             
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Assunto</th>
+            <th scope="col"></th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+            <?php   while ($pesq = mysqli_fetch_array($sql_contato)):?>
+          <tr>
+              <form action="pages/forms/comprar.php" method="POST">
+                  <input type="text" value="<?php echo $pesq["id"];  ?> " name="ID" hidden>
+
+            <td><?php  $id = $pesq["id"];  echo  $pesq["Nome"];  ?></td>
+            <td><?php echo  $pesq["Email"]  ?></td>
+            <td><?php echo  $pesq["Assunto"]  ?></td>
             
-            <label for="#compra-prev">Produto</label>
-
+            <?php   
+                //  $ID = filter_input(INPUT_POST,'ID',FILTER_SANITIZE_STRING);
+                // $ID = $ID
             
-        </div>
-    </div>
-    <div class="col-1 p-2 mt-5 text-center ">
-   
-        
-        <h5 class="float-left">Produto</h5>
-        <p>Produto legal</p>
-        <p>Produto legal</p>
+            ?>
+            <th scope="col"><button type="submit"  class="btn btn-danger">Delete</button></th>
+            </form>
 
-       
-        
-        
-        <button class="btn btn-primary">Comprar</button>
-         
-
-         
-   
-    </div>
-
+          </tr>
+<?php endwhile; ?>
     
+        </tbody>
+      </table>
 </div>
 
 

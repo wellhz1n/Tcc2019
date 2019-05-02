@@ -52,15 +52,19 @@
       <?php
       
            //pecorrendo os registros da consulta. 
-           while($aux = mysqli_fetch_assoc($sql)) { 
-            echo "-----------------------------------------<br />"; 
-            echo "Nome:".$aux["Nome"]."<br />"; 
+           while($aux = mysqli_fetch_assoc($sql_contato)) { 
+            echo "-----------------------------------------<br />";
+            
+
+            echo "Nome:" .$aux["Nome"]."<br />"; 
+
             echo "Email:".$aux["Email"]."<br />"; 
           }
           
           
           ?>
-      
+          
+     
       
   </div>
   <div class="col-4 ">

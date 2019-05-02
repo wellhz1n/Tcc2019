@@ -1,17 +1,17 @@
 <?php
 require '../../../bootstrap.php';
+require "../../../app/function/DB.php";
 
 
-$validate = validate([
-     'nome' => 's',
-     'asunto' => 's',
-     'email' => 'e',
-     'message' => 's',
 
 
-]);
+$nome = $_POST["nome"];
+$email = $_POST["email"];
+$assunto = $_POST["asunto"];
+$sql = mysqli_query($cx,"INSERT INTO contato (Nome,Email,Assunto)
+Values( '{$nome}','{$email}','{$assunto}')");
 
-dd($validate->nome);
-
+header("Location: http://localhost:8081/Tcc/public/?page=home");
+die();
 
 ?>

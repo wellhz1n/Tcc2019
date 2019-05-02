@@ -1,4 +1,4 @@
-
+<?php   ?>
 <nav class="navbar  font-weight-bolder navbar-expand-md navbar-dark" id="nav">
         <!-- Brand -->
 
@@ -28,6 +28,17 @@
                     <li class="nav-item bordaM bordaMFinal itemMenu">
                         <a class="nav-link about">About</a>
                     </li>
+                    <?php    if (!isset($_SESSION["login"])) {?>
+        
+                        <li class="nav-item bordaM bordaMFinal itemMenu">
+                        <a class="nav-link login" href="?page=login"><i class="fa fa-user"></i> Log-in </a>
+                    </li>
+                    <?php } else{ ?>
+                        <li class="nav-item bordaM bordaMFinal itemMenu">
+                        <a class="nav-link login" href="pages/forms/sair.php"><i class="fa fa-user"></i><?php echo $_SESSION["usuario"];?> </a>
+                    </li>
+
+                    <?php } ?>
          </ul>
       </div>
 
