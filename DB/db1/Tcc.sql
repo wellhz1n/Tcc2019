@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 30-Abr-2019 às 03:20
+-- Generation Time: 02-Maio-2019 às 23:27
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.2
 
@@ -40,8 +40,28 @@ CREATE TABLE `contato` (
 --
 
 INSERT INTO `contato` (`id`, `Nome`, `Email`, `Assunto`) VALUES
-(1, 'wellington', 'wellington@gmail.com', 'teste'),
-(2, 'Mateus', 'nidlap@hotmail.com', 'Teste2');
+(9, 'Pedro', 'pedrinhovqv@yahoo.com.br', 'mo sono bro'),
+(10, 'Wellington Hellstrom', 'wellingtom1234520@gmail.com', 'teste');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `nivel_autoridade` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `nome`, `senha`, `nivel_autoridade`) VALUES
+(1, 'admin', 'admin', 0);
 
 --
 -- Indexes for dumped tables
@@ -54,6 +74,13 @@ ALTER TABLE `contato`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nome` (`nome`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -61,7 +88,13 @@ ALTER TABLE `contato`
 -- AUTO_INCREMENT for table `contato`
 --
 ALTER TABLE `contato`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
