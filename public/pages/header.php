@@ -50,6 +50,14 @@
                     <?php } ?>
 
             <?php } else {?>
+                <?php $page = filter_input(INPUT_GET,'page',FILTER_SANITIZE_STRING);?>
+
+                            <li class="nav-item <?php if($page=="adm_contato"||$page == null) echo "ativo"?> itemMenu">
+                                <a class="nav-link bordaM bordaMInicio" href="?page=adm_contato" >Contato</a>
+                            </li>
+                            <li class="nav-item <?php if($page=="adm_usuario"||$page == null) echo "ativo"?> itemMenu">
+                                <a class="nav-link bordaM bordaMInicio" href="?page=adm_usuario" >Usuário</a>
+                            </li>
 
 
                             <?php    if (!isset($_SESSION["login"])) {?>
@@ -57,6 +65,7 @@
                                 <li class="nav-item bordaM bordaMFinal itemMenu">
                                 <a class="nav-link login" href="?page=login"><i class="fa fa-user"></i> Log-in </a>
                             </li>
+                            
                             <?php } else{ ?>
                                 <li class="nav-item bordaM bordaMFinal itemMenu">
                                 <a class="nav-link login" title="Sair" href="pages/forms/sair.php"><i class="fa fa-sign-out-alt  p-1" ></i><?php echo $_SESSION["usuario"];?> </a>
