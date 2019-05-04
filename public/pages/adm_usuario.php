@@ -66,9 +66,9 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
       <form action="pages/forms/adm_form_usuario_new.php" id="form1" name="cria" method="POST">
                 <div class="col-12 text-center form-group">
                     <label for="nome" class="float-left">Nome</label>
-                  <input type="text" class="form-control" placeholder="Nome" name="nome">
+                  <input type="text" class="form-control" placeholder="Nome" name="nome" required>
                   <label for="senha" class="float-left">Senha</label>
-                  <input type="password" class="form-control" placeholder="Senha" name="senha">
+                  <input type="password" class="form-control" placeholder="Senha" name="senha" required>
                   <h5 class="text-center">Adiministrador</h5>
                   <label for="check" class="" ><i id="checado" class="fa fa-check text-success text-center"></i></label>
                   <input type="hidden"  value="1"   name="nivel_autoridade" >
