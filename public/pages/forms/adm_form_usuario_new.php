@@ -3,12 +3,24 @@
 $nome = $_POST["nome"];
 $senha = md5($_POST['senha']);
 $nivel = $_POST['nivel_autoridade'] ?? 1 ;
-echo $nivel;
+
 $create = mysqli_query($cx,"INSERT INTO usuario (nome,senha,nivel_autoridade)VALUES('$nome','$senha',$nivel)");
+if($create){
+    header("Location: http://localhost:8081/Tcc/public/?page=adm_usuario");
+    die();
 
-header("Location: http://localhost:8081/Tcc/public/?page=adm_usuario");
-die();
+}
+else{
+   
+    ?>
+<link rel="stylesheet" href="../../assets/css/bootstrap/bootstrap.css">
+    <div class="col-12 text-center">
+    <br>
+    <h4>O Nome De Usuario <label class="text-danger"><?php echo $nome ?></label> ja existe Por favos volte e insira um diferente</h4>
+    <a class='btn btn-primary' href='javascript:history.back()'>Voltar</a> 
+    </div>
+<?php } ?>
 
 
 
-?>
+
