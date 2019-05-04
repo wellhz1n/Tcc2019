@@ -5,7 +5,7 @@ require '../../../bootstrap.php';
 
 
 $usuario = addslashes($_POST['usuario']);
-$senha = addslashes($_POST['senha']);
+$senha = md5($_POST['senha']);
 $Busca = "SELECT * FROM usuario WHERE nome ='$usuario' and senha ='$senha'";
 $consulta = mysqli_query($cx,$Busca);
 

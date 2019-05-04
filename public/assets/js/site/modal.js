@@ -24,7 +24,7 @@ function iniciaModal(modalID) {
 
 }
 const about = document.querySelector('.about');
-about.addEventListener('click', () => iniciaModal('modal'));
+about.addEventListener('click',() => iniciaModal('modal'));
     
 });
 

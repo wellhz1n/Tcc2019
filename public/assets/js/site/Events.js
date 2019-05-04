@@ -24,11 +24,38 @@ $(document).ready(function () {
   //250 is fade pixels
   });
 
+ 
 
 
-
+  $("#checado").click(()=>{
+    
   
+    checado();
+    
+  });
+  //Function checado e nao checado
+
 
 
 
 });
+
+//check e o elemento checkbox ja o checado e o elemento i 
+function checado() {
+    
+  var $ch = $('#check').is(":checked");
+
+  $ch ? 0 : 1;
+
+  if ($ch == true) {
+
+    $("#checado").removeClass('fa-check text-success').addClass('fa-times text-danger');
+    // alert(valor.val());
+  }
+  else {
+    
+    $("#checado").removeClass('fa-times text-danger').addClass('fa-check text-success');
+    // alert(valor.val());
+
+  }
+};
