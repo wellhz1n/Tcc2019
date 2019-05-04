@@ -7,7 +7,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
     ?>  
  <section class="col-12">
     <div class="row">
-    <table class="table w-100 text-center table-active table-bordered table-hover table-striped">
+    <table class="table w-100 text-center table-active table-bordered table-hover ">
         <thead class="thead-dark">
           <tr class="col-4">
             
@@ -22,7 +22,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
         </thead>
         <tbody>
             <?php   while ($pes = mysqli_fetch_array($sql_usuario)):?>
-          <tr ondblclick=" document.getElementById('formedit').submit();">
+          <tr  ondblclick=" document.getElementById('formedit').submit();">
               <form action="?page=adm_usuario_edit" id="formedit" name="del" method="POST">
 
               <input type="hidden"  value="<?php echo $pes["id_user"];?>" name="id" >

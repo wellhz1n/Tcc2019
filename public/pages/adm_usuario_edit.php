@@ -5,7 +5,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
 
 $nome = $_POST["nome"];
 $id = $_POST["id"];
-
+echo $id;
 
 $senha = $_POST['senha'];
 $nivel = $_POST['nivel_autoridade'];

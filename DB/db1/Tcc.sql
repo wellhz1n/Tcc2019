@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 02-Maio-2019 às 23:27
+-- Generation Time: 05-Maio-2019 às 00:38
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.2
 
@@ -40,8 +40,8 @@ CREATE TABLE `contato` (
 --
 
 INSERT INTO `contato` (`id`, `Nome`, `Email`, `Assunto`) VALUES
-(9, 'Pedro', 'pedrinhovqv@yahoo.com.br', 'mo sono bro'),
-(10, 'Wellington Hellstrom', 'wellingtom1234520@gmail.com', 'teste');
+(13, 'wewaess  ', 'wellingtom1234520@gmail.comss  ', 'sadas '),
+(15, '                www    ', '             www           ', 'djdjdk  ');
 
 -- --------------------------------------------------------
 
@@ -50,18 +50,20 @@ INSERT INTO `contato` (`id`, `Nome`, `Email`, `Assunto`) VALUES
 --
 
 CREATE TABLE `usuario` (
-  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `nome` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL,
-  `nivel_autoridade` int(11) NOT NULL
+  `nivel_autoridade` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `nome`, `senha`, `nivel_autoridade`) VALUES
-(1, 'admin', 'admin', 0);
+INSERT INTO `usuario` (`id_user`, `nome`, `senha`, `nivel_autoridade`) VALUES
+(53, 'admin ', '21232f297a57a5a743894a0e4a801fc3', 0),
+(54, 'wellington', 'dcbacadf485c141a2b9b0028f2c0b2e1', 1),
+(55, 'mateus', 'e42b6a82864b7060c447ecebd62518a3', 0);
 
 --
 -- Indexes for dumped tables
@@ -77,7 +79,7 @@ ALTER TABLE `contato`
 -- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id_user`),
   ADD UNIQUE KEY `nome` (`nome`);
 
 --
@@ -88,13 +90,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `contato`
 --
 ALTER TABLE `contato`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

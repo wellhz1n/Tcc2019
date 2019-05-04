@@ -3,7 +3,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
    
  <section class="col-12">
     <div class="row">
-    <table class="table col-12 w-100 text-center table-active table-bordered table-hover table-striped">
+    <table class="table col-12 w-100 text-center table-active table-bordered table-hover ">
         <thead class="thead-dark">
           <tr>
             
@@ -17,7 +17,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
         </thead>
         <tbody>
             <?php   while ($pesq = mysqli_fetch_array($sql_contato)):?>
-          <tr ondblclick=" document.getElementById('form').submit();">
+          <tr style="cursor:pointer;" ondblclick="$('#form').submit();">
               <form action="pages/forms/adm_form_contato_edit.php" id="form" name="del" method="POST">
                   <input type="text" id="ID" value="<?php echo $pesq["id"];  ?> " name="ID" hidden>
                   <input type="text" id="ID" value="<?php echo $pesq["Nome"];  ?> " name="nome" hidden>
