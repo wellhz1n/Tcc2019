@@ -22,7 +22,8 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
         </thead>
         <tbody>
             <?php   while ($pes = mysqli_fetch_array($sql_usuario)):?>
-          <tr  ondblclick=" document.getElementById('formedit').submit();">
+          <tr >
+             <!-- NO FUTURO IMPLEMENTAR ISSO ondblclick=" document.getElementById('formedit').submit();" -->
               <form action="?page=adm_usuario_edit" id="formedit" name="del" method="POST">
 
               <input type="hidden"  value="<?php echo $pes["id_user"];?>" name="id" >

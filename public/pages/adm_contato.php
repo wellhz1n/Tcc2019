@@ -17,7 +17,9 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
         </thead>
         <tbody>
             <?php   while ($pesq = mysqli_fetch_array($sql_contato)):?>
-          <tr style="cursor:pointer;" ondblclick="$('#form').submit();">
+          <tr>
+             <!-- NO FUTURO IMPLEMENTAR ISSO ondblclick=" document.getElementById('form').submit();" -->
+
               <form action="pages/forms/adm_form_contato_edit.php" id="form" name="del" method="POST">
                   <input type="text" id="ID" value="<?php echo $pesq["id"];  ?> " name="ID" hidden>
                   <input type="text" id="ID" value="<?php echo $pesq["Nome"];  ?> " name="nome" hidden>
