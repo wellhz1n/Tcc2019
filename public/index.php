@@ -1,4 +1,7 @@
-<?php require "../bootstrap.php" ?>
+<?php 
+
+
+require "../bootstrap.php" ?>
 <!DOCTYPE html>
 <html>
 

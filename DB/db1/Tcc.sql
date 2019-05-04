@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: 05-Maio-2019 às 00:38
--- Versão do servidor: 10.1.38-MariaDB
--- versão do PHP: 7.3.2
+-- Host: 127.0.0.1:3306
+-- Generation Time: 04-Maio-2019 às 23:31
+-- Versão do servidor: 5.7.24
+-- versão do PHP: 7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `Tcc`
+-- Database: `tcc`
 --
 
 -- --------------------------------------------------------
@@ -28,20 +28,24 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `contato`
 --
 
-CREATE TABLE `contato` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `contato`;
+CREATE TABLE IF NOT EXISTS `contato` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `Nome` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
-  `Assunto` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `Assunto` varchar(255) NOT NULL,
+  `data_envio` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `contato`
 --
 
-INSERT INTO `contato` (`id`, `Nome`, `Email`, `Assunto`) VALUES
-(13, 'wewaess  ', 'wellingtom1234520@gmail.comss  ', 'sadas '),
-(15, '                www    ', '             www           ', 'djdjdk  ');
+INSERT INTO `contato` (`id`, `Nome`, `Email`, `Assunto`, `data_envio`) VALUES
+(16, 'well', 'wellingtom1234520@gmail.com', 'aada', '2019-05-04 20:26:00'),
+(17, '2', 'wellingtom1234520@gmail.com', 'sdadas', '2019-05-04 20:28:00'),
+(18, 'Novo', 'wellingtom1234520@gmail.com', 'dada', '2019-05-04 20:31:00');
 
 -- --------------------------------------------------------
 
@@ -49,54 +53,23 @@ INSERT INTO `contato` (`id`, `Nome`, `Email`, `Assunto`) VALUES
 -- Estrutura da tabela `usuario`
 --
 
-CREATE TABLE `usuario` (
-  `id_user` int(11) NOT NULL,
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL,
-  `nivel_autoridade` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `nivel_autoridade` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id_user`),
+  UNIQUE KEY `nome` (`nome`)
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id_user`, `nome`, `senha`, `nivel_autoridade`) VALUES
-(53, 'admin ', '21232f297a57a5a743894a0e4a801fc3', 0),
-(54, 'wellington', 'dcbacadf485c141a2b9b0028f2c0b2e1', 1),
-(55, 'mateus', 'e42b6a82864b7060c447ecebd62518a3', 0);
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `contato`
---
-ALTER TABLE `contato`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id_user`),
-  ADD UNIQUE KEY `nome` (`nome`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `contato`
---
-ALTER TABLE `contato`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT for table `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+(53, 'admin   ', '21232f297a57a5a743894a0e4a801fc3', 0),
+(54, 'wellington', 'dcbacadf485c141a2b9b0028f2c0b2e1', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
