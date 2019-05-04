@@ -1,4 +1,8 @@
 <?php
+
+if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { 
+
+
 $nome = $_POST["nome"];
 $id = $_POST["id"];
 
@@ -26,3 +30,12 @@ $nivel = $_POST['nivel_autoridade'];
 
             </form>
 </section>
+<?php }else{ 
+
+header("Location: http://localhost:8081/Tcc/public/?page=home");
+die();
+}
+  ?>
+
+
+
