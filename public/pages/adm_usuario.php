@@ -69,7 +69,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
                   <input type="text" class="form-control" placeholder="Nome" name="nome" required>
                   <label for="senha" class="float-left">Senha</label>
                   <input type="password" class="form-control" placeholder="Senha" name="senha" required>
-                  <h5 class="text-center">Adiministrador</h5>
+                  <h5 class="text-center">Administrador</h5>
                   <label for="check" class="" ><i id="checado" class="fa fa-check text-success text-center"></i></label>
                   <input type="hidden"  value="1"   name="nivel_autoridade" >
                   <input type="checkbox" id="check" value="0" checked  name="nivel_autoridade" hidden >

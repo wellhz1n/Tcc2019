@@ -10,24 +10,27 @@
 <section class="col-xs-12">
 <section class="text-center col-12">
     <?php
-    for ($i=0; $i < 8 ; $i++) {
-        echo  "<div class='box-complete '>
+
+      $buscaP = mysqli_query($cx,"SELECT * FROM produto");
+
+      while($p =mysqli_fetch_array($buscaP)): ?>
+     <div class='box-complete '>
 
                 <div class='bt font-Arimo'>
-            
-        
-
-                 </div>
-
+                  <img src="assets/img/produto/<?php echo $p["img"]; ?>">
+                  
+                  
+                  <p><?php echo $p["nome"] ;?></p>
+                </div>
+                
                 <div class='bb'>
                   <a class='btn btn-primary' href='?page=comprar'> Comprar</a>
                 </div>
 
-              </div>";
-    }
+              </div>
+    
 
-
-?>
+  <?php endwhile;?>
 </section >
 </section>
   <?php } else{ ?>
