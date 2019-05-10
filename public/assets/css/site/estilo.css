@@ -15,7 +15,7 @@ head, body {
   overflow-x: hidden;
   margin: 0px;
   padding: 0px;
-  
+
 }
 .corp{
 
@@ -355,4 +355,16 @@ ul .itemMenu:hover::after {
   width: 200px;
   background-color: #62377e;
 
+}
+
+
+
+/* ================================================ NAV ===================================== */
+
+.navbar-fixed-top {
+  top: 0px;
+}
+
+.navbar-fixed-top, .navbar-fixed-bottom {
+  position: relative;
 }
