@@ -51,6 +51,8 @@ require "../bootstrap.php" ?>
 <script src="assets/js/site/Validation.js"></script>
 <script src="assets/js/site/Events.js"></script>
 <script src="assets/js/site/modal.js"></script>
+<script src="assets/js/site/ajax.js"></script>
+
 
 
 

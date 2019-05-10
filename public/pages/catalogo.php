@@ -11,13 +11,13 @@
 <section class="text-center col-12">
     <?php
 
-      $buscaP = mysqli_query($cx,"SELECT * FROM produto");
+      $buscaP = mysqli_query($cx,"SELECT * FROM produto ORDER BY valor ASC");
 
       while($p =mysqli_fetch_array($buscaP)): ?>
      <div class='box-complete '>
 
                 <div class='bt font-Arimo'>
-                  <img src="assets/img/produto/<?php echo $p["img"]; ?>">
+                  <img class='img-responsive mt-2' src="assets/img/produto/<?php echo $p["img"]; ?>">
                   
                   
                   <p><?php echo $p["nome"] ;?></p>
@@ -26,7 +26,7 @@
                 <div class='bb'>
                   <a class='btn btn-primary' href='?page=comprar'> Comprar</a>
                 </div>
-
+                  <p>R$:<?php echo $p['valor'];  ?></p>
               </div>
     
 

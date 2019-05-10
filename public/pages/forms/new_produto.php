@@ -14,6 +14,7 @@ if (isset($_POST['cadastrar'])) {
 	$nome = $_POST['nome'];
 	$email = $_POST['valor'];
 	$foto = $_FILES["img"];
+	$desc = htmlspecialchars($_POST["descricao"]);
 	
 	// Se a foto estiver sido selecionada
 	if (!empty($foto["name"])) {
@@ -66,11 +67,12 @@ if (isset($_POST['cadastrar'])) {
 			move_uploaded_file($foto["tmp_name"], $caminho_imagem);
 		
 			// Insere os dados no banco
-        $newP = mysqli_query($cx,"INSERT INTO produto (nome,valor,img)VALUES ('{$nome}', '{$email}', '{$nome_imagem}')");
+        $newP = mysqli_query($cx,"INSERT INTO produto (nome,descricao,valor,img)VALUES ('{$nome}','{$desc}', '{$email}', '{$nome_imagem}')");
 		 
 			// Se os dados forem inseridos com sucesso
 			if ($newP){
-				echo "Você foi cadastrado com sucesso.";
+				header("Location: http://localhost:8081/Tcc/public/?page=adm_produto");
+				die(); 
 			}
 		}
 	
