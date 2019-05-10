@@ -4,14 +4,18 @@
 
 
 
-<section class="row">
+<section class="row ">
 
-
+  <div class="col-12 h-25 text-center mt-5">
+  <a class="btn btn-danger" href="?page=catalogo&order=DESC" ><i class=""></i>Mais Caros</a>
+  <a class="btn btn-success" href="?page=catalogo&order=ASC" >Mais Baratos</a>
+  <div>
 <section class="col-xs-12">
-<section class="text-center col-12">
-    <?php
+  <section class="text-center col-12">
 
-      $buscaP = mysqli_query($cx,"SELECT * FROM produto ORDER BY valor ASC");
+    <?php
+      @$Order = $_GET['order'] == "DESC"?"DESC":"ASC" ;
+      @$buscaP = mysqli_query($cx,"SELECT * FROM produto WHERE id <> 17 ORDER BY valor ".$Order);
 
       while($p =mysqli_fetch_array($buscaP)): ?>
      <div class='box-complete '>

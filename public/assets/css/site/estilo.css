@@ -356,3 +356,12 @@ ul .itemMenu:hover::after {
   background-color: #62377e;
 
 }
+
+
+
+/* ======================================================================================= */
+.tabela-centralizada{
+  display:table-cell;
+  vertical-align: middle;
+   color:red;
+}
