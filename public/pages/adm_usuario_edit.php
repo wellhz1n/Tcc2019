@@ -5,7 +5,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
 
 $nome = $_POST["nome"];
 $id = $_POST["id"];
-echo $id;
+
 
 $senha = $_POST['senha'];
 $nivel = $_POST['nivel_autoridade'];
@@ -20,7 +20,7 @@ $nivel = $_POST['nivel_autoridade'];
                     <label for="nome" class="float-left">Nome</label>
                   <input type="text" class="form-control" value="<?php echo $nome ?>" name="nome">
                  
-                  <h5 class="text-center">Adiministrador</h5>
+                  <h5 class="text-center">Administrador</h5>
                   <label for="check" class="" ><i id="checado" class="fa   <?php echo $nivel == 0? 'fa-check text-success' : 'fa-times text-danger'; ?>     text-center"></i></label>
                   <input type="hidden"  value="1"   name="nivel_autoridade" >
                   <input type="checkbox" id="check" value="0" <?php echo $nivel == 0? 'checked' : '';?> name="nivel_autoridade" hidden >

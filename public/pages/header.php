@@ -58,6 +58,10 @@
                             <li class="nav-item <?php if($page=="adm_usuario"||$page == null) echo "ativo"?> itemMenu">
                                 <a class="nav-link bordaM bordaMInicio" href="?page=adm_usuario" >Usuário</a>
                             </li>
+                            <li class="nav-item <?php if($page=="adm_produto"||$page == null) echo "ativo"?> itemMenu">
+                                <a class="nav-link bordaM bordaMInicio" href="?page=adm_produto" >Produtos</a>
+                            </li>
+
 
 
                             <?php    if (!isset($_SESSION["login"])) {?>
