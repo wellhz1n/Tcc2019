@@ -4,16 +4,29 @@ $buscaP = mysqli_query($cx,"SELECT * FROM produto");
 if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
- <section class="col-12">
-    <div class="row">
-    <table class="table col-12 w-100 text-center table-active table-bordered table-hover ">
+ <section class="col-12 text-center w-100">
+   <form class="" id="pesquisa" method="POST">
+       
+       <div class=" offset-10 col-2 my-3">
+           <div class="input-group">
+             <input class="form-control border-primary" id="pesquisar" name="pesqui" type="search" placeholder="Pesquisar" aria-label="Search" style="border-right: none;">
+             <div class="input-group-append">
+               <div class="input-group-text border-primary" style="background-color: #5555"><i class="fas fa-search"></i></div>
+             </div>
+           </div>
+         </div>
+     </form>
+
+   <div id="resultado" >
+     
+    <table  class="table col-md-12 my-5 w-100 table-responsive-md  text-center table-active table-bordered table-hover ">
         <thead class="thead-dark">
-          <tr>
-          <th scope="col">Imagem</th>
-            <th scope="col">Nome</th>
-            <th scope="col">descrição</th>
-            <th scope="col">Preço</th>
-            <th scope="col"><a  href="?page=produto" class='btn btn-primary' ><i class="fa fa-plus"></i>Novo</a></th>
+          <tr >
+          <th scope="col"  style="display:table-cell; vertical-align: middle;">Imagem</th>
+            <th scope="col" style="display:table-cell; vertical-align: middle;">Nome</th>
+            <th scope="col" style="display:table-cell; vertical-align: middle;">descrição</th>
+            <th scope="col" style="display:table-cell; vertical-align: middle;">Preço</th>
+            <th class="" scope="col "><a  href="?page=produto" class='btn btn-primary' ><i class="fa fa-plus"></i>Novo</a></th>
             
             
 
@@ -22,7 +35,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
 
           </tr>
           </thead>
-          <tbody>
+          <tbody   >
             <?php   while ($pesq = mysqli_fetch_array($buscaP)):?>
           <tr style="" class="text-center" >
             <!-- NO FUTURO IMPLEMENTAR ISSO ondblclick=" document.getElementById('form').submit();" -->
@@ -47,13 +60,18 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
 
 
 
-        </tr >
+   </div>      
+  </tr >
         </form>
-<?php endwhile; ?>
+        <?php endwhile; ?>
+        
+                </tbody>
+              </table>
 
-        </tbody>
-      </table>
-</div>
+
+
+   </div>      
+
 
 
 </section>
