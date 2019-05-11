@@ -13,7 +13,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
             <th scope="col">Nome</th>
             <th scope="col">descrição</th>
             <th scope="col">Preço</th>
-            <th scope="col"><a  href="?page=produto" class='btn btn-primary' >Novo</a></th>
+            <th scope="col"><a  href="?page=produto" class='btn btn-primary' ><i class="fa fa-plus"></i>Novo</a></th>
             
             
 
