@@ -15,7 +15,7 @@ head, body {
   overflow-x: hidden;
   margin: 0px;
   padding: 0px;
-  
+
 }
 .corp{
 
@@ -359,9 +359,21 @@ ul .itemMenu:hover::after {
 
 
 
+<<<<<<< HEAD
+/* ================================================ NAV ===================================== */
+
+.navbar-fixed-top {
+  top: 0px;
+}
+
+.navbar-fixed-top, .navbar-fixed-bottom {
+  position: relative;
+}
+=======
 /* ======================================================================================= */
 .tabela-centralizada{
   display:table-cell;
   vertical-align: middle;
    color:red;
 }
+>>>>>>> 0351604033708caeb4e8a633e6d8860096b60961
