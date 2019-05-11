@@ -2,7 +2,6 @@
   function validate(array $fields){
 
       $request = request();
-      $validate = [];
 
         foreach($fields as $field => $type){
           switch ($type) {

@@ -21,19 +21,15 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
      
     <table  class="table col-md-12 my-5 w-100 table-responsive-md  text-center table-active table-bordered table-hover ">
         <thead class="thead-dark">
+
           <tr >
           <th scope="col"  style="display:table-cell; vertical-align: middle;">Imagem</th>
             <th scope="col" style="display:table-cell; vertical-align: middle;">Nome</th>
             <th scope="col" style="display:table-cell; vertical-align: middle;">descrição</th>
             <th scope="col" style="display:table-cell; vertical-align: middle;">Preço</th>
             <th class="" scope="col "><a  href="?page=produto" class='btn btn-primary' ><i class="fa fa-plus"></i>Novo</a></th>
-            
-            
 
-
-
-
-          </tr>
+            </tr>
           </thead>
           <tbody   >
             <?php   while ($pesq = mysqli_fetch_array($buscaP)):?>
