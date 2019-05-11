@@ -1,22 +1,21 @@
 <?php
   function validate(array $fields){
 
+      $request = request();
+      $validate = [];
 
-         $validate = [];
-
-       foreach($fields as $field => $type){
-        switch ($type) {
-              case  's':
-              $validate[$field] = filter_var($_POST[$field], FILTER_SANITIZE_STRING);
-              break;
-              case  'i':
-
-              $validate[$field] = filter_var($_POST[$field], FILTER_SANITIZE_INT);
+        foreach($fields as $field => $type){
+          switch ($type) {
+            case  's':
+              $validate[$field] = filter_var($request[$field], FILTER_SANITIZE_STRING);
               break;
 
-              case  'e':
+            case  'i':
+              $validate[$field] = filter_var($request[$field], FILTER_SANITIZE_INT);
+              break;
 
-              $validate[$field] = filter_var($_POST[$field], FILTER_SANITIZE_EMAIL);
+            case  'e':
+              $validate[$field] = filter_var($request[$field], FILTER_SANITIZE_EMAIL);
               break;
           }
 
@@ -25,7 +24,7 @@
 
 
 
-       return (object)$validate;
+       return (object) $validate;
 
   }
 

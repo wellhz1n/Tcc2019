@@ -13,15 +13,15 @@
             <input type="email" name="email" id="email" placeholder="Seu email" class='form-control' />
             <span class="text-danger" id="span2">Campo Nescessário</span>
             <div class="row mt-2"></div>
-            <input type="text" name="asunto" id="assunto" placeholder="Assunto" class='form-control' />
+            <input type="text" name="assunto" id="assunto" placeholder="Assunto" class='form-control' />
             <span class="text-danger" id="span3">Campo Nescessário</span>
             <div class="row mt-2"></div>
-            <textarea name="message" rows="5" cols="20" id="mensage"  class="form-control " placeholder="Sua Sugestão"></textarea>
+            <textarea name="message" rows="5" cols="20" id="message"  class="form-control " placeholder="Sua Sugestão"></textarea>
             <span class="text-danger" id="span4">Campo Nescessário</span>
             <div class="row mt-2 offset-5 text-center">
 
             </div>
-      
+
 
         <button type="submit" id="Enviar" class="btn btn-primary m-3">Enviar</button>
         </form>

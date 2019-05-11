@@ -1,12 +1,12 @@
 <?php
 if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
-   
+
  <section class="col-12">
     <div class="row">
     <table class="table col-12 w-100 text-center table-active table-bordered table-hover ">
         <thead class="thead-dark">
           <tr>
-            
+
             <th scope="col">Nome</th>
             <th scope="col">Email</th>
             <th scope="col">Assunto</th>
@@ -16,7 +16,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
           </tr>
         </thead>
         <tbody>
-            <?php   while ($pesq = mysqli_fetch_array($sql_contato)):?>
+            <?php while ($pesq = mysqli_fetch_array($sql_contato)):?>
           <tr>
              <!-- NO FUTURO IMPLEMENTAR ISSO ondblclick=" document.getElementById('form').submit();" -->
 
@@ -30,22 +30,22 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
             <td><?php  $id = $pesq["id"];  echo  $pesq["Nome"];  ?></td>
             <td><?php echo  $pesq["Email"]  ?></td>
             <td><?php echo  $pesq["Assunto"]  ?></td>
-            
-            <th scope="col "><button type="submit"  formaction="pages/forms/adm_form_contato_edit.php" class="btn btn-info"><i class="fa fa-edit"></i>Editar</button> 
+
+            <th scope="col "><button type="submit"  formaction="pages/forms/adm_form_contato_edit.php" class="btn btn-info"><i class="fa fa-edit"></i>Editar</button>
             <button type="submit"  formaction="pages/forms/adm_form_contato.php" class="btn btn-danger"><i class="fa fa-trash"></i>Deletar</button></th>
-            
-            
-            
+
+
+
         </tr>
     </form>
 <?php endwhile; ?>
-    
+
         </tbody>
       </table>
 </div>
 
 
-</section> 
+</section>
 
 
 
@@ -60,6 +60,3 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
     die();
 
 } ?>
-
-
-

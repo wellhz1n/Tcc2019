@@ -1,13 +1,15 @@
 <?php
 require '../../../bootstrap.php';
-require "../../../app/function/DB.php";
 
+$dados = validate([
+  nome = 's',
+  assunto = 's',
+  message = 's',
+  email = 's',
+]);
 
+dd($dados[nome]);
 
-
-$nome = $_POST["nome"];
-$email = $_POST["email"];
-$assunto = $_POST["asunto"];
 
 $sql = mysqli_query($cx,"INSERT INTO contato (Nome,Email,Assunto,data_envio)
 Values( '{$nome}','{$email}','{$assunto}','{$date}')");
