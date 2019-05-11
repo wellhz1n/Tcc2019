@@ -13,13 +13,9 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
             <th scope="col">Nome</th>
             <th scope="col">descrição</th>
             <th scope="col">Preço</th>
-<<<<<<< HEAD
-            <th scope="col"><a  href="?page=produto" class='btn btn-primary' >Novo</a></th>
-=======
+
             <th scope="col"><a  href="?page=produto" class='btn btn-primary' ><i class="fa fa-plus"></i>Novo</a></th>
-            
-            
->>>>>>> 3aa89aa2966f06823331fb642c3b77413c2f037e
+
 
 
 

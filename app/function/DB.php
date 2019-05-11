@@ -9,10 +9,7 @@ $db = mysqli_select_db($cx, "Tcc") or die(criaDB());
 $sql_contato = mysqli_query($cx, "SELECT * FROM contato ORDER BY data_envio DESC ") or die(
   mysqli_error($cx) //caso haja um erro na consulta
 );
-<<<<<<< HEAD
-=======
 
->>>>>>> 198dc28f5afc4211918edf058721bbe60e26fadd
 
 
 
