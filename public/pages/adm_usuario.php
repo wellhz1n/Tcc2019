@@ -4,9 +4,15 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
         mysqli_error($cx));
     
     
-    ?>  
- <section class="col-12">
-    <div class="row">
+        ?>  
+          <div id="mod-edit" class="mod-edit   " >
+              <div class="content">
+                  <button id='fechar' class="close" title="Fechar" ><i  class="fa fa-times text-danger x-icon"></i></button>
+                  <div id="result"></div>
+                  </div>
+                </div>
+ <section   class="col-12 text-center">
+    <div  class="row">
     <table class="table w-100 text-center table-active table-bordered table-hover ">
         <thead class="thead-dark">
           <tr class="col-4">
@@ -22,19 +28,19 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
         </thead>
         <tbody>
             <?php   while ($pes = mysqli_fetch_array($sql_usuario)):?>
-          <tr >
-             <!-- NO FUTURO IMPLEMENTAR ISSO ondblclick=" document.getElementById('formedit').submit();" -->
               <form action="?page=adm_usuario_edit" id="formedit" name="del" method="POST">
+          <tr   >
+             <!-- NO FUTURO IMPLEMENTAR ISSO ondblclick=" document.getElementById('formedit').submit();" -->
 
-              <input type="hidden"  value="<?php echo $pes["id_user"];?>" name="id" >
-              <input type="text" value="<?php echo $pes["nome"];  ?> " name="nome" hidden>
-              <input type="text" value="<?php echo $pes["senha"];  ?> " name="senha" hidden>
-              <input type="text"  value="<?php echo $pes["nivel_autoridade"];  ?> " name="nivel_autoridade" hidden>
-                  <td><?php  echo  $pes["nome"];  ?></td>
+              <input type="hidden"  value="<?php echo $pes["id_user"];  $linha = $pes['id_user'];  $nome = $pes['nome'] ; 
+              $autoridade =  $pes['nivel_autoridade'];  ?>" name="id" >
+            
+              
+                  <td  ondblclick="LevaUsuarioId(<?php echo $linha; ?>, '<?php echo $nome;?>' ,<?php echo $autoridade; ?>)" ><?php  echo  $pes["nome"];  ?></td>
                   
-                  <td><?php echo  $pes["nivel_autoridade"] == 0?"<i  class='fa fa-check text-success text-center'></i>":"<i  class='fa fa-times text-danger text-center'></i>";  ?></td>
+                  <td ondblclick="LevaUsuarioId(<?php echo $linha; ?>,'<?php echo $nome;?>',<?php echo $autoridade; ?>)"><?php echo  $pes["nivel_autoridade"] == 0?"<i  class='fa fa-check text-success text-center'></i>":"<i  class='fa fa-times text-danger text-center'></i>";  ?></td>
                   
-                  <td><button type="submit"  class="btn mb-2 btn-info"><i class="fa fa-edit"></i>Editar</button> 
+                  <td><button type="button" onclick="LevaUsuarioId(<?php echo $linha; ?>,'<?php echo $nome;?>',<?php echo $autoridade; ?>)""  class="btn mb-2 btn-info"><i class="fa fa-edit"></i>Editar</button> 
                     <button type="submit"  formaction="pages/forms/adm_form_usuario_delete.php"  class="btn mb-2 btn-danger"><i class="fa fa-trash"></i>Deletar</button></td>
                     
                     
@@ -84,9 +90,6 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
     </div>
   </div>
 </div>
-
-
-
 
 
 <?php }elseif (isset($_SESSION["login"])&& $_SESSION["nivel"] == 1) {

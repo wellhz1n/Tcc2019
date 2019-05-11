@@ -9,7 +9,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
        
        <div class=" offset-10 col-2 my-3">
            <div class="input-group">
-             <input class="form-control border-primary" id="pesquisar" name="pesqui" type="search" placeholder="Pesquisar" aria-label="Search" style="border-right: none;">
+             <input class="form-control border-primary" id="pesquisar" name="pesqui" type="search" placeholder="Pesquisar"  aria-label="Search" style="border-right: none;" disabled>
              <div class="input-group-append">
                <div class="input-group-text border-primary" style="background-color: #5555"><i class="fas fa-search"></i></div>
              </div>
@@ -44,7 +44,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
 
 
 
-            <td> <img class="" src="assets/img/produto/<?php echo  $pesq["img"]; ?>"></td>
+            <td> <img class="rounded-circle" src="assets/img/produto/<?php echo  $pesq["img"]; ?>"></td>
             <td class="mt-3 " style="display:table-cell; vertical-align: middle;"><?php echo  $pesq["nome"]  ?></td>
             <td style="display:table-cell; vertical-align: middle;"><?php echo  $pesq["descricao"]  ?></td>
             <td style="display:table-cell; vertical-align: middle;"><h5 class="text-danger">R$:<?php echo  $pesq["valor"] ?></h5></td>

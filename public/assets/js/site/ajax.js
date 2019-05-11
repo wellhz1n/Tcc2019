@@ -1,3 +1,19 @@
+$(document).ready(()=>{
+
+$("#fechar").click(()=>{
+    $(".content").removeClass('hidden').fadeIn('fast');
+
+    $("#mod-edit").removeClass('hidden');
+
+
+}); 
+
+
+
+});
+                   
+                 
+
 
     $("#pesquisar").focusout(()=>{
     
@@ -15,13 +31,21 @@
                     
                     beforeSend:()=>{
 
-                        $("#resultado").empty().html("Carregando");
+                     
+                        
+                      
+                        loading_show("#resultado");
+                        // $("#resultado").html("Carregando");
 
                     },
                     
                     success:(data)=>{
+
                         
-                        $("#resultado").empty().html(data);
+
+                        $("#resultado").empty().html(data).fadeIn('slow');
+                        // $("#resultado").empty();
+                        
                     }
          
 
@@ -31,10 +55,12 @@
 
 
 
-            
+
 
      });
-     
+
+
+    
      $("#pesquisa").trigger('submit');
 
 
@@ -64,3 +90,35 @@ function ProdutoDel(id){
 
 });
 };
+
+
+
+function LevaUsuarioId(id,nome,autoridade){
+    var Id = id;
+    var Nome = nome;
+    var Autoridade = autoridade;
+
+        $.ajax({
+            url:'pages/forms/adm_usuario_edit.php',
+            type: 'POST',
+            data: {id: Id ,nome: ''+Nome+'',nivel_autoridade: Autoridade    } ,
+            success: (data)=>{
+                $("#mod-edit").addClass('hidden').fadeIn('fast');
+                $(".content").addClass('hidden').fadeIn('fast');
+
+              $("#result").html(data);
+
+                   
+            }
+    
+        });
+   
+
+};
+
+function loading_show(div){
+    $(div).html("<img src='https://i.gifer.com/4V0b.gif'/>").fadeIn('fast');
+};
+function loading_hide(div){
+    $(div).fadeOut('slow');
+}  ;
