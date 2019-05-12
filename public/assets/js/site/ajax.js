@@ -1,4 +1,5 @@
 $(document).ready(()=>{
+  
 
 $("#fechar").click(()=>{
      $(".content").removeClass('hidden');
@@ -159,28 +160,83 @@ function NovoUsuario(){
     else{
         Autoridade = 1;
     }
-
+        
 
     
         $.ajax({
             url:'pages/forms/adm_form_usuario_new.php',
             type: 'POST',
-            data: {nome: ''+Nome+'',senha:''+Senha+'',nivel_autoridade: Autoridade    } ,
-            success: (data)=>{
-                $("#exampleModal").modal('hide');
-                $.get("http://localhost:8081/Tcc/public/?page=adm_usuario", {},
-                function (returndata) {
-                    var headline = $(returndata).find('#resultado'); 
-                    $("#resultado").html(headline);
-                    
-                });
-                $("#form1")[0].reset();
-            }
-    
-        });
-   
+            data: {nome: ''+Nome+'',senha:''+Senha+'',nivel_autoridade: Autoridade    }   
+        }).done((data)=>{
+               
+
+                  $("#exampleModal").modal('hide');
+                  $("#form1")[0].reset();
+
+                  $.get("http://localhost:8081/Tcc/public/?page=adm_usuario", {},
+                  function (returndata) {
+                      var headline = $(returndata).find('#resultado'); 
+                      $("#resultado").html(headline);
+                      
+                  });
+                  $("#form1")[0].reset();
+        }).fail((data)=>{
+            
+                $("#erro").show('fast');
+                
+            });
+            
+            
 
 };
+
+$("#nome").keyup(()=>{
+    
+    $("#form1").submit(()=>{
+        var dados = $("#nome").val();
+       
+    $.ajax({
+
+          url:'pages/forms/busca_usuario.php',
+                    type: 'POST',
+                    async:true,
+                    data: {'nome': dados} 
+                }).done((data)=>{
+
+                    
+                    $("#erro").empty().html(data);
+
+                });
+                return false;
+            });
+     $("#nome").trigger('submit');
+
+   
+
+
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function loading_show(div){
     $(div).html("<img src='https://i.gifer.com/4V0b.gif'/>").fadeIn('fast');

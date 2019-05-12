@@ -6,8 +6,8 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
     
         ?>  
           <div id="mod-edit" class="mod-edit   " >
-              <div class="content">
-                  <button id='fechar' class="close" title="Fechar" ><i  class="fa fa-times text-danger x-icon"></i></button>
+              <div class="content rounded">
+                  <button id='fechar' class="close border-dark " title="Fechar" ><i  class="fa fa-times text-danger x-icon"></i></button>
                   <div id="result"></div>
                   </div>
                 </div>
@@ -68,13 +68,17 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div id="modb" class="modal-body">
      
 
       <form action="pages/forms/adm_form_usuario_new.php" id="form1" name="cria" method="POST">
                 <div class="col-12 text-center form-group">
                     <label for="nome" class="float-left">Nome</label>
                   <input type="text" class="form-control" placeholder="Nome" id="nome" name="nome" required>
+                  <div id="erro" class="alert-danger rounded text-center">
+                
+                  </div>
+                  
                   <label for="senha" class="float-left">Senha</label>
                   <input type="password" class="form-control" placeholder="Senha" id="senha" name="senha" required>
                   <h5 class="text-center">Administrador</h5>

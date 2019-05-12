@@ -11,10 +11,10 @@ if($create){
 
 }
 else{
-   
+     die(header("HTTP/1.0 500 Not Found"));
     ?>
 <link rel="stylesheet" href="../../assets/css/bootstrap/bootstrap.css">
-    <div class="col-12 text-center">
+    <div id="erro" class="col-12 text-center">
     <br>
     <h4>O Nome De Usuario <label class="text-danger"><?php echo $nome ?></label> ja existe Por favos volte e insira um diferente</h4>
     <a class='btn btn-primary' href='javascript:history.back()'>Voltar</a> 
