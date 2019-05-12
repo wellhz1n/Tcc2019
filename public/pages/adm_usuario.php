@@ -12,7 +12,8 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
                   </div>
                 </div>
  <section   class="col-12 text-center">
-    <div  class="row">
+    <div class="row">
+        <div  id="resultado" class="w-100" >
     <table class="table w-100 text-center table-active table-bordered table-hover ">
         <thead class="thead-dark">
           <tr class="col-4">
@@ -26,7 +27,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
 
           </tr>
         </thead>
-        <tbody>
+        <tbody >
             <?php   while ($pes = mysqli_fetch_array($sql_usuario)):?>
               <form action="?page=adm_usuario_edit" id="formedit" name="del" method="POST">
           <tr   >
@@ -40,8 +41,8 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
                   
                   <td ondblclick="LevaUsuarioId(<?php echo $linha; ?>,'<?php echo $nome;?>',<?php echo $autoridade; ?>)"><?php echo  $pes["nivel_autoridade"] == 0?"<i  class='fa fa-check text-success text-center'></i>":"<i  class='fa fa-times text-danger text-center'></i>";  ?></td>
                   
-                  <td><button type="button" onclick="LevaUsuarioId(<?php echo $linha; ?>,'<?php echo $nome;?>',<?php echo $autoridade; ?>)""  class="btn mb-2 btn-info"><i class="fa fa-edit"></i>Editar</button> 
-                    <button type="submit"  formaction="pages/forms/adm_form_usuario_delete.php"  class="btn mb-2 btn-danger"><i class="fa fa-trash"></i>Deletar</button></td>
+                  <td><button type="button" onclick="LevaUsuarioId(<?php echo $linha; ?>,'<?php echo $nome;?>',<?php echo $autoridade; ?>)"  class="btn mb-2 btn-info"><i class="fa fa-edit"></i>Editar</button> 
+                    <button type="button" onclick="DeleteUsuario(<?php echo $linha; ?>)"   class="btn mb-2 btn-danger"><i class="fa fa-trash"></i>Deletar</button></td>
                     
                     
                     
@@ -52,6 +53,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
                 
         </tbody>
       </table>
+      </div>
 </div>
 
 
@@ -72,20 +74,20 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
       <form action="pages/forms/adm_form_usuario_new.php" id="form1" name="cria" method="POST">
                 <div class="col-12 text-center form-group">
                     <label for="nome" class="float-left">Nome</label>
-                  <input type="text" class="form-control" placeholder="Nome" name="nome" required>
+                  <input type="text" class="form-control" placeholder="Nome" id="nome" name="nome" required>
                   <label for="senha" class="float-left">Senha</label>
-                  <input type="password" class="form-control" placeholder="Senha" name="senha" required>
+                  <input type="password" class="form-control" placeholder="Senha" id="senha" name="senha" required>
                   <h5 class="text-center">Administrador</h5>
                   <label for="check" class="" ><i id="checado" class="fa fa-check text-success text-center"></i></label>
-                  <input type="hidden"  value="1"   name="nivel_autoridade" >
-                  <input type="checkbox" id="check" value="0" checked  name="nivel_autoridade" hidden >
+                  <input type="hidden"  value="1"    name=" autoridade nivel_autoridade" >
+                  <input type="checkbox" id="check" value="0"  checked  name="autoridade nivel_autoridade" hidden >
                   
                 </div>
             </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-        <button type="submit" form="form1" class="btn btn-success">Criar</button>
+        <button type="button" onclick="NovoUsuario()" class="btn btn-success">Criar</button>
       </div>
     </div>
   </div>

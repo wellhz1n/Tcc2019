@@ -1,7 +1,7 @@
 <?php
   @$Order = $_GET['order'] == "DESC"?"DESC":"ASC" ;
 
-  if (isset($_SESSION["login"])) {?>
+  // if (isset($_SESSION["login"])) {?>
 
 
 
@@ -21,7 +21,7 @@
       while($p =mysqli_fetch_array($buscaP)): ?>
      <div class='box-complete '>
 
-                <div class='bt font-Arimo' ondblclick=" window.location.href='?page=comprar&id=<?php echo $p['id'];?>';">
+                <div class='bt font-Arimo' style="cursor:pointer;" ondblclick=" window.location.href='?page=comprar&id=<?php echo $p['id'];?>';">
                   <img class='img-responsive mt-2' src="assets/img/produto/<?php echo $p["img"]; ?>">
                   
                   
@@ -38,10 +38,10 @@
   <?php endwhile;?>
 </section >
 </section>
-  <?php } else{ ?>
+  <!-- <?php #} else{ ?>
     <div class="col-12 text-center">
       <h1 class="mt-5"> Para ver o Catalogo faça o Login </h1>
       <a href="?page=login" class="btn btn-primary  ">Login</a>
   </div>
-<?php } ?>
+<?php #} ?> -->
 

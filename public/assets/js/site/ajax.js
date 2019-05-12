@@ -1,9 +1,16 @@
 $(document).ready(()=>{
 
 $("#fechar").click(()=>{
-    $(".content").removeClass('hidden').fadeIn('fast');
+     $(".content").removeClass('hidden');
+    
+    setTimeout( ()=>{$("#mod-edit").removeClass('hidden').fadeOut("fast");},250);
 
-    $("#mod-edit").removeClass('hidden');
+
+}); 
+$("#Enviar").click(()=>{
+    $(".content").removeClass('hidden');
+   
+   setTimeout( ()=>{$("#mod-edit").removeClass('hidden').fadeOut("fast");},250);
 
 
 }); 
@@ -83,7 +90,11 @@ function ProdutoDel(id){
         data: {'ID': Id} ,
         success: (data)=>{
           
-               window.location.href = 'http://localhost:8081/Tcc/public/?page=adm_produto';
+            $.get("http://localhost:8081/Tcc/public/?page=adm_produto", {},
+            function (returndata) {
+             var headline = $(returndata).find('#resultado'); 
+            $("#resultado").html(headline);
+      });
 
         }
 
@@ -91,7 +102,7 @@ function ProdutoDel(id){
 });
 };
 
-
+// Usuario =======================================================
 
 function LevaUsuarioId(id,nome,autoridade){
     var Id = id;
@@ -105,10 +116,65 @@ function LevaUsuarioId(id,nome,autoridade){
             success: (data)=>{
                 $("#mod-edit").addClass('hidden').fadeIn('fast');
                 $(".content").addClass('hidden').fadeIn('fast');
-
-              $("#result").html(data);
-
+                $("#result").html(data);
+                    
                    
+            }
+    
+        });
+   
+
+};
+
+function DeleteUsuario(id){
+    var Id = id;
+ 
+    $.ajax({
+        url:'pages/forms/adm_form_usuario_delete.php',
+        type: 'POST',
+        dataType:'html',
+        data: {'id': Id} ,
+        success: (data)=>{
+          
+            $.get("http://localhost:8081/Tcc/public/?page=adm_usuario", {},
+            function (returndata) {
+             var headline = $(returndata).find('#resultado'); 
+            $("#resultado").html(headline);
+      });
+
+        }
+
+
+});
+};
+
+function NovoUsuario(){
+   
+    var Nome = $("#nome").val();
+    var Senha = $("#senha").val();
+    var Autoridade ;
+    if($("#check").is(':checked')){
+            Autoridade = 0; 
+    }
+    else{
+        Autoridade = 1;
+    }
+
+
+    
+        $.ajax({
+            url:'pages/forms/adm_form_usuario_new.php',
+            type: 'POST',
+            data: {nome: ''+Nome+'',senha:''+Senha+'',nivel_autoridade: Autoridade    } ,
+            success: (data)=>{
+                $("#exampleModal").modal('hide');
+                $.get("http://localhost:8081/Tcc/public/?page=adm_usuario", {},
+                function (returndata) {
+                    var headline = $(returndata).find('#resultado'); 
+                    $("#resultado").html(headline);
+                    
+                });
+                $("#form1")[0].reset();
             }
     
         });

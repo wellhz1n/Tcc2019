@@ -370,8 +370,12 @@ ul .itemMenu:hover::after {
 }
 
 .mod-edit{
+
+
   height: 100vh;
   width: 100vw;
+  opacity: 0;
+  transform: scale(0.0);
   top: 0px;
   left: 0px;
   position: fixed;
@@ -381,23 +385,26 @@ ul .itemMenu:hover::after {
   justify-content: center;
   align-items: center;
   text-align: center;
-  transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1) ;
+  transition: all 4s cubic-bezier(0.075, 0.82, 0.165, 1) ;
  
 }
 .content{
+  will-change: transform;
 position: relative;
-top:-300px;
-opacity: 0.1;
+transform: translate3d(0px,-300px,0px);
+opacity: 0;
 height: 400px;
 width: 600px;
 z-index: 500000;
 background: hsl(256, 100%, 95%);
-transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1) ;
+transition: all 2s cubic-bezier(0.075, 1, 0.165, 1) ;
 
 
 }
 .content.hidden{
-  top:0;
+  will-change: transform;
+  
+  transform: translate3d(0px,0px,0px);
   opacity: 1;
 }
 
@@ -416,5 +423,7 @@ transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1) ;
 
 }
 .mod-edit.hidden{
+  transform: scale(1.1);
+  opacity: 1;
   display: flex;
 }

@@ -26,7 +26,7 @@ $nivel = $_POST['nivel_autoridade'];
                   <input type="hidden"  value="1"   name="nivel_autoridade" >
                   <input type="checkbox" id="check" value="0" <?php echo $nivel == 0? 'checked' : '';?> name="nivel_autoridade" hidden >
                   <br>  
-                  <button type="submit" form="form1" class="btn btn-success">Editar</button>
+                  <button type="submit" id="Enviar" form="form1" class="btn btn-success">Editar</button>
                 </div>
 
             </form>

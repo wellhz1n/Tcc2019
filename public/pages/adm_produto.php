@@ -4,7 +4,7 @@ $buscaP = mysqli_query($cx,"SELECT * FROM produto");
 if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
- <section class="col-12 text-center w-100">
+ <section id="update" class="col-12 text-center w-100">
    <form class="" id="pesquisa" method="POST">
        
        <div class=" offset-10 col-2 my-3">
@@ -37,7 +37,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
             <!-- NO FUTURO IMPLEMENTAR ISSO ondblclick=" document.getElementById('form').submit();" -->
 
             <form action="pages/forms/adm_form_produto_edit.php" id="form" name="del" method="POST">
-                  <input type="text" id="ID" value="<?php echo $pesq["id"];  ?> " name="ID" hidden>
+                  <input type="text" id="ID" value="<?php echo $pesq["id"]; $linha = $pesq['id'];  ?> " name="ID" hidden>
                   <input type="text" id="ID" value="<?php echo $pesq["nome"];  ?> " name="nome" hidden>
                   <input type="text" id="ID" value="<?php echo $pesq["descricao"];  ?> " name="emadescricao" hidden>
                   <input type="text" id="ID" value="<?php echo $pesq["valor"];  ?> " name="valor" hidden>
@@ -51,8 +51,8 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
 
 
 
-            <td style="display:table-cell; vertical-align: middle;" scope="col "><button type="submit"  formaction="pages/forms/adm_form_produto_edit.php" class="btn btn-info"><i class="fa fa-edit"></i>Editar</button>
-            <button type="submit" id="deleteP" formaction="pages/forms/adm_produto_del.php" class=" deleteP  btn btn-danger"><i class="fa fa-trash"></i>Deletar</button></td>
+            <td style="display:table-cell; vertical-align: middle;" scope="col "><button type="submit"  formaction="pages/forms/adm_form_produto_edit.php" class="my-1 btn btn-info"><i class="fa fa-edit"></i>Editar</button>
+            <button type="button" id="deleteP" onclick="ProdutoDel(<?php echo $linha; ?>);" formaction="pages/forms/adm_produto_del.php" class=" my-1 deleteP  btn btn-danger"><i class="fa fa-trash"></i>Deletar</button></td>
 
 
 
