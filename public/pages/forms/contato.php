@@ -16,7 +16,6 @@ $message = $dados->message;
 // $email = $_POST['email'];
 // $assunto = $_POST['assunto'];
 
-echo $nome;
 
 $sql = mysqli_query($cx,"INSERT INTO contato (Nome,Email,Assunto,data_envio)
 Values( '{$nome}','{$email}','{$assunto}','{$date}')");

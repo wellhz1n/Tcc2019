@@ -1,61 +1,61 @@
 $(document).ready(()=>{
-  
+
 
 $("#fechar").click(()=>{
      $(".content").removeClass('hidden');
-    
+
     setTimeout( ()=>{$("#mod-edit").removeClass('hidden').fadeOut("fast");},250);
 
 
-}); 
-$("#Enviar").click(()=>{
-    $(".content").removeClass('hidden');
-   
-   setTimeout( ()=>{$("#mod-edit").removeClass('hidden').fadeOut("fast");},250);
-
-
-}); 
+});
+// $("#Enviar").click(()=>{
+//     $(".content").removeClass('hidden');
+//
+//    setTimeout( ()=>{$("#mod-edit").removeClass('hidden').fadeOut("fast");},250);
+//
+//
+// });
 
 
 
 });
-                   
-                 
+
+
 
 
     $("#pesquisar").focusout(()=>{
-    
+
 
      $("#pesquisa").submit(()=>{
 
             var dados = $("#pesquisar").val();
-           
+
             $.ajax({
                     url:'pages/forms/busca_produto.php',
                     type: 'POST',
                     async:true,
                     dataType:'html',
                     data: {'pesqui': dados} ,
-                    
+
                     beforeSend:()=>{
 
-                     
-                        
-                      
+
+
+
                         loading_show("#resultado");
                         // $("#resultado").html("Carregando");
 
                     },
-                    
+
                     success:(data)=>{
 
-                        
+
 
                         $("#resultado").empty().html(data).fadeIn('slow');
                         // $("#resultado").empty();
-                        
+
                     }
-         
+
 
             });
 
@@ -68,7 +68,7 @@ $("#Enviar").click(()=>{
      });
 
 
-    
+
      $("#pesquisa").trigger('submit');
 
 
@@ -79,21 +79,21 @@ $("#Enviar").click(()=>{
 
 
 
-    
+
 
 function ProdutoDel(id){
     var Id = id;
- 
+
     $.ajax({
         url:'pages/forms/adm_produto_del.php',
         type: 'POST',
         dataType:'html',
         data: {'ID': Id} ,
         success: (data)=>{
-          
+
             $.get("http://localhost:8081/Tcc/public/?page=adm_produto", {},
             function (returndata) {
-             var headline = $(returndata).find('#resultado'); 
+             var headline = $(returndata).find('#resultado');
             $("#resultado").html(headline);
       });
 
@@ -118,28 +118,28 @@ function LevaUsuarioId(id,nome,autoridade){
                 $("#mod-edit").addClass('hidden').fadeIn('fast');
                 $(".content").addClass('hidden').fadeIn('fast');
                 $("#result").html(data);
-                    
-                   
+
+
             }
-    
+
         });
-   
+
 
 };
 
 function DeleteUsuario(id){
     var Id = id;
- 
+
     $.ajax({
         url:'pages/forms/adm_form_usuario_delete.php',
         type: 'POST',
         dataType:'html',
         data: {'id': Id} ,
         success: (data)=>{
-          
+
             $.get("http://localhost:8081/Tcc/public/?page=adm_usuario", {},
             function (returndata) {
-             var headline = $(returndata).find('#resultado'); 
+             var headline = $(returndata).find('#resultado');
             $("#resultado").html(headline);
       });
 
@@ -150,60 +150,60 @@ function DeleteUsuario(id){
 };
 
 function NovoUsuario(){
-   
+
     var Nome = $("#nome").val();
     var Senha = $("#senha").val();
     var Autoridade ;
     if($("#check").is(':checked')){
-            Autoridade = 0; 
+            Autoridade = 0;
     }
     else{
         Autoridade = 1;
     }
-        
 
-    
+
+
         $.ajax({
             url:'pages/forms/adm_form_usuario_new.php',
             type: 'POST',
-            data: {nome: ''+Nome+'',senha:''+Senha+'',nivel_autoridade: Autoridade    }   
+            data: {nome: ''+Nome+'',senha:''+Senha+'',nivel_autoridade: Autoridade    }
         }).done((data)=>{
-               
+
 
                   $("#exampleModal").modal('hide');
                   $("#form1")[0].reset();
 
                   $.get("http://localhost:8081/Tcc/public/?page=adm_usuario", {},
                   function (returndata) {
-                      var headline = $(returndata).find('#resultado'); 
+                      var headline = $(returndata).find('#resultado');
                       $("#resultado").html(headline);
-                      
+
                   });
                   $("#form1")[0].reset();
         }).fail((data)=>{
-            
+
                 $("#erro").show('fast');
-                
+
             });
-            
-            
+
+
 
 };
 
 $("#nome").keyup(()=>{
-    
+
     $("#form1").submit(()=>{
         var dados = $("#nome").val();
-       
+
     $.ajax({
 
           url:'pages/forms/busca_usuario.php',
                     type: 'POST',
                     async:true,
-                    data: {'nome': dados} 
+                    data: {'nome': dados}
                 }).done((data)=>{
 
-                    
+
                     $("#erro").empty().html(data);
 
                 });
@@ -211,7 +211,7 @@ $("#nome").keyup(()=>{
             });
      $("#nome").trigger('submit');
 
-   
+
 
 
 
