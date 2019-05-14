@@ -23,13 +23,8 @@ $("#fechar").click(()=>{
 
 
 
-<<<<<<< HEAD
     $("#pesquisar").keyup(()=>{
     
-=======
-    $("#pesquisar").focusout(()=>{
-
->>>>>>> b14742e40491f493b124057218b991be455e9cc6
 
      $("#pesquisa").submit(()=>{
 
