@@ -6,7 +6,7 @@
             <form action="pages/forms/contato.php" method="POST" class="m-0">
                 <div class="m-0 form-group">
 
-                    <input type="text" id="nome" name="nome" placeholder="Seu Nome" class='form-control '/>
+                    <input type="text" id="nome" name="nome" placeholder="Seu Nome" class='form-control' />
                     <span class="text-danger"  id="span1">Campo Nescessário</span>
                 </div>
             <div class="row mt-2"></div>
@@ -23,7 +23,7 @@
             </div>
 
 
-        <button type="submit" id="Enviar" class="btn btn-primary m-3">Enviar</button>
+        <button id="Enviar" type="submit" class="btn btn-primary m-3" onclick="removeCharEspeciais()">Enviar</button>
         </form>
 
 

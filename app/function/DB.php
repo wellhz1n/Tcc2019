@@ -11,6 +11,4 @@ $sql_contato = mysqli_query($cx, "SELECT * FROM contato ORDER BY data_envio DESC
 );
 
 
-
-
 ?>
