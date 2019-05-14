@@ -23,7 +23,7 @@ $("#Enviar").click(()=>{
                  
 
 
-    $("#pesquisar").focusout(()=>{
+    $("#pesquisar").keyup(()=>{
     
 
      $("#pesquisa").submit(()=>{

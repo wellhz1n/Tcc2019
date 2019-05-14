@@ -1,20 +1,26 @@
-<section class="col-12 text-center  ">
-    
-<form action="pages/forms/login.php" method="POST">
+<section class="login-fundo    ">
+    <div class='ripple-background'>
+        <div class='circle xxlarge shade1'></div>
+        <div class='circle xlarge shade2'></div>
+        <div class='circle large shade3'></div>
+        <div class='circle mediun shade4'></div>
+        <div class='circle small shade5'></div>
+      </div>
+<form action="pages/forms/login.php" class="login-form  " autocomplete="off"  method="POST">
     <h1>Log-in</h1>
-    <div class="row offset-4  ">
-    <section class=" col-6 text-center p-4 rounded   alert-dark ">
-        <div class="form-group form-inline mt-2 ml-5  ">
-    <label for="usuario" class="mr-2 "><i class="fa fa-user"></i></label>
-    <input type="text" placeholder="Usuário" class="form-control " name="usuario"  />
-        </div>
-        <div class="form-group form-inline ml-5  ">
-    <label for="senha" class="mr-2"><i class="fa fa-key"></i></label>
-    <input type="password" placeholder="Senha" class="form-control " name="senha"  />
-        </div>
-        <button class="btn btn-primary " type="submit">Log-in</button>
-    </section>
-
+    <div class="form-login ">
+   
+        
+    <label for="usuario" class=""></label>
+    <input type="text" placeholder="Usuário"  class=" " name="usuario"  />
+      <br>
+      
+    <label for="senha" class=""></label>
+    <input type="password" placeholder="Senha" class="" name="senha"  />
+    <br>
+  
+        <button class=" " type="submit">Log-in</button>
+ 
     </div>
     
     

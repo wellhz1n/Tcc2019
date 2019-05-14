@@ -51,8 +51,8 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
 
 
 
-            <td style="display:table-cell; vertical-align: middle;" scope="col "><button type="submit"  formaction="pages/forms/adm_form_produto_edit.php" class="my-1 btn btn-info"><i class="fa fa-edit"></i>Editar</button>
-            <button type="button" id="deleteP" onclick="ProdutoDel(<?php echo $linha; ?>);" formaction="pages/forms/adm_produto_del.php" class=" my-1 deleteP  btn btn-danger"><i class="fa fa-trash"></i>Deletar</button></td>
+            <td style="display:table-cell; vertical-align: middle;" scope="col "><button type="submit"  formaction="pages/forms/adm_form_produto_edit.php" class="my-1 btn btn-info"  <?php if($pesq['id'] == 17){ echo 'hidden'; } ?> ><i class="fa fa-edit"></i>Editar</button>
+            <button type="button" id="deleteP" onclick="ProdutoDel(<?php echo $linha; ?>);" formaction="pages/forms/adm_produto_del.php" class=" my-1 deleteP  btn btn-danger" <?php if($pesq['id'] == 17){ echo 'hidden'; } ?> ><i class="fa fa-trash"></i>Deletar</button></td>
 
 
 
