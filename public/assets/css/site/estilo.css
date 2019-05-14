@@ -16,6 +16,7 @@ head, body {
   margin: 0px;
   padding: 0px;
 
+
 }
 .corp{
 
@@ -431,13 +432,14 @@ transition: all 2s cubic-bezier(0.075, 1, 0.165, 1) ;
 .login-fundo{
   will-change: animation;
   height: 100vh;
+  position: fixed;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   background: #3f4b57;
-
+  z-index: 1;
   outline: none;
   color:white;
   animation: AnimationName 40s ease  alternate infinite;
@@ -445,7 +447,7 @@ transition: all 2s cubic-bezier(0.075, 1, 0.165, 1) ;
 }
 
 .circle{
-  z-index: 2;
+  z-index: 1;
   position: absolute;
   border-radius: 50%;
   background: rgb(49, 49, 49);
@@ -454,6 +456,8 @@ transition: all 2s cubic-bezier(0.075, 1, 0.165, 1) ;
 }
 
 .small{
+  z-index: 1;
+
   width: 200px;
   height: 200px;
   left: -100px;
@@ -461,6 +465,8 @@ transition: all 2s cubic-bezier(0.075, 1, 0.165, 1) ;
 }
 
 .medium{
+  z-index: 1;
+
   width: 400px;
   height: 400px;
   left: -200px;
@@ -468,6 +474,8 @@ transition: all 2s cubic-bezier(0.075, 1, 0.165, 1) ;
 }
 
 .large{
+  z-index: 1;
+
   width: 600px;
   height: 600px;
   left: -300px;
@@ -475,13 +483,19 @@ transition: all 2s cubic-bezier(0.075, 1, 0.165, 1) ;
 }
 
 .xlarge{
+  z-index: 1;
+
   width: 800px;
   height: 800px;
   left: -400px;
   bottom: -400px;
+ 
+
 }
 
 .xxlarge{
+  z-index: 1;
+
   width: 1000px;
   height: 1000px;
   left: -500px;
@@ -569,7 +583,7 @@ transition: all 2s cubic-bezier(0.075, 1, 0.165, 1) ;
   outline: none;
   background: none;
   position: relative;
-  border: 2px solid #23af00;
+  border: 2px solid #8335c2;
   border-radius:50px; 
   width: 150px;
   height: 50px;
@@ -577,23 +591,24 @@ transition: all 2s cubic-bezier(0.075, 1, 0.165, 1) ;
   color: white;
   text-align: center;
   
-transition: .8s cubic-bezier(0.165, 0.84, 0.44, 1);
+transition: .8s cubic-bezier(0.165, 1, 0.44, 1);
 
 
 }
 .login-form input[type="text"]:focus{
   border: 2px solid #246300;
   color: white;
-  transition: .8s cubic-bezier(0.165, 0.84, 0.44, 1);
-  width: 300px;
+  transition: .8s cubic-bezier(0.165, 1, 1.44, 1);
+
+  width: 350px;
   outline: none;
 
 
 
 }
 .login-form button[type="submit"]:hover{
-  border: 2px solid #246300;
-  background: #246300;
+  border: 2px solid #8335c2;
+  background: #8335c2;
   color: white;
   transition: .8s cubic-bezier(0.165, 0.84, 0.44, 1);
   width: 250px;
@@ -617,22 +632,37 @@ transition: .8s cubic-bezier(0.165, 0.84, 0.44, 1);
    width: 250px;
  text-align: center; 
 
-   transition: .8s cubic-bezier(0.165, 0.84, 0.44, 1);
+ transition: .8s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+
   
   
   }
   .login-form input[type="password"]:focus{
     border: 2px solid #246300;
     color: white;
-    transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-    width: 300px;
+  transition: .8s cubic-bezier(0.165, 1, 1.44, 1);
+
+    width: 350px;
   
  
   
   
   }
+
+
+
+  .login-form.sumir{
+    transform: translate3d(0px,-300px,0px);
+    opacity: 0;
+
+  }
   
+.page-footer{
+  z-index: 6;
+}
 
-
-
+footer{
+  z-index: 1000;
+}
   

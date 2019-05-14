@@ -90,12 +90,14 @@ function ProdutoDel(id){
         dataType:'html',
         data: {'ID': Id} ,
         success: (data)=>{
-
+              
             $.get("http://localhost:8081/Tcc/public/?page=adm_produto", {},
-            function (returndata) {
-             var headline = $(returndata).find('#resultado');
-            $("#resultado").html(headline);
-      });
+             function (returndata) {
+          
+                var headline = $(returndata).find('#resultado');
+           
+                 $("#resultado").html(headline);
+            });
 
         }
 
@@ -220,7 +222,12 @@ $("#nome").keyup(()=>{
 });
 
 
+$(".bt-login").click(()=>{
+    
+    $(".login-form").addClass("sumir");
 
+
+});
 
 
 

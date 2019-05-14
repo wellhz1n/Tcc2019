@@ -19,7 +19,7 @@
     <input type="password" placeholder="Senha" class="" name="senha"  />
     <br>
   
-        <button class=" " type="submit">Log-in</button>
+        <button class="bt-login " type="submit">Log-in</button>
  
     </div>
     

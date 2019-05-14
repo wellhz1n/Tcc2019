@@ -71,7 +71,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
       <div id="modb" class="modal-body">
      
 
-      <form action="pages/forms/adm_form_usuario_new.php" autocomplete="off" id="form1" name="cria" method="POST">
+      <form   autocomplete="off" id="form1" name="cria" method="POST">
                 <div class="col-12 text-center form-group">
                     <label for="nome" class="float-left">Nome</label>
                   <input type="text" class="form-control" placeholder="Nome" id="nome" name="nome" required>
