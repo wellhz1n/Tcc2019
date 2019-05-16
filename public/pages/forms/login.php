@@ -15,15 +15,17 @@ if (mysqli_num_rows($consulta) == 1) {
     $_SESSION["usuario"] = $usuario;
     while($log = mysqli_fetch_array($consulta)):
         $_SESSION["nivel"] = $log["nivel_autoridade"];
+        $_SESSION['id'] = $log['id_user'];
     endwhile;
     
-    header("Location: http://localhost:8081/Tcc/public/?page=adm_contato");
+    header("Location: http://localhost:8081/Tcc/public/?page=adm_inicio");
     die();
 }
 else{
-   
-    
+    session_start();
 
+    http_response_code(502);
+        $_SESSION[err] = "Nome ou Senha Incorretos";
     header("Location: http://localhost:8081/Tcc/public/?page=login");
     die();
 }

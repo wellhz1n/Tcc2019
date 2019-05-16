@@ -1,6 +1,6 @@
 $(document).ready(()=>{
 
-
+        $(".login-form").addClass('sumir');
 $("#fechar").click(()=>{
      $(".content").removeClass('hidden');
 
@@ -192,6 +192,9 @@ function NovoUsuario(){
 
 };
 
+
+
+
 $("#nome").keyup(()=>{
 
     $("#form1").submit(()=>{
@@ -224,10 +227,14 @@ $("#nome").keyup(()=>{
 
 $(".bt-login").click(()=>{
     
-    $(".login-form").addClass("sumir");
 
+    $(".login-form").removeClass("sumir");
+   
 
 });
+
+
+
 
 
 

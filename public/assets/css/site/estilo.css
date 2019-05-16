@@ -552,7 +552,8 @@ transition: all 2s cubic-bezier(0.075, 1, 0.165, 1) ;
   transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   color: white;
  
-
+  transform: translate3d(0px,-300px,0px);
+  opacity: 0;
   bottom: 5%;
  
  text-align: center; 
@@ -606,6 +607,12 @@ transition: .8s cubic-bezier(0.165, 1, 0.44, 1);
 
 
 }
+.login-form input[type="text"]:{
+
+  border:#ff0000 solid;
+
+
+}
 .login-form button[type="submit"]:hover{
   border: 2px solid #8335c2;
   background: #8335c2;
@@ -653,8 +660,8 @@ transition: .8s cubic-bezier(0.165, 1, 0.44, 1);
 
 
   .login-form.sumir{
-    transform: translate3d(0px,-300px,0px);
-    opacity: 0;
+    transform: translate3d(0px,0px,0px);
+    opacity: 1;
 
   }
   
@@ -665,4 +672,62 @@ transition: .8s cubic-bezier(0.165, 1, 0.44, 1);
 footer{
   z-index: 1000;
 }
-  
+/* ======================================================================= */
+.cont{
+height: 100vh;
+width: 100vw;
+background: #14171a;
+color:white;
+display: flex;  
+justify-content: center;
+align-items: center;
+
+
+
+}
+.ft{
+
+position: relative;
+  bottom: 200px;
+  left:15vw;
+  text-align: center; 
+  height: 200px;
+  width: 200px;
+  background: #62377e;
+  border-radius: 100px;
+  transition: .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.ft::after{
+  content:"";
+  position: absolute;
+  top:8vh;
+  left:11.3vh;
+  border-radius:100px; 
+  height: 50px;
+  width: 50px;
+  background: #ffff;
+  transition: .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+}
+
+.ft::before{
+  transition: .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  content:"";
+  position: absolute;
+  top:16vh;
+  left:7.8vh;
+  border-radius: 150px 150px 0px 0px; 
+
+
+  height: 50px;
+  width: 100px;
+  background: #ffff;
+
+}
+.cont > h1{
+  text-align: center;
+  position: relative;
+  left: -5vw;
+
+}
