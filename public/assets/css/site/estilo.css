@@ -558,7 +558,18 @@ transition: all 2s cubic-bezier(0.075, 1, 0.165, 1) ;
  
  text-align: center; 
 }
+.registrese{
 
+  position: relative;
+  top:-1vh;
+
+
+}
+.margin-t{
+
+
+  top:-3vh;
+}
 
 .login-form input[type="text"]{
     outline: none;
@@ -678,7 +689,7 @@ height: 100vh;
 width: 100vw;
 background: #14171a;
 color:white;
-display: flex;  
+ 
 justify-content: center;
 align-items: center;
 
@@ -688,8 +699,8 @@ align-items: center;
 .ft{
 
 position: relative;
-  bottom: 200px;
-  left:15vw;
+display: inline-block;
+  margin: 10px auto;
   text-align: center; 
   height: 200px;
   width: 200px;
@@ -728,6 +739,6 @@ position: relative;
 .cont > h1{
   text-align: center;
   position: relative;
-  left: -5vw;
+  margin:10px auto;
 
 }

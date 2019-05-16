@@ -1,5 +1,5 @@
 <?php
-if( isset($_SESSION['login'], $_SESSION['id']) && $_SESSION['nivel'] == 0 ){
+if( isset($_SESSION['login'], $_SESSION['id']) ){
     $ID = $_SESSION["id"];
     $busca = mysqli_query($cx,"SELECT * FROM usuario WHERE id_user = $ID");
     while($usuario = mysqli_fetch_array($busca)) :

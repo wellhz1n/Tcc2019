@@ -41,7 +41,7 @@ require "../bootstrap.php" ?>
         <?php  require load();?>
     </div>
     <?php require "pages/modal.php" ?>
-    <?php if($page == "login"||isset($_SESSION['login']) && $_SESSION['nivel'] == 0 ){
+    <?php if($page == "login"||isset($_SESSION['login']) && $_SESSION['nivel'] == 0 || $page = 'registrese' ){
             
     } else{ require 'pages/footer.php'; }?>
 </body>

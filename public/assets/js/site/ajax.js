@@ -234,6 +234,32 @@ $(".bt-login").click(()=>{
 });
 
 
+$("#usuarios").focusout(()=>{
+
+ 
+        var dados = $("#usuarios").val();
+
+   $.ajax({
+
+          url:'pages/forms/busca_usuario.php',
+                    type: 'POST',
+                    async:true,
+                    data: {'nome': dados}
+                }).done((data)=>{
+
+                    $("#errado").html(data).fadeIn('slow');
+
+                });
+            
+               $("#usuarios").trigger(ajax);
+            });
+
+
+
+
+
+
+
 
 
 

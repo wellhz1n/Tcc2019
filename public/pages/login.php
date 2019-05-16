@@ -8,11 +8,16 @@
       </div>
 <form action="pages/forms/login.php" id="login" class="login-form  " autocomplete="off"  method="POST">
     <h1>Log-in</h1>
-    <div class="form-login ">
+    <div class="form-login">
     <div id="err">
-    <span class="text-danger"><?php  if(!empty($_SESSION['err'])){echo $_SESSION['err'];}  ?></span>
+    <span id="errado" class="text-danger"><?php  if(!empty($_SESSION['err'])){echo $_SESSION['err'];}  ?></span>
+    </div>
+    <div id="sucesso">
+    <span id="deucerto" class="text-success"><?php  if(!empty($_SESSION['sucesso'])){echo $_SESSION['sucesso'];}  ?></span>
     </div>
         <?php  unset($_SESSION["err"]); ?>
+        <?php  unset($_SESSION["sucesso"]); ?>
+
     <label for="usuario" class=""></label>
     <input type="text" placeholder="Usuário"  class=" " id="usuario" name="usuario"  />
       <br>
@@ -25,7 +30,8 @@
  
     </div>
     
+    <p style="font-size:13px;"  class="text-center registrese float-right mr-3 text-white-50 ">Novo por aqui, <a class="text-secundary" href="?page=registrese" title="registre-se" style="cursor:pointer;">Registre-se</a></p>
     
-</form>
+  </form>
 
 </section>
