@@ -1,6 +1,6 @@
 $(document).ready(()=>{
 
-
+        $(".login-form").addClass('sumir');
 $("#fechar").click(()=>{
      $(".content").removeClass('hidden');
 
@@ -23,8 +23,8 @@ $("#fechar").click(()=>{
 
 
 
-    $("#pesquisar").focusout(()=>{
-
+    $("#pesquisar").keyup(()=>{
+    
 
      $("#pesquisa").submit(()=>{
 
@@ -90,12 +90,14 @@ function ProdutoDel(id){
         dataType:'html',
         data: {'ID': Id} ,
         success: (data)=>{
-
+              
             $.get("http://localhost:8081/Tcc/public/?page=adm_produto", {},
-            function (returndata) {
-             var headline = $(returndata).find('#resultado');
-            $("#resultado").html(headline);
-      });
+             function (returndata) {
+          
+                var headline = $(returndata).find('#resultado');
+           
+                 $("#resultado").html(headline);
+            });
 
         }
 
@@ -190,6 +192,9 @@ function NovoUsuario(){
 
 };
 
+
+
+
 $("#nome").keyup(()=>{
 
     $("#form1").submit(()=>{
@@ -218,6 +223,41 @@ $("#nome").keyup(()=>{
 
 
 });
+
+
+$(".bt-login").click(()=>{
+    
+
+    $(".login-form").removeClass("sumir");
+   
+
+});
+
+
+$("#usuarios").focusout(()=>{
+
+ 
+        var dados = $("#usuarios").val();
+
+   $.ajax({
+
+          url:'pages/forms/busca_usuario.php',
+                    type: 'POST',
+                    async:true,
+                    data: {'nome': dados}
+                }).done((data)=>{
+
+                    $("#errado").html(data).fadeIn('slow');
+
+                });
+            
+               $("#usuarios").trigger(ajax);
+            });
+
+
+
+
+
 
 
 

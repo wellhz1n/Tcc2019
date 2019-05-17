@@ -44,7 +44,7 @@
                     </li>
                     <?php } else{ ?>
                         <li class="nav-item bordaM bordaMFinal itemMenu">
-                        <a class="nav-link login" title="Sair" href="pages/forms/sair.php"><i class="fa fa-sign-out-alt  p-1" ></i><?php echo $_SESSION["usuario"];?> </a>
+                        <a class="nav-link login" title="Sair" id="login-menu" href="pages/forms/sair.php"><i class="fa fa-sign-out-alt  p-1" ></i><?php echo $_SESSION["usuario"];?> </a>
                     </li>
 
                     <?php } ?>

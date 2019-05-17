@@ -35,8 +35,15 @@ $(document).ready(function () {
   });
   //Function checado e nao checado
 
+    var loginError = $("#errado").text();
+    var loginsuccess = $("#deucerto").text();
+
+    if(loginError !=""||loginsuccess !=""){
+
+      $(".login-form").css("height","320px");
 
 
+    }
 
 });
 
@@ -59,3 +66,5 @@ function checado() {
 
   }
 };
+
+

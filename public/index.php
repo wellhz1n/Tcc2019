@@ -3,9 +3,11 @@
 
 require "../bootstrap.php" ?>
 <!DOCTYPE html>
-<html>
+<html >
 
-<head>
+<head  style="<?php if($page == "login"){
+            echo "overflow-y: hidden;";
+        }?>">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>PAGINA</title>
@@ -31,15 +33,17 @@ require "../bootstrap.php" ?>
     <link rel="stylesheet" media="(max-width: 767px)" href="assets/css/site/smart.css" />
 </head>
 
-<body class="font-Montserrat ">
+<body     class="font-Montserrat      ">
 
     <?php require 'pages/header.php' ?>
-    <div class="corp">
+    <div  class="corp">
 
         <?php  require load();?>
     </div>
     <?php require "pages/modal.php" ?>
-    <?php  require 'pages/footer.php' ?>
+    <?php if($page == "login"||isset($_SESSION['login']) && $_SESSION['nivel'] == 0 || $page = 'registrese' ){
+            
+    } else{ require 'pages/footer.php'; }?>
 </body>
 <!-- Nao Mudar a ordem Sempre Deixar o jquery Como o primeiro a ser puxado -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
