@@ -1,5 +1,5 @@
 <section class="col-12 text-center  ">
-    
+
 <form action="pages/forms/login.php" method="POST">
     <h1>Log-in</h1>
     <div class="row offset-4  ">
@@ -16,8 +16,8 @@
     </section>
 
     </div>
-    
-    
+
+
 </form>
 
 </section>

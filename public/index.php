@@ -53,6 +53,7 @@ require "../bootstrap.php" ?>
 <script src="assets/js/site/modal.js"></script>
 <script src="assets/js/site/ajax.js"></script>
 <script src="assets/js/site/main.js"></script>
+<script src="assets/js/outros/regexp.js"></script>
 
 
 
