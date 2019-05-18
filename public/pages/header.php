@@ -33,7 +33,7 @@
                     <?php if (isset($_SESSION["login"])&& $_SESSION["nivel"]==1) { ?>
 
 
-                        <a class="" style="cursor: pointer;" title="Carrinho" href="?pages=carrinho" ><i class="fa fa-shopping-cart"></i></a>
+                        <!-- <a class="" style="cursor: pointer;" title="Carrinho" href="?pages=carrinho" ><i class="fa fa-shopping-cart"></i></a> -->
                     <?php } else{}?>
 
 
@@ -43,9 +43,18 @@
                         <a class="nav-link login" href="?page=login"><i class="fa fa-user"></i> Log-in </a>
                     </li>
                     <?php } else{ ?>
-                        <li class="nav-item bordaM bordaMFinal itemMenu">
-                        <a class="nav-link login" title="Sair" id="login-menu" href="pages/forms/sair.php"><i class="fa fa-sign-out-alt  p-1" ></i><?php echo $_SESSION["usuario"];?> </a>
-                    </li>
+                      <li class="nav-item dropdown bordaM bordaMFinal itemMenu">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownContaNormal" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Conta
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownContaNormal">
+                          <!-- <a class="dropdown-item" href="#">outra opção</a> -->
+                          <a class="dropdown-item" href="?page=usuario_editar_conta">Editar Conta</a>
+                          <a class="dropdown-item login" title="Sair" href="pages/forms/sair.php"><i class="fa fa-sign-out-alt  p-1" ></i>Logout </a>
+                        </div>
+
+
+                      </li>
 
                     <?php } ?>
 
@@ -71,9 +80,18 @@
                             </li>
 
                             <?php } else{ ?>
-                                <li class="nav-item bordaM bordaMFinal itemMenu">
-                                <a class="nav-link login" title="Sair" href="pages/forms/sair.php"><i class="fa fa-sign-out-alt  p-1" ></i><?php echo $_SESSION["usuario"];?> </a>
-                            </li>
+                              <li class="nav-item dropdown bordaM bordaMFinal itemMenu">
+                                <a class="nav-link dropdown-toggle" href="#" id="dropdownConta" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Conta
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownConta">
+                                  <!-- <a class="dropdown-item" href="#">outra opção</a> -->
+                                  <a class="dropdown-item" href="?page=adm_editar_conta">Editar Conta</a>
+                                  <a class="dropdown-item login" title="Sair" href="pages/forms/sair.php"><i class="fa fa-sign-out-alt  p-1" ></i>Logout </a>
+                                </div>
+
+
+                              </li>
 
                          <?php } ?>
                     <?php } ?>

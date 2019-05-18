@@ -13,6 +13,11 @@ while($user = mysqli_fetch_array($con)):
      <img class="rounded-circle my-5" src="assets/img/usuario/<?php echo $user['img'];   ?>" >
 
    <?php   } else{   ?> <div class="ft"></div><?php } ?>
+    <form name="formft" enctype="multipart/form-data"  action="pages/forms/usuario_edit_img.php" id="form" method="POST">
+
+        <input type="file" id="img"  name="img" id="img-usuario" class="form-control-file" >
+        <button type="submit" name="envia"  id ="usftedit" class=" btn  btn-primary ">Editar</button>
+    </form>
 
 
 </div>
