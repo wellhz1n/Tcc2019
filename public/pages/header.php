@@ -45,11 +45,11 @@
                     <?php } else{ ?>
                       <li class="nav-item dropdown bordaM bordaMFinal itemMenu">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownContaNormal" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fa fa-user"></i>Conta
+                          Conta
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownContaNormal">
                           <!-- <a class="dropdown-item" href="#">outra opção</a> -->
-                          <a class="dropdown-item" href="?page=usuario_foto">Perfil</a>
+                          <!-- <a class="dropdown-item" href="?page=usuario_foto">Perfil</a> -->
                           <a class="dropdown-item" href="?page=usuario_editar_conta">Editar Conta</a>
                           <a class="dropdown-item login" title="Sair" href="pages/forms/sair.php"><i class="fa fa-sign-out-alt  p-1" ></i>Logout </a>
                         </div>
