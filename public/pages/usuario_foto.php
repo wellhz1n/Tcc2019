@@ -11,8 +11,9 @@ while($user = mysqli_fetch_array($con)):
 ?>
 
      <img class="rounded-circle my-5" src="assets/img/usuario/<?php echo $user['img'];   ?>" >
-
    <?php   } else{   ?> <div class="ft"></div><?php } ?>
+  <h1 name"no" class=""><?php echo $user['nome']; ?></h1>
+
 
 
 </div>
