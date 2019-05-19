@@ -9,20 +9,20 @@ require '../../../bootstrap.php';
 
 // Se o usuário clicou no botão cadastrar efetua as ações
 if (isset($_POST['cadastrar'])) {
-	
+
 	// Recupera os dados dos campos
 	$nome = $_POST['nome'];
 	$email = $_POST['valor'];
 	$foto = $_FILES["img"];
 	$desc = htmlspecialchars($_POST["descricao"]);
-	
+
 	// Se a foto estiver sido selecionada
 	if (!empty($foto["name"])) {
-		
+
 		// Largura máxima em pixels
-		$largura = 150;
+		$largura = 512;
 		// Altura máxima em pixels
-		$altura = 180;
+		$altura = 512;
 		// Tamanho máximo do arquivo em bytes
 		$tamanho = 1000000;
 
@@ -31,11 +31,11 @@ if (isset($_POST['cadastrar'])) {
     	// Verifica se o arquivo é uma imagem
     	if(!preg_match("/^image\/(pjpeg|jpeg|png|gif|bmp)$/", $foto["type"])){
      	   $error[1] = "Isso não é uma imagem.";
-   	 	} 
-	
+   	 	}
+
 		// Pega as dimensões da imagem
 		$dimensoes = getimagesize($foto["tmp_name"]);
-	
+
 		// Verifica se a largura da imagem é maior que a largura permitida
 		if($dimensoes[0] > $largura) {
 			$error[2] = "A largura da imagem não deve ultrapassar ".$largura." pixels";
@@ -45,7 +45,7 @@ if (isset($_POST['cadastrar'])) {
 		if($dimensoes[1] > $altura) {
 			$error[3] = "Altura da imagem não deve ultrapassar ".$altura." pixels";
 		}
-		
+
 		// Verifica se o tamanho da imagem é maior que o tamanho permitido
 		if($foto["size"] > $tamanho) {
    		 	$error[4] = "A imagem deve ter no máximo ".$tamanho." bytes";
@@ -53,7 +53,7 @@ if (isset($_POST['cadastrar'])) {
 
 		// Se não houver nenhum erro
 		if (count($error) == 0) {
-		
+
 			// Pega extensão da imagem
 			preg_match("/\.(gif|bmp|png|jpg|jpeg){1}$/i", $foto["name"], $ext);
 
@@ -65,17 +65,17 @@ if (isset($_POST['cadastrar'])) {
 
 			// Faz o upload da imagem para seu respectivo caminho
 			move_uploaded_file($foto["tmp_name"], $caminho_imagem);
-		
+
 			// Insere os dados no banco
         $newP = mysqli_query($cx,"INSERT INTO produto (nome,descricao,valor,img)VALUES ('{$nome}','{$desc}', '{$email}', '{$nome_imagem}')");
-		 
+
 			// Se os dados forem inseridos com sucesso
 			if ($newP){
 				header("Location: http://localhost:8081/Tcc/public/?page=adm_produto");
-				die(); 
+				die();
 			}
 		}
-	
+
 		// Se houver mensagens de erro, exibe-as
 		if (count($error) != 0) {
 			foreach ($error as $erro) {

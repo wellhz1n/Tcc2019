@@ -22,18 +22,18 @@
      <div class='box-complete '>
 
                 <div class='bt font-Arimo' style="cursor:pointer;" ondblclick=" window.location.href='?page=comprar&id=<?php echo $p['id'];?>';">
-                  <img class='img-responsive mt-2' src="assets/img/produto/<?php echo $p["img"]; ?>">
-                  
-                  
+                  <img class='img-responsive my-2 ml-3   h-75 w-50' src="assets/img/produto/<?php echo $p["img"]; ?>">
+
+
                   <p><?php echo $p["nome"] ;?></p>
                 </div>
-                
+
                 <div class='bb'>
                   <a class='btn btn-primary' href='?page=comprar&id=<?php echo $p['id']; ?>'> Comprar</a>
                 </div>
                   <p>R$:<?php echo $p['valor'];  ?></p>
               </div>
-    
+
 
   <?php endwhile;?>
 </section >
@@ -44,4 +44,3 @@
       <a href="?page=login" class="btn btn-primary  ">Login</a>
   </div>
 <?php #} ?> -->
-
