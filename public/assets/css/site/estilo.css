@@ -308,14 +308,17 @@ ul .itemMenu:hover::after {
   top: 90px;
   height: 180px;
   width: 300px;
-  background: #0e0033;
+  background: #d8cff0;
   z-index: 3;
   margin: 0px;
   padding: 0px;
 }
 
 .bt p {
-  color: white;
+  color: black;
+  font-weight: bolder;
+  word-spacing: 3px;
+  font-stretch: expanded;
 }
 
 .bb {
@@ -335,7 +338,7 @@ ul .itemMenu:hover::after {
 
 .box-complete:hover .bt {
   top: 10px;
-  filter: grayscale(1);
+  filter: grayscale(0.3);
 }
 
 .sec {
