@@ -10,6 +10,7 @@
   margin: 0px;
   padding: 0px;
 }
+html, body { height: 100%; width: 100%; margin: 0; }
 
 head, body {
   overflow-x: hidden;
@@ -51,6 +52,26 @@ head, body {
 .dropdown-item:hover {
   color: black !important;
 }
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  width: 100%;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 0px;
+  border-radius: 0.25rem;
+  text-align: center;
+}
 
 #link {
   position: relative;
@@ -87,9 +108,11 @@ ul {
 
 .itemMenu {
   position: relative;
-  margin-top: 10px;
-  height: 9vh;
   width: 100%;
+  height: 100%;
+}
+.itemNavPai {
+  height: 5%;
 }
 
 a {
@@ -102,15 +125,16 @@ a {
 ul .itemMenu:hover::after {
   content: "";
   position: relative;
-  top: -66px;
   left: 2%;
   margin-left: -15px;
+  top: -35px;
   width: 0px;
   height: 0px;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
   border-top: 15px solid #62377e;
 }
+
 /* =========================MODAL==================================================================== */
 
 .mod-container {
@@ -387,7 +411,7 @@ ul .itemMenu:hover::after {
   align-items: center;
   text-align: center;
   transition: all 4s cubic-bezier(0.075, 0.82, 0.165, 1) ;
- 
+
 }
 .content{
   will-change: transform;
@@ -404,7 +428,7 @@ transition: all 2s cubic-bezier(0.075, 1, 0.165, 1) ;
 }
 .content.hidden{
   will-change: transform;
-  
+
   transform: translate3d(0px,0px,0px);
   opacity: 1;
 }
@@ -489,7 +513,7 @@ transition: all 2s cubic-bezier(0.075, 1, 0.165, 1) ;
   height: 800px;
   left: -400px;
   bottom: -400px;
- 
+
 
 }
 
@@ -525,11 +549,11 @@ transition: all 2s cubic-bezier(0.075, 1, 0.165, 1) ;
   0%{
     transform: scale(0.8);
   }
-  
+
   50%{
     transform: scale(1.1);
   }
-  
+
   100%{
     transform: scale(0.8);
   }
@@ -547,16 +571,16 @@ transition: all 2s cubic-bezier(0.075, 1, 0.165, 1) ;
  background: #030303dc;
   height: 300px;
   width: 600px;
-  border-radius: 25px; 
+  border-radius: 25px;
 
   transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
   color: white;
- 
+
   transform: translate3d(0px,-300px,0px);
   opacity: 0;
   bottom: 5%;
- 
- text-align: center; 
+
+ text-align: center;
 }
 .registrese{
 
@@ -575,18 +599,18 @@ transition: all 2s cubic-bezier(0.075, 1, 0.165, 1) ;
     outline: none;
     position: relative;
     border: 2px solid #18005c;
-    border-radius:50px; 
+    border-radius:50px;
     width: 250px;
     height: 50px;
   background: none;
   color: white;
 
-  margin:  10px  auto; 
-   
-    
-   
+  margin:  10px  auto;
+
+
+
     text-align: center;
-    
+
  transition: .8s cubic-bezier(0.165, 0.84, 0.44, 1);
 
 
@@ -596,13 +620,13 @@ transition: all 2s cubic-bezier(0.075, 1, 0.165, 1) ;
   background: none;
   position: relative;
   border: 2px solid #8335c2;
-  border-radius:50px; 
+  border-radius:50px;
   width: 150px;
   height: 50px;
   margin: 10px auto;
   color: white;
   text-align: center;
-  
+
 transition: .8s cubic-bezier(0.165, 1, 0.44, 1);
 
 
@@ -638,8 +662,8 @@ transition: .8s cubic-bezier(0.165, 1, 0.44, 1);
 }
 .login-form input[type="password"]{
   border: 2px solid  #18005c;
-   border-radius:50px; 
-  margin:  10px  auto; 
+   border-radius:50px;
+  margin:  10px  auto;
   background: none;
   outline: none;
   color: white;
@@ -648,13 +672,13 @@ transition: .8s cubic-bezier(0.165, 1, 0.44, 1);
   height: 50px;
 
    width: 250px;
- text-align: center; 
+ text-align: center;
 
  transition: .8s cubic-bezier(0.165, 0.84, 0.44, 1);
 
 
-  
-  
+
+
   }
   .login-form input[type="password"]:focus{
     border: 2px solid #246300;
@@ -662,10 +686,10 @@ transition: .8s cubic-bezier(0.165, 1, 0.44, 1);
   transition: .8s cubic-bezier(0.165, 1, 1.44, 1);
 
     width: 350px;
-  
- 
-  
-  
+
+
+
+
   }
 
 
@@ -675,7 +699,7 @@ transition: .8s cubic-bezier(0.165, 1, 0.44, 1);
     opacity: 1;
 
   }
-  
+
 .page-footer{
   z-index: 6;
 }
@@ -689,7 +713,7 @@ height: 100vh;
 width: 100vw;
 background: #14171a;
 color:white;
- 
+
 justify-content: center;
 align-items: center;
 
@@ -702,7 +726,7 @@ position: relative;
 display: inline-block;
   margin: 10px auto;
   margin-top: 60px;
-  text-align: center; 
+  text-align: center;
   height: 200px;
   width: 200px;
   background: #62377e;
@@ -714,7 +738,7 @@ display: inline-block;
   position: absolute;
   top:8vh;
   left:11.3vh;
-  border-radius:100px; 
+  border-radius:100px;
   height: 50px;
   width: 50px;
   background: #ffff;
@@ -729,7 +753,7 @@ display: inline-block;
   position: absolute;
   top:16vh;
   left:7.8vh;
-  border-radius: 150px 150px 0px 0px; 
+  border-radius: 150px 150px 0px 0px;
 
 
   height: 50px;
@@ -746,8 +770,8 @@ display: inline-block;
 #form > button{
 
 position: relative;
-text-align: center; 
-margin-top:50px; 
+text-align: center;
+margin-top:50px;
 top:20px;
 right:0%;
 margin: 10px auto;
@@ -756,8 +780,8 @@ margin: 10px auto;
 #form > input[type="file"]{
 
   position: relative;
-  text-align: center; 
-  margin-top:50px; 
+  text-align: center;
+  margin-top:50px;
   top:10px;
   left:40%;
   margin: 10px auto;

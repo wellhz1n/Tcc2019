@@ -12,7 +12,7 @@
 
         <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul  class="navbar-nav ">
+            <ul  class="navbar-nav itemNavPai">
         <?php if (!isset($_SESSION["login"]) || $_SESSION["nivel"] != 0) { ?>
               <?php $page = filter_input(INPUT_GET,'page',FILTER_SANITIZE_STRING);?>
 
@@ -23,10 +23,10 @@
                         <a class="nav-link bordaM" href='?page=contato' >Contato</a>
                     </li>
                     <li class="nav-item <?php if($page=="catalogo") echo "ativo"?> itemMenu">
-                        <a class="nav-link bordaM" href='?page=catalogo' >Catalogo</a>
+                        <a class="nav-link bordaM" href='?page=catalogo' >Catálogo</a>
                     </li>
 
-                    <li class="nav-item bordaM bordaMFinal itemMenu">
+                    <li class="nav-item bordaM itemMenu">
                         <a class="nav-link about">About</a>
                     </li>
 

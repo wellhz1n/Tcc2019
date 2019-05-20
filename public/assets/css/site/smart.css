@@ -43,9 +43,9 @@ left: 44vw;
 
 .itemMenu {
   position: relative;
+  margin-top: 10px;
   height: 9vh;
   width: 100%;
-  margin: 0;
 }
 
 ul .itemMenu:hover::after {

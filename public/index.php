@@ -27,7 +27,7 @@ require "../bootstrap.php" ?>
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/fontawesome.css" integrity="sha384-vd1e11sR28tEK9YANUtpIOdjGW14pS87bUBuOIoBILVWLFnS+MCX9T6MMf0VdPGq" crossorigin="anonymous"> -->
     </div>
 
-    <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css"> -->
     <link rel="stylesheet" media="(max-width: 767px)" href="assets/css/site/smart.css" />
 </head>
 
@@ -49,7 +49,7 @@ require "../bootstrap.php" ?>
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
-<script src="assets/js/bootstrap/bootstrap.js"></script>
+<!-- <script src="assets/js/bootstrap/bootstrap.js"></script> Comentei essa linha porque estava importando dois bootstrap.js, o que causa conflito.-->
 <script src="assets/js/site/Validation.js"></script>
 <script src="assets/js/site/Events.js"></script>
 <script src="assets/js/site/modal.js"></script>
