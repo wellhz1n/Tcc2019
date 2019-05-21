@@ -13,6 +13,12 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
                 </div>
  <section   class="col-12 text-center">
     <div class="row">
+      <div class="col-12">
+        
+           <button class="btn btn-primary mx-2 my-2" type="button"><i class="fa fa-check "></i>Administradores</button>
+           <button class="btn btn-primary mx-2 my-2"   type="button">Usuários Comuns</button>
+      </div>
+
         <div  id="resultado" class="w-100" >
     <table class="table w-100 text-center table-active table-bordered table-hover ">
         <thead class="thead-dark">
