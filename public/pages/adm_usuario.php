@@ -1,6 +1,6 @@
 <?php
 if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { 
-    $sql_usuario = mysqli_query($cx,"SELECT * FROM usuario") or die( 
+    $sql_usuario = mysqli_query($cx,"SELECT * FROM usuario ORDER BY nivel_autoridade = 1") or die( 
         mysqli_error($cx));
     
     
