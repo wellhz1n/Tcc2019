@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 11-Maio-2019 às 02:52
--- Versão do servidor: 10.1.38-MariaDB
--- versão do PHP: 7.3.2
+-- Tempo de geração: 21/05/2019 às 02:55
+-- Versão do servidor: 10.1.40-MariaDB
+-- Versão do PHP: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `Tcc`
+-- Banco de dados: `Tcc`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `contato`
+-- Estrutura para tabela `contato`
 --
 
 CREATE TABLE `contato` (
@@ -37,7 +37,7 @@ CREATE TABLE `contato` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `contato`
+-- Despejando dados para a tabela `contato`
 --
 
 INSERT INTO `contato` (`id`, `Nome`, `Email`, `Assunto`, `data_envio`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `contato` (`id`, `Nome`, `Email`, `Assunto`, `data_envio`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `produto`
+-- Estrutura para tabela `produto`
 --
 
 CREATE TABLE `produto` (
@@ -60,22 +60,21 @@ CREATE TABLE `produto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `produto`
+-- Despejando dados para a tabela `produto`
 --
 
 INSERT INTO `produto` (`id`, `nome`, `descricao`, `img`, `valor`) VALUES
-(12, 'C#', NULL, '1cd5e6423b158615eec037c41cf3dd20.png', 200),
-(14, 'VUE JS', 'Uma Ferramenta JavaScript poderos para geraÃ§Ã£o de Interfaces Graficas.', '86eeb9ea2c0b6a31bd4ef261e8152f65.png', 20),
-(15, 'Aula HTML', 'Uma Linguagem Basica para desenvolvimento WEB.', '10a2d60388a3d6d693309858f3208666.png', 200),
-(16, 'JavaScript', 'Uma Linguagem Melhor que Java, NÃ£o Ã© difÃ­cil o mateus ta de mimimi!', '2c5ec69350240bf98fa93b48f913ab40.png', 1000),
 (17, 'Corpo Humano', 'Unico no estoque', '7a788c4124db4d124101d319ad11d871.png', 400000000),
-(19, 'html', 'html', '828672bb52f3a577a4ce86e8cd26a8c5.png', 1),
-(20, 'passaro', 'n tem', '9f59fec4c5665b8a25dea3542263114b.gif', 88978979);
+(20, 'teste maior', 'haahh', '92a4407985ea3bb4674bc3f775266736.png', 222),
+(21, 'html', 'html', '7ba48cb9115c44c8559e2285bb2b9a56.png', 20220),
+(22, 'Exel', 'exel', '2f7886405515a124841f1e93a821ce87.png', 20),
+(23, 'PowerPoint', 'vai que da bom', '5207bb17819e8b0a0d2fa3c9732c33d0.png', 1200),
+(24, 'Google Chrome', 'Pesquisa ae ', '54b5d7a365616d4ad9066bba888b44d1.png', 200);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Estrutura para tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -87,60 +86,61 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `usuario`
+-- Despejando dados para a tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id_user`, `nome`, `senha`, `nivel_autoridade`, `img`) VALUES
-(53, 'admin     ', '21232f297a57a5a743894a0e4a801fc3', 0, NULL),
+(53, 'admin     ', '21232f297a57a5a743894a0e4a801fc3', 0, 'ce9a43020c56d0c69577a829b97dd4c4.png'),
 (54, 'wellington ', 'dcbacadf485c141a2b9b0028f2c0b2e1', 0, NULL),
 (68, 'root', '63a9f0ea7bb98050796b649e85481845', 0, NULL),
-(69, 'mateus  ', 'dcbacadf485c141a2b9b0028f2c0b2e1', 1, NULL),
-(70, 'Igor    ', 'dd97813dd40be87559aaefed642c3fbb', 1, NULL);
+(69, 'mateus  ', 'dcbacadf485c141a2b9b0028f2c0b2e1', 1, '62f8ddd241fb9f36aeccd7ff800ca3e7.jpg'),
+(70, 'Igor    ', 'dd97813dd40be87559aaefed642c3fbb', 1, 'f7e17470d5a2c60e8dadc54467e56117.jpg'),
+(73, 'marquinhos', '202cb962ac59075b964b07152d234b70', 1, 'd0ce7660ac458876cce114a5d600f8cc.jpg');
 
 --
--- Indexes for dumped tables
+-- Índices de tabelas apagadas
 --
 
 --
--- Indexes for table `contato`
+-- Índices de tabela `contato`
 --
 ALTER TABLE `contato`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `produto`
+-- Índices de tabela `produto`
 --
 ALTER TABLE `produto`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `usuario`
+-- Índices de tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_user`),
   ADD UNIQUE KEY `nome` (`nome`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas apagadas
 --
 
 --
--- AUTO_INCREMENT for table `contato`
+-- AUTO_INCREMENT de tabela `contato`
 --
 ALTER TABLE `contato`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT for table `produto`
+-- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `usuario`
+-- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
