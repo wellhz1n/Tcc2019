@@ -13,10 +13,20 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
                 </div>
  <section   class="col-12 text-center">
     <div class="row">
-      <div class="col-12">
-        
-           <button class="btn btn-primary mx-2 my-2" type="button"><i class="fa fa-check "></i>Administradores</button>
-           <button class="btn btn-primary mx-2 my-2"   type="button">Usuários Comuns</button>
+      <div class="col-12 text-center my-2">
+
+        <form action=""  method="POST">  
+            <select style="transition: .1s;" class="selectpicker col-3" data-live-search="true" data-style="btn-primary" >
+                <option data-icon="fa fa-users" value="0">Todos</option>
+                <option   data-icon="fa fa-user-lock" value="1">Administradores</option>
+                <option  data-icon="fa fa-user" value="2">Usuário Comum</option>
+
+            </select>
+          </form>
+          
+          
+          <!--       <button class="btn btn-primary mx-2 my-2" type="button"><i class="fa fa-check "></i>Administradores</button>
+                     <button class="btn btn-primary mx-2 my-2"   type="button">Usuários Comuns</button> -->
       </div>
 
         <div  id="resultado" class="w-100" >

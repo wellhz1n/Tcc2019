@@ -18,6 +18,7 @@ require "../bootstrap.php" ?>
     <link rel="stylesheet" href="assets/css/site/estilo.css">
     <link rel="stylesheet" href="assets/css/site/fonts.css">
     <link rel="stylesheet" href="assets/css/site/paralax.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
     <div title="FONTAWESOME">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css" integrity="sha384-QokYePQSOwpBDuhlHOsX0ymF6R/vLk/UQVz3WHa6wygxI5oGTmDTv8wahFOSspdm" crossorigin="anonymous">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/regular.css" integrity="sha384-FKw7x8fCxuvzBwOJmhTJJsKzBl8dnN9e2R4+pXRfYoHivikuHkzWyhKWDSMcGNK8" crossorigin="anonymous">
@@ -58,8 +59,8 @@ require "../bootstrap.php" ?>
 <script src="assets/js/site/ajax.js"></script>
 <script src="assets/js/site/main.js"></script>
 <script src="assets/js/outros/regexp.js"></script>
-
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/i18n/defaults-*.min.js"></script>
 
 
 </html>
