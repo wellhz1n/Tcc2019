@@ -646,12 +646,12 @@ transition: .8s cubic-bezier(0.165, 1, 0.44, 1);
 
 
 }
-.login-form input[type="text"]:{
+/* .login-form input[type="text"]:{
 
   border:#ff0000 solid;
 
 
-}
+} */
 .login-form button[type="submit"]:hover{
   border: 2px solid #8335c2;
   background: #8335c2;
