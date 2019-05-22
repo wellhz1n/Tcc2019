@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Tempo de geração: 21/05/2019 às 02:55
--- Versão do servidor: 10.1.40-MariaDB
--- Versão do PHP: 7.3.5
+-- Host: 127.0.0.1:3306
+-- Generation Time: 22-Maio-2019 às 00:56
+-- Versão do servidor: 5.7.24
+-- versão do PHP: 7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,25 +19,27 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `Tcc`
+-- Database: `tcc`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `contato`
+-- Estrutura da tabela `contato`
 --
 
-CREATE TABLE `contato` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `contato`;
+CREATE TABLE IF NOT EXISTS `contato` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `Nome` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
   `Assunto` varchar(255) NOT NULL,
-  `data_envio` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `data_envio` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
 --
--- Despejando dados para a tabela `contato`
+-- Extraindo dados da tabela `contato`
 --
 
 INSERT INTO `contato` (`id`, `Nome`, `Email`, `Assunto`, `data_envio`) VALUES
@@ -48,19 +50,21 @@ INSERT INTO `contato` (`id`, `Nome`, `Email`, `Assunto`, `data_envio`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `produto`
+-- Estrutura da tabela `produto`
 --
 
-CREATE TABLE `produto` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `produto`;
+CREATE TABLE IF NOT EXISTS `produto` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
   `descricao` varchar(255) DEFAULT NULL,
   `img` varchar(255) DEFAULT NULL,
-  `valor` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `valor` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
 --
--- Despejando dados para a tabela `produto`
+-- Extraindo dados da tabela `produto`
 --
 
 INSERT INTO `produto` (`id`, `nome`, `descricao`, `img`, `valor`) VALUES
@@ -74,73 +78,30 @@ INSERT INTO `produto` (`id`, `nome`, `descricao`, `img`, `valor`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuario`
+-- Estrutura da tabela `usuario`
 --
 
-CREATE TABLE `usuario` (
-  `id_user` int(11) NOT NULL,
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL,
   `nivel_autoridade` tinyint(1) NOT NULL,
-  `img` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `img` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_user`),
+  UNIQUE KEY `nome` (`nome`)
+) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=latin1;
 
 --
--- Despejando dados para a tabela `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id_user`, `nome`, `senha`, `nivel_autoridade`, `img`) VALUES
 (53, 'admin     ', '21232f297a57a5a743894a0e4a801fc3', 0, 'ce9a43020c56d0c69577a829b97dd4c4.png'),
 (54, 'wellington ', 'dcbacadf485c141a2b9b0028f2c0b2e1', 0, NULL),
 (68, 'root', '63a9f0ea7bb98050796b649e85481845', 0, NULL),
-(69, 'mateus  ', 'dcbacadf485c141a2b9b0028f2c0b2e1', 1, '62f8ddd241fb9f36aeccd7ff800ca3e7.jpg'),
 (70, 'Igor    ', 'dd97813dd40be87559aaefed642c3fbb', 1, 'f7e17470d5a2c60e8dadc54467e56117.jpg'),
 (73, 'marquinhos', '202cb962ac59075b964b07152d234b70', 1, 'd0ce7660ac458876cce114a5d600f8cc.jpg');
-
---
--- Índices de tabelas apagadas
---
-
---
--- Índices de tabela `contato`
---
-ALTER TABLE `contato`
-  ADD PRIMARY KEY (`id`);
-
---
--- Índices de tabela `produto`
---
-ALTER TABLE `produto`
-  ADD PRIMARY KEY (`id`);
-
---
--- Índices de tabela `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id_user`),
-  ADD UNIQUE KEY `nome` (`nome`);
-
---
--- AUTO_INCREMENT de tabelas apagadas
---
-
---
--- AUTO_INCREMENT de tabela `contato`
---
-ALTER TABLE `contato`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
---
--- AUTO_INCREMENT de tabela `produto`
---
-ALTER TABLE `produto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
-
---
--- AUTO_INCREMENT de tabela `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
