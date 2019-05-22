@@ -1,8 +1,35 @@
+
 <?php
+
 if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { 
-    $sql_usuario = mysqli_query($cx,"SELECT * FROM usuario ORDER BY nivel_autoridade = 1") or die( 
-        mysqli_error($cx));
+ 
     
+  $tipo = $_POST['selecionar']?? $_SESSION['tuser'];
+
+  $_SESSION['tuser'] = $tipo;
+  switch ($tipo) {
+    case '0':
+    
+    $sql_usuario = mysqli_query($cx,"SELECT * FROM usuario  ORDER BY nome ASC") or die( 
+      mysqli_error($cx));
+          break;
+      case '1':
+ 
+
+      $sql_usuario = mysqli_query($cx,"SELECT * FROM usuario WHERE nivel_autoridade = 0   ORDER BY nome ASC") or die( 
+          mysqli_error($cx));
+          break;
+          case '2':
+ 
+
+          $sql_usuario = mysqli_query($cx,"SELECT * FROM usuario WHERE nivel_autoridade = 1   ORDER BY nome ASC") or die( 
+              mysqli_error($cx));
+          break;
+  
+      default:
+    
+          break;
+  }
     
         ?>  
           <div id="mod-edit" class="mod-edit   " >
@@ -15,14 +42,14 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
     <div class="row">
       <div class="col-12 text-center my-2">
 
-        <form action=""  method="POST">  
-            <select style="transition: .1s;" class="selectpicker col-3" data-live-search="true" data-style="btn-primary" >
-                <option data-icon="fa fa-users" value="0">Todos</option>
-                <option   data-icon="fa fa-user-lock" value="1">Administradores</option>
-                <option  data-icon="fa fa-user" value="2">Usuário Comum</option>
+        <form action="" enctype="multipart/form-data" id="selec" method="POST">  
+            <select id="selecionar"  name="selecionar" style="transition: .1s;" class="selectpicker col-3" data-live-search="true" data-style="btn-primary" >
+                <option  <?php if($_SESSION['tuser'] == 0) echo "selected"; ?>  data-icon="fa fa-users" value="0">Todos</option>
+                <option   <?php if($_SESSION['tuser'] == 1) echo "selected"; ?>    data-icon="fa fa-user-lock" value="1">Administradores</option>
+                <option  <?php if($_SESSION['tuser'] == 2) echo "selected"; ?>    data-icon="fa fa-user" value="2">Usuário Comum</option>
 
             </select>
-          </form>
+        </form> 
           
           
           <!--       <button class="btn btn-primary mx-2 my-2" type="button"><i class="fa fa-check "></i>Administradores</button>

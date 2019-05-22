@@ -239,17 +239,29 @@ $("#usuarios").focusout(()=>{
  
         var dados = $("#usuarios").val();
 
-   $.ajax({
+  $.ajax({
+            url:'pages/forms/adm_form_usuario_new.php',
+            type: 'POST',
+            data: {nome: ''+Nome+'',senha:''+Senha+'',nivel_autoridade: Autoridade    }
+        }).done((data)=>{
 
-          url:'pages/forms/busca_usuario.php',
-                    type: 'POST',
-                    async:true,
-                    data: {'nome': dados}
-                }).done((data)=>{
 
-                    $("#errado").html(data).fadeIn('slow');
+                  $("#exampleModal").modal('hide');
+                  $("#form1")[0].reset();
 
-                });
+                  $.get("http://localhost:8081/Tcc/public/?page=adm_usuario", {},
+                  function (returndata) {
+                      var headline = $(returndata).find('#resultado');
+                      $("#resultado").html(headline);
+
+                  });
+                  $("#form1")[0].reset();
+        }).fail((data)=>{
+
+                $("#erro").show('fast');
+
+            });
+
             
                $("#usuarios").trigger(ajax);
             });
@@ -284,3 +296,15 @@ function loading_show(div){
 function loading_hide(div){
     $(div).fadeOut('slow');
 }  ;
+
+
+
+$("#selecionar").change(()=>{
+
+
+        $("#selec").submit();
+        $("#selec")[0].reset();
+
+            
+        $("#selecionar").trigger('submit');
+});
