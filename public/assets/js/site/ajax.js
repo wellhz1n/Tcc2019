@@ -24,7 +24,7 @@ $("#fechar").click(()=>{
 
 
     $("#pesquisar").keyup(()=>{
-    
+
 
      $("#pesquisa").submit(()=>{
 
@@ -90,12 +90,12 @@ function ProdutoDel(id){
         dataType:'html',
         data: {'ID': Id} ,
         success: (data)=>{
-              
+
             $.get("http://localhost:8081/Tcc/public/?page=adm_produto", {},
              function (returndata) {
-          
+
                 var headline = $(returndata).find('#resultado');
-           
+
                  $("#resultado").html(headline);
             });
 
@@ -226,17 +226,17 @@ $("#nome").keyup(()=>{
 
 
 $(".bt-login").click(()=>{
-    
+
 
     $(".login-form").removeClass("sumir");
-   
+
 
 });
 
 
 $("#usuarios").focusout(()=>{
 
- 
+
         var dados = $("#usuarios").val();
 
   $.ajax({
@@ -262,7 +262,7 @@ $("#usuarios").focusout(()=>{
 
             });
 
-            
+
                $("#usuarios").trigger(ajax);
             });
 
@@ -305,6 +305,6 @@ $("#selecionar").change(()=>{
         $("#selec").submit();
         $("#selec")[0].reset();
 
-            
+
         $("#selecionar").trigger('submit');
 });

@@ -256,8 +256,11 @@ ul .itemMenu:hover::after {
   border-top: 15px solid #62377e;
 }
 
-#nav {
+.navcor1 {
   background: #0e0033 !important;
+}
+.navcor2 {
+  background: #211e2a !important;
 }
 
 /*===========================SETA =============================*/
@@ -571,7 +574,7 @@ transition: all 2s cubic-bezier(0.075, 1, 0.165, 1) ;
 .login-form{
   z-index: 5;
   position: relative;
- outline: none;
+  outline: none;
  background: #030303dc;
   height: 300px;
   width: 600px;
@@ -793,3 +796,12 @@ margin: 10px auto;
 
 
 }
+
+
+/* ==================================== USUARIO - IMAGEM =================================== */
+/* .usuarioImg {
+  width: 130px;
+  height: 130px;
+  position: relative;
+
+} */
