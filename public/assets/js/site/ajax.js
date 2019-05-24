@@ -292,3 +292,17 @@ $("#selecionar").change(()=>{
 
         $("#selecionar").trigger('submit');
 });
+
+
+$("#btncor").click(()=>{
+    $('#formdcor').submit();
+
+
+});
+$("#btncontato").click(()=>{
+    $('#formdcontato').submit();
+
+
+
+
+});

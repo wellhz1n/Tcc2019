@@ -1,8 +1,9 @@
 <?php
-$buscaconf = mysqli_query($cx,"SELECT * FROM configuracoes WHERE chave = 'MUDARCORSITE'");
+@$buscaconf = mysqli_query($cx,"SELECT * FROM configuracoes WHERE chave = 'MUDARCORSITE' AND idusuario='{$_SESSION['id']}' ");
 while ($result = mysqli_fetch_array($buscaconf)) {
   $at = $result['ativo'];
-}
+};
+@$buscacontato = mysqli_query($cx,"SELECT * FROM configuracoes WHERE chave = 'DESABILITACONTATO' AND idusuario='{$_SESSION['id']}' ");
 
  ?>
 <nav class="navbar <?php
@@ -72,10 +73,23 @@ else{echo 'navcor1';}
 
             <?php } else {?>
                 <?php $page = filter_input(INPUT_GET,'page',FILTER_SANITIZE_STRING);?>
+                              <?php
 
+                              while ($result = mysqli_fetch_array($buscacontato)) {
+                                $desc = $result['ativo'];
+
+                                if (!empty($desc) && $desc == 1 ){
+
+                                }
+
+                                      else {
+
+
+                         ?>
                             <li class="nav-item <?php if($page=="adm_contato"||$page == null) echo "ativo"?> itemMenu">
                                 <a class="nav-link bordaM bordaMInicio" href="?page=adm_contato" >Contato</a>
                             </li>
+                          <?php }   }; ?>
                             <li class="nav-item <?php if($page=="adm_usuario"||$page == null) echo "ativo"?> itemMenu">
                                 <a class="nav-link bordaM bordaMInicio" href="?page=adm_usuario" >Usuário</a>
                             </li>
