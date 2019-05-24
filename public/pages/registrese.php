@@ -16,17 +16,17 @@
     <label for="usuario" class=""></label>
     <input type="text" placeholder="Usuário"  class=" " id="usuarios" name="usuario"  />
       <br>
-      
+
     <label for="senha" class=""></label>
     <input type="password" placeholder="Senha" class="" id="senha" name="senha"  />
     <br>
-  
+
         <button class="bt-login"   type="submit">Registrar</button>
- 
+
     </div>
-    
-   
-    
+
+
+
   </form>
 
 </section>

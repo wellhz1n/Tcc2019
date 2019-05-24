@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 23/05/2019 às 14:48
+-- Tempo de geração: 24/05/2019 às 02:49
 -- Versão do servidor: 10.1.40-MariaDB
 -- Versão do PHP: 7.3.5
 
@@ -89,7 +89,8 @@ INSERT INTO `produto` (`id`, `nome`, `descricao`, `img`, `valor`) VALUES
 (21, 'html', 'html', '7ba48cb9115c44c8559e2285bb2b9a56.png', 20220),
 (22, 'Exel', 'exel', '2f7886405515a124841f1e93a821ce87.png', 20),
 (23, 'PowerPoint', 'vai que da bom', '5207bb17819e8b0a0d2fa3c9732c33d0.png', 1200),
-(24, 'Google Chrome', 'Pesquisa ae ', '54b5d7a365616d4ad9066bba888b44d1.png', 200);
+(24, 'Google Chrome', 'Pesquisa ae ', '54b5d7a365616d4ad9066bba888b44d1.png', 200),
+(25, 'a', 'a', '1523c80a8ecf53e7636b1610432defcd.png', 22);
 
 -- --------------------------------------------------------
 
@@ -110,14 +111,15 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_user`, `nome`, `senha`, `nivel_autoridade`, `img`) VALUES
-(53, 'admin     ', '21232f297a57a5a743894a0e4a801fc3', 0, 'ce9a43020c56d0c69577a829b97dd4c4.png'),
+(53, 'admin     ', '21232f297a57a5a743894a0e4a801fc3', 0, '488be71da5a90dce4fa86eeda0a0812b.jpg'),
 (54, 'wellington ', 'dcbacadf485c141a2b9b0028f2c0b2e1', 1, '3ea7291451201e07cdb7375519a66da2.gif'),
 (68, 'root', '63a9f0ea7bb98050796b649e85481845', 0, '5da4c44ff7ed17a05aac13165f9f5fb5.jpeg'),
 (70, 'Igor    ', 'dd97813dd40be87559aaefed642c3fbb', 1, 'f7e17470d5a2c60e8dadc54467e56117.jpg'),
 (73, 'marquinhos', '202cb962ac59075b964b07152d234b70', 0, 'd0ce7660ac458876cce114a5d600f8cc.jpg'),
 (106, 'mateus', '202cb962ac59075b964b07152d234b70', 1, '8ed58504699cc98cb5f0d8658e7306b1.jpg'),
 (107, 'Pipoca, a Minhoca', '202cb962ac59075b964b07152d234b70', 1, '19d41349b40984e084730725a76479ad.jpeg'),
-(110, 'Deus Mateus', '54e39e4621bd57e5e73104bc7a787ff7', 1, NULL);
+(110, 'Deus Mateus', '54e39e4621bd57e5e73104bc7a787ff7', 1, NULL),
+(112, 'novo', 'e10adc3949ba59abbe56e057f20f883e', 1, NULL);
 
 --
 -- Índices de tabelas apagadas
@@ -169,13 +171,13 @@ ALTER TABLE `contato`
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- Restrições para dumps de tabelas

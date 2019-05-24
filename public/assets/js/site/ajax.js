@@ -197,7 +197,7 @@ function NovoUsuario(){
 
 $("#nome").keyup(()=>{
 
-    $("#form1").submit(()=>{
+    $("#login").submit(()=>{
         var dados = $("#nome").val();
 
     $.ajax({
@@ -234,41 +234,25 @@ $(".bt-login").click(()=>{
 });
 
 
-$("#usuarios").focusout(()=>{
+$("#usuarios").keyup(()=>{
 
 
         var dados = $("#usuarios").val();
 
-  $.ajax({
-            url:'pages/forms/adm_form_usuario_new.php',
-            type: 'POST',
-            data: {nome: ''+Nome+'',senha:''+Senha+'',nivel_autoridade: Autoridade    }
-        }).done((data)=>{
+   $.ajax({
 
+          url:'pages/forms/busca_usuario.php',
+                    type: 'POST',
+                    async:true,
+                    data: {'nome': dados}
+                }).done((data)=>{
 
-                  $("#exampleModal").modal('hide');
-                  $("#form1")[0].reset();
+                    $("#errado").html(data).fadeIn('slow');
 
-                  $.get("http://localhost:8081/Tcc/public/?page=adm_usuario", {},
-                  function (returndata) {
-                      var headline = $(returndata).find('#resultado');
-                      $("#resultado").html(headline);
-
-                  });
-                  $("#form1")[0].reset();
-        }).fail((data)=>{
-
-                $("#erro").show('fast');
-
-            });
-
+                });
 
                $("#usuarios").trigger(ajax);
             });
-
-
-
-
 
 
 
