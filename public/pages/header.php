@@ -2,15 +2,16 @@
 @$buscaconf = mysqli_query($cx,"SELECT * FROM configuracoes WHERE chave = 'MUDARCORSITE' AND idusuario='{$_SESSION['id']}' ");
 while ($result = mysqli_fetch_array($buscaconf)) {
   $at = $result['ativo'];
+  $cor = $result['cor'];
 };
 @$buscacontato = mysqli_query($cx,"SELECT * FROM configuracoes WHERE chave = 'DESABILITACONTATO' AND idusuario='{$_SESSION['id']}' ");
 
  ?>
-<nav class="navbar <?php
-if( $at== 1){
-  echo 'navcor2';
+<nav style=" background-color:<?php if(!empty($cor)){echo $cor;} ?> " class="navbar <?php
+if( $at != 1 && empty($cor)){
+    echo 'navcor1';
 }
-else{echo 'navcor1';}
+
   ?> font-weight-bolder navbar-expand-md " id="nav">
         <!-- Brand -->
 

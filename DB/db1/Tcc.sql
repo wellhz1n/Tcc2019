@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 24/05/2019 às 02:49
+-- Tempo de geração: 25/05/2019 às 02:14
 -- Versão do servidor: 10.1.40-MariaDB
 -- Versão do PHP: 7.3.5
 
@@ -32,15 +32,23 @@ CREATE TABLE `configuracoes` (
   `id` int(11) NOT NULL,
   `chave` varchar(255) DEFAULT NULL,
   `idusuario` int(11) DEFAULT NULL,
-  `ativo` int(11) DEFAULT NULL
+  `ativo` int(11) DEFAULT NULL,
+  `cor` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Despejando dados para a tabela `configuracoes`
 --
 
-INSERT INTO `configuracoes` (`id`, `chave`, `idusuario`, `ativo`) VALUES
-(1, 'MUDARCORSITE', 53, 1);
+INSERT INTO `configuracoes` (`id`, `chave`, `idusuario`, `ativo`, `cor`) VALUES
+(1, 'MUDARCORSITE', 53, 1, '#3600c5'),
+(2, 'MUDARCORSITE', 68, 1, '#022311'),
+(3, 'DESABILITACONTATO', 53, 1, NULL),
+(4, 'DESABILITACONTATO', 68, 1, NULL),
+(5, 'DESABILITACONTATO', 73, 0, NULL),
+(6, 'DESABILITACONTATO', 70, 1, NULL),
+(7, 'DESABILITACONTATO', 114, 0, NULL),
+(8, 'MUDARCORSITE', 70, 1, '#bc00dc');
 
 -- --------------------------------------------------------
 
@@ -61,9 +69,7 @@ CREATE TABLE `contato` (
 --
 
 INSERT INTO `contato` (`id`, `Nome`, `Email`, `Assunto`, `data_envio`) VALUES
-(23, 'Wellington Hellstrom', 'wellingtom1234520@gmail.com', 'dad', '2019-05-06 12:27:00'),
-(24, 'hj', 'wellingtom1234520@gmail.com', 'hknjk', '2019-05-07 10:20:00'),
-(25, 'vbhjv ', 'wellingtom1234520@gmail.com', 'vjvmv', '2019-05-10 14:22:00');
+(26, 'teste', 'wellingtom.h@hotmail.com', 'mdspkamd', '2019-05-24 10:36:00');
 
 -- --------------------------------------------------------
 
@@ -111,15 +117,15 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_user`, `nome`, `senha`, `nivel_autoridade`, `img`) VALUES
-(53, 'admin     ', '21232f297a57a5a743894a0e4a801fc3', 0, '488be71da5a90dce4fa86eeda0a0812b.jpg'),
+(53, 'admin     ', '21232f297a57a5a743894a0e4a801fc3', 0, 'aa273854d3689739a7e4752ef35caaa9.jpg'),
 (54, 'wellington ', 'dcbacadf485c141a2b9b0028f2c0b2e1', 1, '3ea7291451201e07cdb7375519a66da2.gif'),
-(68, 'root', '63a9f0ea7bb98050796b649e85481845', 0, '5da4c44ff7ed17a05aac13165f9f5fb5.jpeg'),
-(70, 'Igor    ', 'dd97813dd40be87559aaefed642c3fbb', 1, 'f7e17470d5a2c60e8dadc54467e56117.jpg'),
+(68, 'root', '63a9f0ea7bb98050796b649e85481845', 0, '7cbad886a41c17a2de4e60e220401219.gif'),
+(70, 'Igor    ', 'dd97813dd40be87559aaefed642c3fbb', 0, '0e2914e9491d77ea5a27264f87067fb7.jpeg'),
 (73, 'marquinhos', '202cb962ac59075b964b07152d234b70', 0, 'd0ce7660ac458876cce114a5d600f8cc.jpg'),
 (106, 'mateus', '202cb962ac59075b964b07152d234b70', 1, '8ed58504699cc98cb5f0d8658e7306b1.jpg'),
 (107, 'Pipoca, a Minhoca', '202cb962ac59075b964b07152d234b70', 1, '19d41349b40984e084730725a76479ad.jpeg'),
-(110, 'Deus Mateus', '54e39e4621bd57e5e73104bc7a787ff7', 1, NULL),
-(112, 'novo', 'e10adc3949ba59abbe56e057f20f883e', 1, NULL);
+(112, 'novo', 'e10adc3949ba59abbe56e057f20f883e', 1, NULL),
+(114, 'julia', 'e10adc3949ba59abbe56e057f20f883e', 1, '9cdd1b5b08280b3b7565d3e9fa857f3a.jpg');
 
 --
 -- Índices de tabelas apagadas
@@ -159,13 +165,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `configuracoes`
 --
 ALTER TABLE `configuracoes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `contato`
 --
 ALTER TABLE `contato`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de tabela `produto`
@@ -177,7 +183,7 @@ ALTER TABLE `produto`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
 
 --
 -- Restrições para dumps de tabelas

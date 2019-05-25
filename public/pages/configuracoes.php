@@ -2,6 +2,7 @@
 $buscaconf = mysqli_query($cx,"SELECT * FROM configuracoes WHERE chave = 'MUDARCORSITE' AND idusuario= '{$_SESSION['id']}' ");
 while ($result = mysqli_fetch_array($buscaconf)) {
   $at = $result['ativo'];
+  $cor = $result['cor'];
 }
 $buscadesc = mysqli_query($cx,"SELECT * FROM configuracoes WHERE chave = 'DESABILITACONTATO' AND idusuario= '{$_SESSION['id']}' ");
 while ($result = mysqli_fetch_array($buscadesc)) {
@@ -21,6 +22,8 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
 
     <input type="hidden" name="cor" value="0">
     <input type="hidden" name="nome" value="MUDARCORSITE">
+    <input type="color" name="corsinha" id="cor"  <?php if(@$at !=1){echo"disabled";} ?> value="<?php if(empty($cor)){echo "#0e0033";}   else{ echo $cor;}?>" >
+    <div class="row"></div>
     <input name="cor" id="check" <?php if(@$at ==1){echo"checked";} ?>  type="checkbox" value="1" >
 
   <div class="row ">

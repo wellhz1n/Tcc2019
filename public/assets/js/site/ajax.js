@@ -306,3 +306,17 @@ $("#btncontato").click(()=>{
 
 
 });
+
+
+
+
+$("#check").change(()=>{
+      var checado = $("#check").is(":checked");
+    if(checado){
+        $("#cor").removeAttr('disabled');
+    }
+    else{
+      $("#cor").attr("disabled","disabled");
+    }
+
+});
