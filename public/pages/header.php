@@ -1,5 +1,6 @@
 <?php
 @$buscaconf = mysqli_query($cx,"SELECT * FROM configuracoes WHERE chave = 'MUDARCORSITE' AND idusuario='{$_SESSION['id']}' ");
+ $at = '';
 while ($result = mysqli_fetch_array($buscaconf)) {
   $at = $result['ativo'];
   $cor = $result['cor'];
@@ -8,7 +9,7 @@ while ($result = mysqli_fetch_array($buscaconf)) {
 
  ?>
 <nav style=" background-color:<?php if(!empty($cor)){echo $cor;} ?> " class="navbar <?php
-if( $at != 1 && empty($cor)){
+if($at != 1 && empty($cor)){
     echo 'navcor1';
 }
 
