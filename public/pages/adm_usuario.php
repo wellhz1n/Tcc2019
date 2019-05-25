@@ -1,8 +1,38 @@
-<?php
-if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
-    $sql_usuario = mysqli_query($cx,"SELECT * FROM usuario") or die(
-        mysqli_error($cx));
 
+<?php
+
+if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
+  if(!isset($_SESSION['tuser'])){
+
+    $_SESSION['tuser'] = 0;
+  }
+
+  $tipo = $_POST['selecionar']?? $_SESSION['tuser'] ;
+
+  $_SESSION['tuser'] = $tipo;
+  switch ($tipo) {
+    case '0':
+
+    $sql_usuario = mysqli_query($cx,"SELECT * FROM usuario  ORDER BY nome ASC") or die(
+      mysqli_error($cx));
+          break;
+      case '1':
+
+
+      $sql_usuario = mysqli_query($cx,"SELECT * FROM usuario WHERE nivel_autoridade = 0   ORDER BY nome ASC") or die(
+          mysqli_error($cx));
+          break;
+          case '2':
+
+
+          $sql_usuario = mysqli_query($cx,"SELECT * FROM usuario WHERE nivel_autoridade = 1   ORDER BY nome ASC") or die(
+              mysqli_error($cx));
+          break;
+
+      default:
+
+          break;
+  }
 
         ?>
           <div id="mod-edit" class="mod-edit   " >
@@ -13,6 +43,22 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
                 </div>
  <section   class="col-12 text-center">
     <div class="row">
+      <div class="col-12 text-center my-2">
+
+        <form action="" enctype="multipart/form-data" id="selec" method="POST">
+            <select id="selecionar"  name="selecionar" style="transition: .1s;" class="selectpicker col-3"  data-style="btn-primary" >
+                <option  <?php if($_SESSION['tuser'] == 0) echo "selected"; ?>  data-icon="fa fa-users" value="0">Todos</option>
+                <option   <?php if($_SESSION['tuser'] == 1) echo "selected"; ?>    data-icon="fa fa-user-lock" value="1">Administradores</option>
+                <option  <?php if($_SESSION['tuser'] == 2) echo "selected"; ?>    data-icon="fa fa-user" value="2">Usuário Comum</option>
+
+            </select>
+        </form>
+
+
+          <!--       <button class="btn btn-primary mx-2 my-2" type="button"><i class="fa fa-check "></i>Administradores</button>
+                     <button class="btn btn-primary mx-2 my-2"   type="button">Usuários Comuns</button> -->
+      </div>
+
         <div  id="resultado" class="w-100" >
     <table class="table w-100 text-center table-active table-bordered table-hover ">
         <thead class="thead-dark">

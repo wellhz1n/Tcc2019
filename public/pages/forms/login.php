@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require '../../../bootstrap.php';
 
@@ -17,7 +17,18 @@ if (mysqli_num_rows($consulta) == 1) {
         $_SESSION["nivel"] = $log["nivel_autoridade"];
         $_SESSION['id'] = $log['id_user'];
     endwhile;
-    
+    $buscaconf = mysqli_query($cx,"SELECT * FROM configuracoes WHERE chave = 'DESABILITACONTATO' AND idusuario = '{$_SESSION['id']}'  ");
+
+    if(mysqli_num_rows($buscaconf) ==0 ){
+
+      if($_SESSION['nivle'] == 0){
+
+        $inserir = mysqli_query($cx,"INSERT INTO configuracoes (chave,ativo,idusuario) VALUES('DESABILITACONTATO',0,'{$_SESSION['id']}')");
+
+      }
+    }
+
+
     header("Location: http://localhost:8081/Tcc/public/?page=adm_inicio");
     die();
 }
@@ -31,6 +42,3 @@ else{
 }
 
 ?>
-
-
-

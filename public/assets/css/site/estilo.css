@@ -124,10 +124,11 @@ a {
 
 ul .itemMenu:hover::after {
   content: "";
-  position: relative;
-  left: 2%;
-  margin-left: -15px;
-  top: -35px;
+  position: absolute;
+
+  top: -10px;
+  margin: 0px 0px 0px -5%;
+
   width: 0px;
   height: 0px;
   border-left: 15px solid transparent;
@@ -244,10 +245,10 @@ ul .itemMenu:hover::after {
 
 .ativo::after {
   content: "";
-  position: relative;
-  top: -66px;
-  left: 2%;
-  margin-left: -15px;
+  position: absolute;
+  top: -10px;
+    margin: 0px 0px 0px -5%;
+
   width: 0px;
   height: 0px;
   border-left: 15px solid transparent;
@@ -255,8 +256,11 @@ ul .itemMenu:hover::after {
   border-top: 15px solid #62377e;
 }
 
-#nav {
+.navcor1 {
   background: #0e0033 !important;
+}
+.navcor2 {
+  background: #211e2a !important;
 }
 
 /*===========================SETA =============================*/
@@ -307,14 +311,17 @@ ul .itemMenu:hover::after {
   top: 90px;
   height: 180px;
   width: 300px;
-  background: #0e0033;
+  background: #d8cff0;
   z-index: 3;
   margin: 0px;
   padding: 0px;
 }
 
 .bt p {
-  color: white;
+  color: black;
+  font-weight: bolder;
+  word-spacing: 3px;
+  font-stretch: expanded;
 }
 
 .bb {
@@ -334,7 +341,7 @@ ul .itemMenu:hover::after {
 
 .box-complete:hover .bt {
   top: 10px;
-  filter: grayscale(1);
+  filter: grayscale(0.3);
 }
 
 .sec {
@@ -567,7 +574,7 @@ transition: all 2s cubic-bezier(0.075, 1, 0.165, 1) ;
 .login-form{
   z-index: 5;
   position: relative;
- outline: none;
+  outline: none;
  background: #030303dc;
   height: 300px;
   width: 600px;
@@ -642,12 +649,12 @@ transition: .8s cubic-bezier(0.165, 1, 0.44, 1);
 
 
 }
-.login-form input[type="text"]:{
+/* .login-form input[type="text"]:{
 
   border:#ff0000 solid;
 
 
-}
+} */
 .login-form button[type="submit"]:hover{
   border: 2px solid #8335c2;
   background: #8335c2;
@@ -789,3 +796,12 @@ margin: 10px auto;
 
 
 }
+
+
+/* ==================================== USUARIO - IMAGEM =================================== */
+/* .usuarioImg {
+  width: 130px;
+  height: 130px;
+  position: relative;
+
+} */

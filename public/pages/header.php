@@ -1,5 +1,18 @@
-<?php   ?>
-<nav class="navbar font-weight-bolder navbar-expand-md navbar-dark" id="nav">
+<?php
+@$buscaconf = mysqli_query($cx,"SELECT * FROM configuracoes WHERE chave = 'MUDARCORSITE' AND idusuario='{$_SESSION['id']}' ");
+while ($result = mysqli_fetch_array($buscaconf)) {
+  $at = $result['ativo'];
+  $cor = $result['cor'];
+};
+@$buscacontato = mysqli_query($cx,"SELECT * FROM configuracoes WHERE chave = 'DESABILITACONTATO' AND idusuario='{$_SESSION['id']}' ");
+
+ ?>
+<nav style=" background-color:<?php if(!empty($cor)){echo $cor;} ?> " class="navbar <?php
+if( $at != 1 && empty($cor)){
+    echo 'navcor1';
+}
+
+  ?> font-weight-bolder navbar-expand-md " id="nav">
         <!-- Brand -->
 
 
@@ -61,10 +74,23 @@
 
             <?php } else {?>
                 <?php $page = filter_input(INPUT_GET,'page',FILTER_SANITIZE_STRING);?>
+                              <?php
 
+                              while ($result = mysqli_fetch_array($buscacontato)) {
+                                $desc = $result['ativo'];
+
+                                if (!empty($desc) && $desc == 1 ){
+
+                                }
+
+                                      else {
+
+
+                         ?>
                             <li class="nav-item <?php if($page=="adm_contato"||$page == null) echo "ativo"?> itemMenu">
                                 <a class="nav-link bordaM bordaMInicio" href="?page=adm_contato" >Contato</a>
                             </li>
+                          <?php }   }; ?>
                             <li class="nav-item <?php if($page=="adm_usuario"||$page == null) echo "ativo"?> itemMenu">
                                 <a class="nav-link bordaM bordaMInicio" href="?page=adm_usuario" >Usuário</a>
                             </li>
@@ -88,6 +114,7 @@
                                 <div class="dropdown-menu" aria-labelledby="dropdownConta">
                                   <!-- <a class="dropdown-item" href="#">outra opção</a> -->
                                   <a class="dropdown-item " href="?page=usuario_foto">Perfil</a>
+                                  <a class="dropdown-item " href="?page=configuracoes"><i class="fas fa-cog"></i>Configurações</a>
 
                                   <a class="dropdown-item" href="?page=adm_editar_conta">Editar Conta</a>
                                   <a class="dropdown-item login" title="Sair" href="pages/forms/sair.php"><i class="fa fa-sign-out-alt  p-1" ></i>Logout </a>
