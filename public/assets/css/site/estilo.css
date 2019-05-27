@@ -825,7 +825,27 @@ margin: 10px auto;
   z-index: 500000;
 
 }
+#cameraHoverimg {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.35);
+  width: 23.8vh;
+  height: 23.8vh;
+  border-radius: 100%;
+  transform: translate(0, -31.4vh);
+  visibility: hidden;
+  z-index: 500000;
 
+}
+
+#cameraIconimg{
+  color: #fff;
+  text-align: center;
+  vertical-align: center;
+  font-size: 8vh;
+  transform: translate(0, 7vh);
+  visibility: hidden;
+  z-index: 500000;
+}
 #cameraIcon {
   color: #fff;
   text-align: center;
@@ -844,11 +864,26 @@ margin: 10px auto;
   visibility: visible;
 }
 
+#imguserhover{
+
+  z-index: 10000;
+
+
+
+}
+
+#imguserhover:hover #cameraHoverimg{
+  visibility: visible;
+  cursor: pointer;
+
+
+}
+#imguserhover:hover #cameraIconimg {
+    visibility: visible;
+
+
+}
 #imgUpload {
   visibility: hidden;
   position: absolute;
-}
-
-#imagemPronta {
-
 }

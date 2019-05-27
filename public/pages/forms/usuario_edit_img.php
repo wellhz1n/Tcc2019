@@ -36,6 +36,7 @@ if (isset($_POST["envia"])){
 
 
 	$foto = $_FILES["img"];
+  echo  $foto;
 
 
 	// Se a foto estiver sido selecionada

@@ -320,3 +320,26 @@ $("#check").change(()=>{
     }
 
 });
+
+$("#imgUpload").click(()=>{
+
+    $("#imgUpload").change(()=>{
+
+    var valor = $("#formuser").val();
+
+
+    if(valor!= ""){
+
+        // alert(valor);
+        // $('#formuser').submit();
+
+
+    }
+
+
+
+  });
+
+
+
+});
