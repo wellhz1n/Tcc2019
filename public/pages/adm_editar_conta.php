@@ -9,7 +9,7 @@ if (isset($_SESSION['login'])) {
     ?>
     <div>
       <label for="imgUpload"  class="imagemDefault" id="imageFilho">
-        <img class="my-5" src="assets/img/usuario/<?php echo $user['img']; ?>" id="imagemPronta">
+        <img class="my-5" src="assets/img/usuario/<?php echo $user['img']; ?>" >
           <div id="cameraHover">
             <i class="fas fa-camera" id="cameraIcon">
             </i>

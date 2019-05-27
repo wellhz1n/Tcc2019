@@ -10,10 +10,10 @@ while($user = mysqli_fetch_array($con)):
    <?php if($user['img'] != ''){
    ?>
 
-              <label id="imguserhover"    for="imgUpload" ><img  class="rounded-circle my-5" src="assets/img/usuario/<?php echo $user['img'];   ?>" />
+              <label id="imguserhover"  for="imgUpload" >
+                <img  class="rounded-circle my-5" src="assets/img/usuario/<?php echo $user['img'];   ?>" />
                 <div id="cameraHoverimg"><i class="fas fa-camera" id="cameraIconimg"></i></div>
-
-              </label>
+   </label>
   <?php   } else{
   ?>         <div><label for="imgUpload" id="imageFilho"class="imagemDefault my-5 fas fa-user-circle"><div id="cameraHover"><i class="fas fa-camera" id="cameraIcon"></i></div></label></div>
 

@@ -117,7 +117,7 @@ if($at != 1 && empty($cor)){
                                   <a class="dropdown-item " href="?page=usuario_foto">Perfil</a>
                                   <a class="dropdown-item " href="?page=configuracoes"><i class="fas fa-cog"></i>Configurações</a>
 
-                                  <a class="dropdown-item" href="?page=adm_editar_conta">Editar Conta</a>
+                                  <a class="dropdown-item" href="?page=usuario_editar_conta">Editar Conta</a>
                                   <a class="dropdown-item login" title="Sair" href="pages/forms/sair.php"><i class="fa fa-sign-out-alt  p-1" ></i>Logout </a>
                                 </div>
 

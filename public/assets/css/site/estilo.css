@@ -866,6 +866,7 @@ margin: 10px auto;
 
 #imguserhover{
 
+
   z-index: 10000;
 
 
@@ -884,6 +885,6 @@ margin: 10px auto;
 
 }
 #imgUpload {
-  visibility: hidden;
+visibility: hidden;
   position: absolute;
 }
