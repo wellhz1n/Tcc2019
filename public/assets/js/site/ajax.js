@@ -128,18 +128,6 @@ function LevaUsuarioId(id,nome,autoridade){
 
 
 };
-<<<<<<< HEAD
-//
-// function DeleteUsuario(id){
-//     var Id = id;
-//     alert(id);
-//     $.ajax({
-//         url:'pages/forms/adm_form_usuario_delete.php',
-//         type: 'POST',
-//         dataType:'html',
-//         data: {'id': Id}
-=======
->>>>>>> 2c463e2308180e51e878df75fba8a3581c09fdde
 //
 function DeleteUsuario(id){
     var Id = id;
