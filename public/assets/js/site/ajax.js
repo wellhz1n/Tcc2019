@@ -128,6 +128,7 @@ function LevaUsuarioId(id,nome,autoridade){
 
 
 };
+<<<<<<< HEAD
 //
 // function DeleteUsuario(id){
 //     var Id = id;
@@ -137,25 +138,36 @@ function LevaUsuarioId(id,nome,autoridade){
 //         type: 'POST',
 //         dataType:'html',
 //         data: {'id': Id}
+=======
+>>>>>>> 2c463e2308180e51e878df75fba8a3581c09fdde
 //
-//         }.done((data)=>{
-//           debugger
-//
-//                   $.get("http://localhost:8081/Tcc/public/?page=adm_usuario", {},
-//                   function (returndata) {
-//                     debugger
-//                       var headline = $(returndata).find('#resultado');
-//                       $("#resultado").html(headline);
-//
-//                   });
-//
-//         }).fail((data)=>{
-//
-//                 $("#erro").show('fast');
-//
-//             });
-//
-//         };
+function DeleteUsuario(id){
+    var Id = id;
+    console.log(id);
+    $.ajax({
+        url:'pages/forms/adm_form_usuario_delete.php',
+        type: 'POST',
+        dataType:'html',
+        data: {'id': Id}
+
+      }).done((data)=>{
+                  $.get("http://localhost:8081/Tcc/public/?page=adm_usuario", {},
+                  function (returndata) {
+                      var headline = $(returndata).find('#resultado');
+                      $("#resultado").html(headline);
+
+                  });
+
+        }).fail((data)=>{
+
+                $("#erro").show('fast');
+
+            });
+
+        };
+
+
+
 
 function NovoUsuario(){
 

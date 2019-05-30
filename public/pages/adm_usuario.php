@@ -88,7 +88,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
                   <td ondblclick="LevaUsuarioId(<?php echo $linha; ?>,'<?php echo $nome;?>',<?php echo $autoridade; ?>)"><?php echo  $pes["nivel_autoridade"] == 0?"<i  class='fa fa-check text-success text-center'></i>":"<i  class='fa fa-times text-danger text-center'></i>";  ?></td>
 
                   <td><button type="button" onclick="LevaUsuarioId(<?php echo $linha; ?>,'<?php echo $nome;?>',<?php echo $autoridade; ?>)"  class="btn mb-2 btn-info"><i class="fa fa-edit"></i>Editar</button>
-                    <button type="button" onclick="DeleteUsuario(<?php echo $linha; ?>)"   class="btn mb-2 btn-danger"><i class="fa fa-trash"></i>Deletar</button></td>
+                    <button type="button" onclick="DeleteUsuario(<?php echo $linha; ?>)" class="btn mb-2 btn-danger"><i class="fa fa-trash"></i>Deletar</button></td>
 
 
 
