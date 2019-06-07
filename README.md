@@ -7,3 +7,16 @@ test
     senha do phpmyadmin estar nula e usuario root
     alem de importar o banco no arquivo DB
     Senha do admin é admin
+
+
+#Mudancas a fazer
+
+Mudancas visuais nas telas gerais do sistema;
+Criar classes PHP;
+Otimizacao geral do sistema;
+Logica de editar Produto;
+Separacao das consultas SQL en classes php {
+    Exemplo:
+    UsuarioDAO.php
+        dentro dessa entidade  fica as consultas.
+};
