@@ -1,6 +1,6 @@
 <?php
 
- require '../../../bootstrap.php';
+require '../../../bootstrap.php';
 require "../../../app/function/DB.php";
  $id = $_POST['id'];
 
