@@ -327,25 +327,30 @@ $("#check").change(()=>{
 
 });
 
-$("#imgUpload").click(()=>{
+// $("#imgUpload").click(()=>{
+//
+//     $("#imgUpload").change(()=>{
+//
+//     var valor = $("#imgUpload").val();
+//
+//
+//     if(valor!= ""){
+//         $("#fotocarregada").removeAttr('hidden')
+//         // // alert(valor);
+//         // $('#formuser')[0].submit(()=>{
+//         //
+//         //
+//         //         return true;
+//         //
+//         // });
+//         //
+//
+//     }
+//
+//
+//
+//   });
 
-    $("#imgUpload").change(()=>{
-
-    var valor = $("#formuser").val();
 
 
-    if(valor!= ""){
-
-        // alert(valor);
-        // $('#formuser').submit();
-
-
-    }
-
-
-
-  });
-
-
-
-});
+// });

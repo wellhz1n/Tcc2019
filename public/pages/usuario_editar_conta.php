@@ -14,6 +14,7 @@ while($user = mysqli_fetch_array($con)):
                 <img  class="rounded-circle my-5" src="assets/img/usuario/<?php echo $user['img'];   ?>" />
                 <div id="cameraHoverimg"><i class="fas fa-camera" id="cameraIconimg"></i></div>
    </label>
+   <!-- <div class="row offset-4" ><span    id="fotocarregada" hidden class="text-danger font-weigth-bolder " >Foto Carregada! Por favor confirme no botao abaixo</span></div -->
   <?php   } else{
   ?>         <div><label for="imgUpload" id="imageFilho"class="imagemDefault my-5 fas fa-user-circle"><div id="cameraHover"><i class="fas fa-camera" id="cameraIcon"></i></div></label></div>
 
