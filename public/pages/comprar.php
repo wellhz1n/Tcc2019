@@ -3,8 +3,8 @@
 $pid =$_GET['id'];
 
 
-$query = mysqli_query($cx,"SELECT * FROM produto WHERE id = $pid");
-while($produto = mysqli_Fetch_Array($query)):
+$saida = $produtoDAO->selectID($pid);
+while($produto = mysqli_Fetch_Array($saida)):
 ?>
 <img  class="img-fluid h-25 w-25" src="assets/img/produto/<?php echo $produto['img']?>">
 <h1>Produto: <?php echo $produto['nome']; ?></h1>

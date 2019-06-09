@@ -1,6 +1,6 @@
 <?php
 
-$buscaP = mysqli_query($cx,"SELECT * FROM produto");
+$buscaP = $produtoDAO->select(null);
 if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="assets/js/bootstrap/jquery-3.3.1.js"></script>

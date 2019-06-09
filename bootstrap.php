@@ -12,6 +12,9 @@ require 'app/function/validate.php';
 require "app/function/pages.php";
 require "app/function/DAO/ProdutoDAO.php";
 
+$produtoDAO = new Produto();
+
+
 
 
 

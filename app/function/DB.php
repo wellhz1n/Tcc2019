@@ -1,5 +1,6 @@
 <?php
-//iniciando a conexão com o banco de dados
+
+  
 $cx = mysqli_connect("127.0.0.1", "root", "");
 
 //selecionando o banco de dados

@@ -16,8 +16,9 @@
   <section class="text-center col-12">
 
     <?php
-      @$buscaP = mysqli_query($cx,"SELECT * FROM produto WHERE id <> 17 ORDER BY valor ".$Order);
+      @$buscaP = $produtoDAO->select($Order);
        
+    
      
       while($p =mysqli_fetch_array($buscaP)): ?>
      <div class='box-complete '>
