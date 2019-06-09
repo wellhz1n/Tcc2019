@@ -59,7 +59,7 @@ if($at != 1 && empty($cor)){
                         <a class="nav-link dropdown-toggle" href="#" id="dropdownContaNormal" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-user"></i>Conta
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownContaNormal">
+                        <div class="dropdown-menu" style="background: #0e0033 !important;" aria-labelledby="dropdownContaNormal">
                           <!-- <a class="dropdown-item" href="#">outra opção</a> -->
                           <a class="dropdown-item " href="?page=usuario_foto">Perfil</a>
                           <a class="dropdown-item" href="?page=usuario_editar_conta">Editar Conta</a>
@@ -110,7 +110,9 @@ if($at != 1 && empty($cor)){
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdownConta" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                   <i class="fa fa-user"></i>Conta
                                 </a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownConta">
+
+
+                                <div class="dropdown-menu" style="background:<?php echo $cor ?>!important;" aria-labelledby="dropdownConta">
                                   <!-- <a class="dropdown-item" href="#">outra opção</a> -->
                                   <a class="dropdown-item " href="?page=usuario_foto">Perfil</a>
                                   <a class="dropdown-item " href="?page=configuracoes"><i class="fas fa-cog"></i>Configurações</a>

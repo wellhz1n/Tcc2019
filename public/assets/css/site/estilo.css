@@ -40,9 +40,9 @@ head, body {
   text-align: center;
 }
 
-.dropdown-menu {
+/* .dropdown-menu {
   background: #0e0033 !important;
-}
+} */
 
 .dropdown-item {
   color: white !important;

@@ -257,7 +257,7 @@ $("#usuarios").keyup(()=>{
 
                 });
 
-               $("#usuarios").trigger(ajax);
+               $("#usuarios").trigger('ajax');
             });
 
 

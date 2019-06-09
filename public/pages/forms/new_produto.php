@@ -12,7 +12,7 @@ if (isset($_POST['cadastrar'])) {
 
 	// Recupera os dados dos campos
 	$nome = $_POST['nome'];
-	$email = $_POST['valor'];
+	$valor = $_POST['valor'];
 	$foto = $_FILES["img"];
 	$desc = htmlspecialchars($_POST["descricao"]);
 
@@ -67,7 +67,7 @@ if (isset($_POST['cadastrar'])) {
 			move_uploaded_file($foto["tmp_name"], $caminho_imagem);
 
 			// Insere os dados no banco
-        $newP = mysqli_query($cx,"INSERT INTO produto (nome,descricao,valor,img)VALUES ('{$nome}','{$desc}', '{$email}', '{$nome_imagem}')");
+        $newP = $produtoDAO->inserir($nome,$desc,$valor,$nome_imagem);
 
 			// Se os dados forem inseridos com sucesso
 			if ($newP){
