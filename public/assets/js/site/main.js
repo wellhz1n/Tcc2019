@@ -22,6 +22,7 @@ function removeCharEspecifico(sttring) {
 /* Modal de Editar Produto */
 
 /* Guardar nome para o produto*/
-function guardarNome(nomeGuardado) {
-  $('#exampleModalLabel #valorRetornoModal').html(nomeGuardado);
+function guardarNome(nomeGuardado, id) {
+  document.cookie="profile_viewer_uid="+id;
+  $('#ModalEditar #valorRetornoModal').html(nomeGuardado);
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
  require '../../../bootstrap.php';
 $nome = $_POST["nome"];
 $senha = md5($_POST['senha']);
@@ -16,11 +16,7 @@ else{
 <link rel="stylesheet" href="../../assets/css/bootstrap/bootstrap.css">
     <div id="erro" class="col-12 text-center">
     <br>
-    <h4>O Nome De Usuario <label class="text-danger"><?php echo $nome ?></label> ja existe Por favos volte e insira um diferente</h4>
-    <a class='btn btn-primary' href='javascript:history.back()'>Voltar</a> 
+    <h4>O Nome De Usuario <label class="text-danger"><?php echo $nome ?></label> já existe, por favor, volte e insira um nome diferente.</h4>
+    <a class='btn btn-primary' href='javascript:history.back()'>Voltar</a>
     </div>
 <?php } ?>
-
-
-
-

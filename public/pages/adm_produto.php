@@ -44,7 +44,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
 
 
 
-            <td style="display:table-cell; vertical-align: middle;" scope="col "><button type="button" class="btn btn-primary" onclick="guardarNome('<?php echo $nome;?>');" data-toggle="modal" data-target="#ModalEditar" class="my-1 btn btn-info"  <?php if ($pesq['id'] == 17) {
+            <td style="display:table-cell; vertical-align: middle;" scope="col "><button type="button" class="btn btn-primary" onclick="guardarNome('<?php echo $nome;?>',<?php echo $linha?>);" data-toggle="modal" data-target="#ModalEditar" class="my-1 btn btn-info"  <?php if ($pesq['id'] == 17) {
               echo 'hidden';
             } ?> ><i class="fa fa-edit"></i>Editar</button>
             <button type="button" id="deleteP" onclick="ProdutoDel(<?php echo $linha; ?>);"  class=" my-1 deleteP  btn btn-danger" <?php if ($pesq['id'] == 17) {
@@ -68,16 +68,16 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
   <div class="modal-dialog modal-xl">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Editando <span id="valorRetornoModal"></span></h5>
+        <h5 class="modal-title" id="ModalEditar">Editando <span id="valorRetornoModal"></span></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form id="formModalEditar" action="pages/forms/adm_produto_editar.php" method="post">
           <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Destinatário:</label>
-            <input type="text" class="form-control" id="recipient-name">
+            <label for="recipient-name" class="col-form-label">Mudar o nome:</label>
+            <input type="text" name="modalEditarNome" class="form-control" id="modalEditarNome">
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label"></label>
@@ -87,7 +87,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary">Enviar</button>
+        <button type="submit" name="submitModal" form="formModalEditar" class="btn btn-primary">Enviar</button>
       </div>
     </div>
   </div>
