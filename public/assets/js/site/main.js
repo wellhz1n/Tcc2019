@@ -13,3 +13,15 @@ function removeCharEspecifico(sttring) {
   semEspecial = semEspecial.replace(/[^a-zA-Z]/g, '');
   document.getElementById(sttring).value = semEspecial;XRegExp("^")
 }
+
+
+
+
+
+
+/* Modal de Editar Produto */
+
+/* Guardar nome para o produto*/
+function guardarNome(nomeGuardado) {
+  $('#exampleModalLabel #valorRetornoModal').html(nomeGuardado);
+}

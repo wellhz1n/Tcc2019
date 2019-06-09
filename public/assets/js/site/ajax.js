@@ -350,7 +350,21 @@ $("#check").change(()=>{
 //
 //
 //   });
-
-
-
 // });
+
+
+function ProdutoEditar(nome){
+    var Nome = nome;
+    $.ajax({
+        url:'pages/forms/adm_produto_editar.php',
+        type: 'POST',
+        dataType:'html',
+        data: {'NOME': Nome} ,
+        success: (data)=>{
+          alert(data);
+
+        }
+
+
+});
+};

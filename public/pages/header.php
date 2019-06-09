@@ -29,7 +29,6 @@ if($at != 1 && empty($cor)){
             <ul  class="navbar-nav itemNavPai">
         <?php if (!isset($_SESSION["login"]) || $_SESSION["nivel"] != 0) { ?>
               <?php $page = filter_input(INPUT_GET,'page',FILTER_SANITIZE_STRING);?>
-
                     <li class="nav-item <?php if($page=="home"||$page == null) echo "ativo"?> itemMenu">
                         <a class="nav-link bordaM bordaMInicio" href="?page=home" >Início</a>
                     </li>
@@ -39,7 +38,6 @@ if($at != 1 && empty($cor)){
                     <li class="nav-item <?php if($page=="catalogo") echo "ativo"?> itemMenu">
                         <a class="nav-link bordaM" href='?page=catalogo' >Catálogo</a>
                     </li>
-
                     <li class="nav-item bordaM itemMenu">
                         <a class="nav-link about">About</a>
                     </li>

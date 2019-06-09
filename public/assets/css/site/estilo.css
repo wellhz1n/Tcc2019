@@ -247,8 +247,7 @@ ul .itemMenu:hover::after {
   content: "";
   position: absolute;
   top: -10px;
-    margin: 0px 0px 0px -5%;
-
+  margin: 0px 0px 0px -5%;
   width: 0px;
   height: 0px;
   border-left: 15px solid transparent;
