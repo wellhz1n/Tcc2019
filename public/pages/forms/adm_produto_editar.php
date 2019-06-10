@@ -1,6 +1,6 @@
 <?php
 require '../../../bootstrap.php';
-$id = $_COOKIE['profile_viewer_uid'];
+$id = $_POST['ID'];
 $nomeEditado = $_POST['modalEditarNome'];
 $descricaoEditado = $_POST['modalEditarDescricao'];
 $precoEditado = (int) $_POST['modalEditarPreco'];

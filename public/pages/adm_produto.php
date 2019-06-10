@@ -44,7 +44,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
 
 
 
-            <td style="display:table-cell; vertical-align: middle;" scope="col "><button type="button" class="btn btn-primary" onclick="guardarNome('<?php echo $nome;?>',<?php echo $linha?>);" data-toggle="modal" data-target="#ModalEditar" class="my-1 btn btn-info"  <?php if ($pesq['id'] == 17) {
+            <td style="display:table-cell; vertical-align: middle;" scope="col "><button type="button" class="btn btn-primary" onclick="guardarNome('<?php echo $nome;?>','<?php echo $pesq['descricao'];?>','<?php echo $pesq['valor'];?>','<?php echo $linha ?>');" data-toggle="modal" data-target="#ModalEditar" class="my-1 btn btn-info"  <?php if ($pesq['id'] == 17) {
               echo 'hidden';
             } ?> ><i class="fa fa-edit"></i>Editar</button>
             <button type="button" id="deleteP" onclick="ProdutoDel(<?php echo $linha; ?>);"  class=" my-1 deleteP  btn btn-danger" <?php if ($pesq['id'] == 17) {
@@ -76,22 +76,23 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
       <div class="modal-body">
         <form id="formModalEditar" action="pages/forms/adm_produto_editar.php" method="post">
           <div class="form-group">
+          <input type="hidden" id="idmod" name="ID">
             <label for="modalEditarNome" class="col-form-label">Mudar o nome:</label>
-            <input type="text" name="modalEditarNome" class="form-control" id="modalEditarNome">
+            <input type="text" name="modalEditarNome" id="nomemod" class="form-control" value="" id="modalEditarNome">
           </div>
           <div class="form-group">
             <label for="modalEditarDescricao" class="col-form-label">Mudar a descrição:</label>
-            <input type="text" name="modalEditarDescricao" class="form-control" id="modalEditarDescricao">
+            <input type="text" name="modalEditarDescricao" id="descmod"  class="form-control" id="modalEditarDescricao">
           </div>
           <div class="form-group">
             <label for="modalEditarPreco" class="col-form-label">Mudar o preço:</label>
-            <input type="text" name="modalEditarPreco" class="form-control" id="modalEditarPreco">
+            <input type="text"  name="modalEditarPreco" id="valmod"  class="form-control" id="modalEditarPreco" maxlength="10">
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="submit" name="submitModal" form="formModalEditar" class="btn btn-primary">Enviar</button>
+        <button type="button" name="submitModal" id="editmodprod" form="formModalEditar" class="btn btn-primary">Enviar</button>
       </div>
     </div>
   </div>

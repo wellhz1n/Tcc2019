@@ -240,12 +240,12 @@ $(".bt-login").click(()=>{
 });
 
 
-$("#usuarios").keyup(()=>{
+$("#usuarios").keyup(async()=>{
 
 
         var dados = $("#usuarios").val();
 
-   $.ajax({
+   await $.ajax({
 
           url:'pages/forms/busca_usuario.php',
                     type: 'POST',
@@ -353,3 +353,38 @@ $("#check").change(()=>{
 // });
 
 //
+$(document).on('click','#editmodprod',()=>{
+
+
+var modalEditarNome = $('#nomemod').val();
+var modalEditarDescricao = $('#descmod').val();
+var modalEditarPreco = $('#valmod').val();
+var ID = $('#idmod').val();
+
+  
+  
+    $.ajax({
+
+        url:'pages/forms/adm_produto_editar.php',
+                  type: 'POST',
+                  async:true,
+                  data: {'ID': ID,'modalEditarNome': modalEditarNome,'modalEditarDescricao': modalEditarDescricao,'modalEditarPreco': modalEditarPreco}
+              }).done((data)=>{
+                   
+
+                  $.get("http://localhost:8081/Tcc/public/?page=adm_produto", {},
+                  function (returndata) {
+                      var headline = $(returndata).find('#resultado');
+                      $("#resultado").html(headline);
+
+                  });
+
+                    $('#ModalEditar').modal('hide');
+
+              });
+
+         
+     
+
+
+});
