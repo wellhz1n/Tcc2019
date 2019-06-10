@@ -40,7 +40,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
             <td> <img class="rounded-circle w-25 h-25 " src="assets/img/produto/<?php echo  $pesq["img"]; ?>"></td>
             <td class="mt-3 " style="display:table-cell; vertical-align: middle;"><?php echo  $pesq["nome"]  ?></td>
             <td style="display:table-cell; vertical-align: middle;"><?php echo  $pesq["descricao"]  ?></td>
-            <td style="display:table-cell; vertical-align: middle;"><h5 class="text-danger">R$:<?php   echo  $pesq["valor"] ?></h5></td>
+            <td style="display:table-cell; vertical-align: middle;"><h5 class="text-danger">R$:<?php   echo  $pesq["valor"]; ?><?php  if($pesq['valor'] == 0){ echo '/GRATIS';}  ?></h5></td>
 
 
 

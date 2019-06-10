@@ -11,12 +11,14 @@ test
 
 #Mudancas a fazer
 
-Mudancas visuais nas telas gerais do sistema;
-Criar classes PHP;
-Otimizacao geral do sistema;
-Logica de editar Produto;
+Mudancas visuais nas telas gerais do sistema
+Criar classes PHP
+Otimizacao geral do sistema
+Logica de editar Produto
 Separacao das consultas SQL en classes php {
     Exemplo:
     UsuarioDAO.php
         dentro dessa entidade  fica as consultas.
-};
+}
+Mudancas visuais nas cores do sistema principalmente no usuario e quando usuario nao utiliza cor
+

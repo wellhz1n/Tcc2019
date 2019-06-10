@@ -6,13 +6,14 @@
 
 
 
+
 <section class="row ">
 
   <div class="col-12 h-25 text-center mt-5">
-  <a class="btn btn-danger" href="?page=catalogo&order=DESC" ><i class="fa <?php if($Order == "DESC") echo 'fa-check';?> " aria-hidden="true"></i>Mais Caros</a>
-  <a class="btn btn-success" href="?page=catalogo&order=ASC" ><i class="fa   <?php if($Order == "ASC"||$Order == null) echo "fa-check";?> fa-caret-rigth" aria-hidden="true"></i>Mais Baratos</a>
-  <div>
-<section class="col-xs-12">
+    <a class="btn btn-danger" href="?page=catalogo&order=DESC" ><i class="fa <?php if($Order == "DESC") echo 'fa-check';?> " aria-hidden="true"></i>Mais Caros</a>
+    <a class="btn btn-success" href="?page=catalogo&order=ASC" ><i class="fa   <?php if($Order == "ASC"||$Order == null) echo "fa-check";?> fa-caret-rigth" aria-hidden="true"></i>Mais Baratos</a>
+    <div>
+      <section class="col-xs-12">
   <section class="text-center col-12">
 
     <?php
@@ -33,7 +34,11 @@
                 <div class='bb'>
                   <a class='btn btn-primary' href='?page=comprar&id=<?php echo $p['id']; ?>'> Comprar</a>
                 </div>
+                <?php if($p['valor'] != 0){ ?>
                   <p>R$:<?php echo $p['valor'];  ?></p>
+                <?php } else{ ?>
+                  <p class='text-danger font-Raleway'><?php echo "GRATIS";  ?></p>
+                <?php } ?>
               </div>
 
 
