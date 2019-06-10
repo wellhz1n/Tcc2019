@@ -76,12 +76,16 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
       <div class="modal-body">
         <form id="formModalEditar" action="pages/forms/adm_produto_editar.php" method="post">
           <div class="form-group">
-            <label for="recipient-name" class="col-form-label">Mudar o nome:</label>
+            <label for="modalEditarNome" class="col-form-label">Mudar o nome:</label>
             <input type="text" name="modalEditarNome" class="form-control" id="modalEditarNome">
           </div>
           <div class="form-group">
-            <label for="message-text" class="col-form-label"></label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <label for="modalEditarDescricao" class="col-form-label">Mudar a descrição:</label>
+            <input type="text" name="modalEditarDescricao" class="form-control" id="modalEditarDescricao">
+          </div>
+          <div class="form-group">
+            <label for="modalEditarPreco" class="col-form-label">Mudar o preço:</label>
+            <input type="text" name="modalEditarPreco" class="form-control" id="modalEditarPreco">
           </div>
         </form>
       </div>
