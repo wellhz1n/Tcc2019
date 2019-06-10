@@ -4,7 +4,7 @@ $id = $_COOKIE['profile_viewer_uid'];
 $nomeEditado = $_POST['modalEditarNome'];
 $descricaoEditado = $_POST['modalEditarDescricao'];
 $precoEditado = (int) $_POST['modalEditarPreco'];
-$create = mysqli_query($cx,"UPDATE produto SET nome = '$nomeEditado', descricao='$descricaoEditado', valor=$precoEditado WHERE id = $id;");
+$create = $produtoDAO->update($nomeEditado, $descricaoEditado, $precoEditado, $id);
 /* No futuro, mudar valores para double no sql.*/
 if($create){
     header("Location: http://localhost:8081/Tcc/public/?page=adm_produto");
