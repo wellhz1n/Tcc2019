@@ -26,8 +26,6 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
           </thead>
           <tbody>
             <?php while ($pesq = mysqli_fetch_array($buscaP)):?>
-          <tr  <?php if ($pesq['id']!=17) {?> style="" class="text-center" >
-            <!-- NO FUTURO IMPLEMENTAR ISSO ondblclick=" document.getElementById('form').submit();" -->
 
             <form  id="form" name="del" method="POST">
                   <input type="text" id="ID" value="<?php echo $pesq["id"]; $linha = $pesq['id']; $nome = $pesq['nome']; ?> " name="ID" hidden>
@@ -35,10 +33,12 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
                   <input type="text" id="ID" value="<?php echo $pesq["descricao"];  ?> " name="emadescricao" hidden>
                   <input type="text" id="ID" value="<?php echo $pesq["valor"];  ?> " name="valor" hidden>
 
+          <tr onclick="guardarNome('<?php echo $nome;?>','<?php echo $pesq['descricao'];?>','<?php echo $pesq['valor'];?>','<?php echo $linha ?>','<?php echo $pesq['img'] ?>');" data-toggle="modal" data-target="#ModalEditar"  <?php if ($pesq['id']!=17) {?> style="" class="text-center" >
+            <!-- NO FUTURO IMPLEMENTAR ISSO ondblclick=" document.getElementById('form').submit();" -->
 
 
             <td> <img class="rounded-circle w-25 h-25 " src="assets/img/produto/<?php echo  $pesq["img"]; ?>"></td>
-            <td class="mt-3 " style="display:table-cell; vertical-align: middle;"><?php echo  $pesq["nome"]  ?></td>
+            <td   class="mt-3 " style="display:table-cell; vertical-align: middle;"><?php echo  $pesq["nome"]  ?></td>
             <td style="display:table-cell; vertical-align: middle;"><?php echo  $pesq["descricao"]  ?></td>
             <td style="display:table-cell; vertical-align: middle;"><h5 class="text-danger">R$:<?php   echo  $pesq["valor"]; ?><?php  if($pesq['valor'] == 0){ echo '/GRATIS';}  ?></h5></td>
 
