@@ -44,7 +44,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
 
 
 
-            <td style="display:table-cell; vertical-align: middle;" scope="col "><button type="button" class="btn btn-primary" onclick="guardarNome('<?php echo $nome;?>','<?php echo $pesq['descricao'];?>','<?php echo $pesq['valor'];?>','<?php echo $linha ?>');" data-toggle="modal" data-target="#ModalEditar" class="my-1 btn btn-info"  <?php if ($pesq['id'] == 17) {
+            <td style="display:table-cell; vertical-align: middle;" scope="col "><button type="button" class="btn btn-primary" onclick="guardarNome('<?php echo $nome;?>','<?php echo $pesq['descricao'];?>','<?php echo $pesq['valor'];?>','<?php echo $linha ?>','<?php echo $pesq['img'] ?>');" data-toggle="modal" data-target="#ModalEditar" class="my-1 btn btn-info"  <?php if ($pesq['id'] == 17) {
               echo 'hidden';
             } ?> ><i class="fa fa-edit"></i>Editar</button>
             <button type="button" id="deleteP" onclick="ProdutoDel(<?php echo $linha; ?>);"  class=" my-1 deleteP  btn btn-danger" <?php if ($pesq['id'] == 17) {
@@ -65,7 +65,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
 </section>
 
 <div class="modal fade" id="ModalEditar" tabindex="-1" role="dialog" aria-labelledby="ModalEditar" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
+  <div class="modal-dialog modal-lg w-75">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="ModalEditar">Editando <span id="valorRetornoModal"></span></h5>
@@ -74,6 +74,12 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
         </button>
       </div>
       <div class="modal-body">
+      <div class="col-12">
+      <div class="row">
+      <div class="col-5 my-5 py-3 text-center">
+      <img id="prodimg" class="w-50 h-75" src="">
+      </div>
+      <div style="margin-left:-1vw;" class="col-6  p-0">
         <form id="formModalEditar" action="pages/forms/adm_produto_editar.php" method="post">
           <div class="form-group">
           <input type="hidden" id="idmod" name="ID">
@@ -89,6 +95,10 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
             <input type="text"  name="modalEditarPreco" id="valmod"  class="form-control" id="modalEditarPreco" maxlength="10">
           </div>
         </form>
+        </div>
+    </div>
+
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>

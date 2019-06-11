@@ -22,8 +22,10 @@ function removeCharEspecifico(sttring) {
 /* Modal de Editar Produto */
 
 /* Guardar nome para o produto*/
-function guardarNome(nomeGuardado,descguardado,valorguardado,id) {
+function guardarNome(nomeGuardado,descguardado,valorguardado,id,imgprod) {
   console.log(nomeGuardado);
+  var img = document.getElementById('prodimg');
+  img.src = 'assets/img/produto/'+imgprod;
   $('#ModalEditar #valorRetornoModal').html(nomeGuardado);
   $('#nomemod').val(nomeGuardado);
   $('#descmod').val(descguardado);
