@@ -22,3 +22,5 @@ Separacao das consultas SQL en classes php {
 }
 Mudancas visuais nas cores do sistema principalmente no usuario e quando usuario nao utiliza cor
 
+Gerear interface no sistema de Carrinho e pasar as consutas para AJAX
+
