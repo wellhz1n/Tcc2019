@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 30/05/2019 às 13:40
+-- Tempo de geração: 12/06/2019 às 02:56
 -- Versão do servidor: 10.1.40-MariaDB
 -- Versão do PHP: 7.3.5
 
@@ -25,6 +25,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `carrinho`
+--
+
+CREATE TABLE `carrinho` (
+  `id` int(11) NOT NULL,
+  `idproduto` int(11) NOT NULL,
+  `idusuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `configuracoes`
 --
 
@@ -41,10 +53,12 @@ CREATE TABLE `configuracoes` (
 --
 
 INSERT INTO `configuracoes` (`id`, `chave`, `idusuario`, `ativo`, `cor`) VALUES
-(1, 'MUDARCORSITE', 53, 1, '#941ddf'),
+(1, 'MUDARCORSITE', 53, 1, '#067edb'),
 (3, 'DESABILITACONTATO', 53, 1, NULL),
-(12, 'DESABILITACONTATO', 123, 0, NULL),
-(13, 'DESABILITACONTATO', 124, 0, NULL);
+(17, 'DESABILITACONTATO', 128, 1, NULL),
+(18, 'MUDARCORSITE', 128, 1, '#3300e5'),
+(23, 'DESABILITACONTATO', 132, 0, NULL),
+(24, 'MUDARCORSITE', 132, 1, '#0e0033');
 
 -- --------------------------------------------------------
 
@@ -87,11 +101,11 @@ CREATE TABLE `produto` (
 
 INSERT INTO `produto` (`id`, `nome`, `descricao`, `img`, `valor`) VALUES
 (17, 'Corpo Humano', 'Unico no estoque', '7a788c4124db4d124101d319ad11d871.png', 400000000),
-(20, 'teste maior', 'haahh', '92a4407985ea3bb4674bc3f775266736.png', 222),
-(23, 'PowerPoint', 'vai que da bom', '5207bb17819e8b0a0d2fa3c9732c33d0.png', 1200),
-(24, 'Google Chrome', 'Pesquisa ae ', '54b5d7a365616d4ad9066bba888b44d1.png', 200),
-(25, 'a', 'a', '1523c80a8ecf53e7636b1610432defcd.png', 22),
-(26, 'novo', 'a', 'e22d9c94ad7adfd44c75ffac9c058b43.png', 30);
+(28, 'Google Chrome', 'Navegador Web Melhor que o EDGE', '846bae3605115753dbd04e7623625007.png', 100),
+(29, 'Html', 'Curso basico de html ', 'a64fece50d6cd256487bf3c7d2ac7b04.png', 0),
+(30, 'Css', 'Curso de Css basico.', 'be2ccf37c5fe0ac7a37735df430497e3.png', 0),
+(31, 'PHP -Basico', 'Curso de PHP', '7d3f92715577bdc3f034b068172aca47.png', 0),
+(32, 'a', 'a', 'b1a1a50d9988c78e3a5364e13018b16b.png', 0);
 
 -- --------------------------------------------------------
 
@@ -112,13 +126,21 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id_user`, `nome`, `senha`, `nivel_autoridade`, `img`) VALUES
-(53, 'admin     ', '21232f297a57a5a743894a0e4a801fc3', 0, 'b03a4428bff79fa785d7714c7db0fc52.jpg'),
-(123, 'teste', '202cb962ac59075b964b07152d234b70', 0, 'b693c8f75d47bffd100bb45589f8a5a7.jpg'),
-(124, 'bruno', '202cb962ac59075b964b07152d234b70', 1, '701d0f37b20fc1e66d61f2b4ed0b0d1d.jpg');
+(53, 'admin     ', '21232f297a57a5a743894a0e4a801fc3', 0, '5155657ab766319c2915414c1e524743.jpg'),
+(128, 'root', '63a9f0ea7bb98050796b649e85481845', 0, '53d7d1c2665aceeb9f448eff5723f379.jpg'),
+(132, 'mateus', 'e10adc3949ba59abbe56e057f20f883e', 0, NULL);
 
 --
 -- Índices de tabelas apagadas
 --
+
+--
+-- Índices de tabela `carrinho`
+--
+ALTER TABLE `carrinho`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FK_IDPRODUTO` (`idproduto`),
+  ADD KEY `FK_IDUSUARIO` (`idusuario`);
 
 --
 -- Índices de tabela `configuracoes`
@@ -151,10 +173,16 @@ ALTER TABLE `usuario`
 --
 
 --
+-- AUTO_INCREMENT de tabela `carrinho`
+--
+ALTER TABLE `carrinho`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `configuracoes`
 --
 ALTER TABLE `configuracoes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de tabela `contato`
@@ -166,17 +194,24 @@ ALTER TABLE `contato`
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
 
 --
 -- Restrições para dumps de tabelas
 --
+
+--
+-- Restrições para tabelas `carrinho`
+--
+ALTER TABLE `carrinho`
+  ADD CONSTRAINT `FK_IDPRODUTO` FOREIGN KEY (`idproduto`) REFERENCES `produto` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_IDUSUARIO` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`id_user`) ON DELETE CASCADE;
 
 --
 -- Restrições para tabelas `configuracoes`
