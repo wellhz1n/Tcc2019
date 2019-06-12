@@ -5,17 +5,17 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="assets/js/bootstrap/jquery-3.3.1.js"></script>
 
- <section class="col-12">
-   <div class="row">
+<section class="col-12">
+  <div class="row">
     <div class=" w-100" id="resultado">
-    <table class="table col-12 w-100 text-center table-active table-bordered table-hover ">
+      <table class="table col-12 w-100 text-center table-active table-bordered table-hover ">
         <thead class="thead-dark">
           <tr>
-          <th scope="col">Imagem</th>
+            <th scope="col">Imagem</th>
             <th scope="col">Nome</th>
             <th scope="col">descrição</th>
             <th scope="col">Preço</th>
-            <th scope="col"><a  href="?page=produto" class='btn btn-primary' ><i class="fa fa-plus"></i>Novo</a></th>
+            <th scope="col"><a href="?page=produto" class='btn btn-primary'><i class="fa fa-plus"></i>Novo</a></th>
 
 
 
@@ -23,45 +23,56 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
 
 
           </tr>
-          </thead>
-          <tbody>
-            <?php while ($pesq = mysqli_fetch_array($buscaP)):?>
+        </thead>
+        <tbody>
+          <?php while ($pesq = mysqli_fetch_array($buscaP)):?>
 
-            <form  id="form" name="del" method="POST">
-                  <input type="text" id="ID" value="<?php echo $pesq["id"]; $linha = $pesq['id']; $nome = $pesq['nome']; ?> " name="ID" hidden>
-                  <input type="text" id="ID" value="<?php echo $pesq["nome"];  ?> " name="nome" hidden>
-                  <input type="text" id="ID" value="<?php echo $pesq["descricao"];  ?> " name="emadescricao" hidden>
-                  <input type="text" id="ID" value="<?php echo $pesq["valor"];  ?> " name="valor" hidden>
+          <form id="form" name="del" method="POST">
+            <input type="text" id="ID" value="<?php echo $pesq["id"]; $linha = $pesq['id']; $nome = $pesq['nome']; ?> "
+              name="ID" hidden>
+            <input type="text" id="ID" value="<?php echo $pesq["nome"];  ?> " name="nome" hidden>
+            <input type="text" id="ID" value="<?php echo $pesq["descricao"];  ?> " name="emadescricao" hidden>
+            <input type="text" id="ID" value="<?php echo $pesq["valor"];  ?> " name="valor" hidden>
 
-          <tr onclick="guardarNome('<?php echo $nome;?>','<?php echo $pesq['descricao'];?>','<?php echo $pesq['valor'];?>','<?php echo $linha ?>','<?php echo $pesq['img'] ?>');" data-toggle="modal" data-target="#ModalEditar"  <?php if ($pesq['id']!=17) {?> style="" class="text-center" >
-            <!-- NO FUTURO IMPLEMENTAR ISSO ondblclick=" document.getElementById('form').submit();" -->
-
-
-            <td> <img class="rounded-circle w-25 h-25 " src="assets/img/produto/<?php echo  $pesq["img"]; ?>"></td>
-            <td   class="mt-3 " style="display:table-cell; vertical-align: middle;"><?php echo  $pesq["nome"]  ?></td>
-            <td style="display:table-cell; vertical-align: middle;"><?php echo  $pesq["descricao"]  ?></td>
-            <td style="display:table-cell; vertical-align: middle;"><h5 class="text-danger">R$:<?php   echo  $pesq["valor"]; ?><?php  if($pesq['valor'] == 0){ echo '/GRATIS';}  ?></h5></td>
+            <tr
+              onclick="guardarNome('<?php echo $nome;?>','<?php echo $pesq['descricao'];?>','<?php echo $pesq['valor'];?>','<?php echo $linha ?>','<?php echo $pesq['img'] ?>');"
+              data-toggle="modal" data-target="#ModalEditar" <?php if ($pesq['id']!=17) {?> style=""
+              class="text-center">
+              <!-- NO FUTURO IMPLEMENTAR ISSO ondblclick=" document.getElementById('form').submit();" -->
 
 
+              <td> <img class=" w-25 h-25 " src="assets/img/produto/<?php echo  $pesq["img"]; ?>"></td>
+              <td class="mt-3 " style="display:table-cell; vertical-align: middle;"><?php echo  $pesq["nome"]  ?></td>
+              <td style="display:table-cell; vertical-align: middle;"><?php echo  $pesq["descricao"]  ?></td>
+              <td style="display:table-cell; vertical-align: middle;">
+                <h5 class="text-danger">
+                  R$:<?php   echo  $pesq["valor"]; ?><?php  if($pesq['valor'] == 0){ echo '/GRATIS';}  ?></h5>
+              </td>
 
-            <td style="display:table-cell; vertical-align: middle;" scope="col "><button type="button" class="btn btn-primary" onclick="guardarNome('<?php echo $nome;?>','<?php echo $pesq['descricao'];?>','<?php echo $pesq['valor'];?>','<?php echo $linha ?>','<?php echo $pesq['img'] ?>');" data-toggle="modal" data-target="#ModalEditar" class="my-1 btn btn-info"  <?php if ($pesq['id'] == 17) {
+
+
+              <td style="display:table-cell; vertical-align: middle;" scope="col "><button type="button"
+                  class="btn btn-primary"
+                  onclick="guardarNome('<?php echo $nome;?>','<?php echo $pesq['descricao'];?>','<?php echo $pesq['valor'];?>','<?php echo $linha ?>','<?php echo $pesq['img'] ?>');"
+                  data-toggle="modal" data-target="#ModalEditar" class="my-1 btn btn-info" <?php if ($pesq['id'] == 17) {
               echo 'hidden';
-            } ?> ><i class="fa fa-edit"></i>Editar</button>
-            <button type="button" id="deleteP" onclick="ProdutoDel(<?php echo $linha; ?>);"  class=" my-1 deleteP  btn btn-danger" <?php if ($pesq['id'] == 17) {
+            } ?>><i class="fa fa-edit"></i>Editar</button>
+                <button type="button" id="deleteP" onclick="ProdutoDel(<?php echo $linha; ?>);"
+                  class=" my-1 deleteP  btn btn-danger" <?php if ($pesq['id'] == 17) {
               echo 'hidden';
-            } ?> ><i class="fa fa-trash"></i>Deletar</button></td>
+            } ?>><i class="fa fa-trash"></i>Deletar</button></td>
 
 
-        </tr >
+            </tr>
             <?php } else {
 } ?>
-        </form>
-<?php endwhile; ?>
+          </form>
+          <?php endwhile; ?>
 
         </tbody>
       </table>
+    </div>
   </div>
-</div>
 </section>
 
 <div class="modal fade" id="ModalEditar" tabindex="-1" role="dialog" aria-labelledby="ModalEditar" aria-hidden="true">
@@ -74,35 +85,42 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
         </button>
       </div>
       <div class="modal-body">
-      <div class="col-12">
-      <div class="row">
-      <div class="col-5 my-5 py-3 text-center">
-      <img id="prodimg" class="w-50 h-75" src="">
-      </div>
-      <div style="margin-left:-1vw;" class="col-6  p-0">
-        <form id="formModalEditar" action="pages/forms/adm_produto_editar.php" method="post">
-          <div class="form-group">
-          <input type="hidden" id="idmod" name="ID">
-            <label for="modalEditarNome" class="col-form-label">Mudar o nome:</label>
-            <input type="text" name="modalEditarNome" id="nomemod" class="form-control" value="" id="modalEditarNome">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-5 my-5 py-3 text-center">
+              <div style="height: 31vh;width: 31vh; border: 2px #000000 solid; margin-top: -5vh; display: flex;">
+            
+                <img id="prodimg" style="height:30vh;width: 30vh; padding: 10px; " class="" src="">
+              </div>
+            </div>
+            <div style="margin-left:-1vw;" class="col-6  p-0">
+              <form id="formModalEditar" action="pages/forms/adm_produto_editar.php" method="post">
+                <div class="form-group">
+                  <input type="hidden" id="idmod" name="ID">
+                  <label for="modalEditarNome" class="col-form-label">Mudar o nome:</label>
+                  <input type="text" name="modalEditarNome" id="nomemod" class="form-control" value=""
+                    id="modalEditarNome">
+                </div>
+                <div class="form-group">
+                  <label for="modalEditarDescricao" class="col-form-label">Mudar a descrição:</label>
+                  <input type="text" name="modalEditarDescricao" id="descmod" class="form-control"
+                    id="modalEditarDescricao">
+                </div>
+                <div class="form-group">
+                  <label for="modalEditarPreco" class="col-form-label">Mudar o preço:</label>
+                  <input type="text" name="modalEditarPreco" id="valmod" class="form-control" id="modalEditarPreco"
+                    maxlength="10">
+                </div>
+              </form>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="modalEditarDescricao" class="col-form-label">Mudar a descrição:</label>
-            <input type="text" name="modalEditarDescricao" id="descmod"  class="form-control" id="modalEditarDescricao">
-          </div>
-          <div class="form-group">
-            <label for="modalEditarPreco" class="col-form-label">Mudar o preço:</label>
-            <input type="text"  name="modalEditarPreco" id="valmod"  class="form-control" id="modalEditarPreco" maxlength="10">
-          </div>
-        </form>
-        </div>
-    </div>
 
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" name="submitModal" id="editmodprod" form="formModalEditar" class="btn btn-primary">Enviar</button>
+        <button type="button" name="submitModal" id="editmodprod" form="formModalEditar"
+          class="btn btn-primary">Enviar</button>
       </div>
     </div>
   </div>
