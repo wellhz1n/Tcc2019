@@ -9,12 +9,7 @@ if( isset($_SESSION['login'], $_SESSION['id']) ){
     $iduser = $_SESSION['id'];
     echo $iduser;
 
-  $insert = mysqli_query($cx,"delete from carrinho where idproduto = '{$idproduto}'");
-
-   if($insert){
-    header("Location: http://localhost:8081/Tcc/public/?page=carrinho");
-    die();
-   }
+ 
 
 
 }

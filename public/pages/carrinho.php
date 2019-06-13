@@ -14,8 +14,10 @@ while($a = mysqli_Fetch_Array($prod)){
 
     ?>
 
-    <form action="pages/forms/del_carrinho.php" method="post">
+    <form action="pages/forms/comprar.php" method="post">
     <input type="hidden" value="<?php echo $a['id']  ?> "name="ID">
+    <input type="hidden" name="OP" value="DEL">
+
     <button type="submit">X</button>
     <form>
 <?php } 

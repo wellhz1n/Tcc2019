@@ -19,6 +19,8 @@ while($produto = mysqli_Fetch_Array($saida)):
 </p> 
 <form action="pages/forms/comprar.php" method="post">
 <input type="hidden" name="ID" value="<?php echo $pid ?>">
+<input type="hidden" name="OP" value="INS">
+
 <button type="submit">Adicionar ao carrinho</button>
 </form>
 <?php endwhile;?>
