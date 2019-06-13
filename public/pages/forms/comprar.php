@@ -1,8 +1,8 @@
 <?php
+require '../../../bootstrap.php';
 
-session_start();
+
 if( isset($_SESSION['login'], $_SESSION['id']) ){
-    require '../../../bootstrap.php';
     $idproduto = $_POST['ID'];
     $op = $_POST['OP'];
     echo $idproduto;
@@ -13,12 +13,7 @@ if( isset($_SESSION['login'], $_SESSION['id']) ){
     switch ($op) {
       case "INS":
            $existe = mysqli_query($cx,"SELECT 1 FROM carrinho where idproduto = '{$idproduto}'");
-              if(!empty($existe)){
-                session_start();
-                $_SESSION['erros'] ="Produto Ja existe no carrinho" ; 
-                header("Location: http://localhost:8081/Tcc/public/?page=carrinho");
-                die();
-              }
+            
             $insert = mysqli_query($cx,"insert into carrinho(idproduto,idusuario) values('{$idproduto}','{$iduser}')");
 
             if($insert){
