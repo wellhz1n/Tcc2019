@@ -9,10 +9,14 @@ if( isset($_SESSION['login'], $_SESSION['id']) ){
 
     $iduser = $_SESSION['id'];
     echo $iduser;
-
+    $existe = mysqli_query($cx,"SELECT * FROM carrinho where idproduto = '{$idproduto}' and idusuario = '{$iduser}'");
+            while($a = mysqli_fetch_array($existe)){
+                    if($a['idproduto'] == $idproduto){
+                        $op = "";
+                    }
+            }
     switch ($op) {
       case "INS":
-           $existe = mysqli_query($cx,"SELECT 1 FROM carrinho where idproduto = '{$idproduto}'");
             
             $insert = mysqli_query($cx,"insert into carrinho(idproduto,idusuario) values('{$idproduto}','{$iduser}')");
 
@@ -31,7 +35,8 @@ if( isset($_SESSION['login'], $_SESSION['id']) ){
             }
         break;
       default:
-        # code...
+            header("Location: http://localhost:8081/Tcc/public/?page=carrinho");
+            die();
         break;
     }
 
