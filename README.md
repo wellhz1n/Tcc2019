@@ -11,16 +11,16 @@ test
 
 #Mudancas a fazer
 
-Mudancas visuais nas telas gerais do sistema
-Criar classes PHP
-Otimizacao geral do sistema
-Logica de editar Produto
-Separacao das consultas SQL en classes php {
-    Exemplo:
-    UsuarioDAO.php
-        dentro dessa entidade  fica as consultas.
-}
-Mudancas visuais nas cores do sistema principalmente no usuario e quando usuario nao utiliza cor
+    Mudancas visuais nas telas gerais do sistema
+    Criar classes PHP
+    Otimizacao geral do sistema
+    Logica de editar Produto
+    Separacao das consultas SQL en classes php {
+        Exemplo:
+        UsuarioDAO.php
+            dentro dessa entidade  fica as consultas.
+    }
+    Mudancas visuais nas cores do sistema principalmente no usuario e quando usuario nao utiliza cor
 
-Gerear interface no sistema de Carrinho e pasar as consutas para AJAX
+    Gerear interface no sistema de Carrinho e pasar as consutas para AJAX
 
