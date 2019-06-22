@@ -61,7 +61,7 @@ class Usuario {
     }
     public function inserirImagem($op,$img,$id){ //$op valor 1 insere nova imagem, valor 2  faz select para ocorrer o unlink
         global $cx;
-         $query;
+         $query = null;
         switch ($op) {
             case 1:
                 $query = mysqli_query($cx,"UPDATE  usuario set usuario.img = '{$img}' WHERE usuario.id_user = $id "); 
