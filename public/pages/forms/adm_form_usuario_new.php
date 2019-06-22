@@ -4,7 +4,7 @@ $nome = $_POST["nome"];
 $senha = md5($_POST['senha']);
 $nivel = $_POST['nivel_autoridade'] ?? 1 ;
 
-$create = mysqli_query($cx,"INSERT INTO usuario (nome,senha,nivel_autoridade)VALUES('$nome','$senha',$nivel)");
+$create = $usuarioDAO->inserir($nome,$senha,$nivel);
 if($create){
     header("Location: http://localhost:8081/Tcc/public/?page=adm_usuario");
     die();

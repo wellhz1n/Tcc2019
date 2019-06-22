@@ -11,8 +11,11 @@ require 'app/function/dd.php';
 require 'app/function/validate.php';
 require "app/function/pages.php";
 require "app/function/DAO/ProdutoDAO.php";
+require "app/function/DAO/UsuarioDAO.php";
+
 
 $produtoDAO = new Produto();
+$usuarioDAO = new Usuario();
 
 
 

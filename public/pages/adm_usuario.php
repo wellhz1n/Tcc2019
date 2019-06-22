@@ -13,19 +13,19 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
   switch ($tipo) {
     case '0':
 
-    $sql_usuario = mysqli_query($cx,"SELECT * FROM usuario  ORDER BY nome ASC") or die(
+    $sql_usuario = $usuarioDAO->select(null,0) or die(
       mysqli_error($cx));
           break;
       case '1':
 
 
-      $sql_usuario = mysqli_query($cx,"SELECT * FROM usuario WHERE nivel_autoridade = 0   ORDER BY nome ASC") or die(
+      $sql_usuario = $usuarioDAO->select(null,1) or die(
           mysqli_error($cx));
           break;
           case '2':
 
 
-          $sql_usuario = mysqli_query($cx,"SELECT * FROM usuario WHERE nivel_autoridade = 1   ORDER BY nome ASC") or die(
+          $sql_usuario =$usuarioDAO->select(null,2) or die(
               mysqli_error($cx));
           break;
 

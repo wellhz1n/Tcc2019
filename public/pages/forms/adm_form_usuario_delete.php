@@ -5,7 +5,7 @@ require "../../../app/function/DB.php";
  $id = $_POST['id'];
 
 echo $id;
-$DelProduto = mysqli_query($cx,"SELECT img FROM usuario WHERE usuario.id_user = $id");
+$DelProduto = $usuarioDAO->inserirImagem(2,null,$id);
     $ft = mysqli_fetch_object($DelProduto);
 
 

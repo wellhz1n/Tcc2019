@@ -3,13 +3,13 @@
 require '../../../bootstrap.php';
 
 $id = $_SESSION['id'];
-$busca = mysqli_query($cx,"SELECT * FROM usuario WHERE usuario.id_user = $id");
+$busca = $usuarioDAO->select($id);
     while($usuario = mysqli_fetch_array($busca)):
 
 
             if($usuario['img']!=""){
 
-                $DelProduto = mysqli_query($cx,"SELECT img FROM usuario WHERE usuario.id_user = '".$id."'");
+                $DelProduto = $usuarioDAO->inserirImagem(2,$nome_imagem,$id);
                     $ft = mysqli_fetch_object($DelProduto);
 
 
@@ -90,7 +90,7 @@ if (isset($_POST["envia"])){
 			move_uploaded_file($foto["tmp_name"], $caminho_imagem);
 
 			// Insere os dados no banco
-        $newP = mysqli_query($cx,"UPDATE  usuario set usuario.img = '{$nome_imagem}' WHERE usuario.id_user = $id ");
+        $newP = $usuarioDAO->inserirImagem(1,$nome_imagem,$id);
 
 			// Se os dados forem inseridos com sucesso
 			if ($newP){
