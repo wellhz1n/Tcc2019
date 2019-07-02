@@ -23,14 +23,14 @@ class Usuario {
         if($id == null){
             switch ($op) {
                 case 0:
-                 $query = mysqli_query($cx,"SELECT * FROM usuario order by nome ASC");
+                    $query = mysqli_query($cx,"SELECT * FROM usuario order by nome ASC");
                     break;
                 case 1 :
-                $query = mysqli_query($cx,"SELECT * FROM usuario WHERE nivel_autoridade = 0   ORDER BY nome ASC");
-                break;
+                    $query = mysqli_query($cx,"SELECT * FROM usuario WHERE nivel_autoridade = 0   ORDER BY nome ASC");
+                    break;
                 case 2 :
-                $query = mysqli_query($cx,"SELECT * FROM usuario WHERE nivel_autoridade = 1   ORDER BY nome ASC");
-                break;
+                    $query = mysqli_query($cx,"SELECT * FROM usuario WHERE nivel_autoridade = 1   ORDER BY nome ASC");
+                    break;
                 default:
                     $query = mysqli_query($cx,"SELECT * FROM usuario");
                     break;

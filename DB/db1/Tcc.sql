@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Tempo de geração: 12/06/2019 às 02:56
--- Versão do servidor: 10.1.40-MariaDB
--- Versão do PHP: 7.3.5
+-- Host: 127.0.0.1
+-- Tempo de geração: 02-Jul-2019 às 15:58
+-- Versão do servidor: 10.3.16-MariaDB
+-- versão do PHP: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `Tcc`
+-- Banco de dados: `tcc`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `carrinho`
+-- Estrutura da tabela `carrinho`
 --
 
 CREATE TABLE `carrinho` (
@@ -37,7 +37,19 @@ CREATE TABLE `carrinho` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `configuracoes`
+-- Estrutura da tabela `carteira`
+--
+
+CREATE TABLE `carteira` (
+  `id` int(11) NOT NULL,
+  `dinheiro` decimal(10,0) DEFAULT NULL,
+  `idUsuario` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `configuracoes`
 --
 
 CREATE TABLE `configuracoes` (
@@ -49,7 +61,7 @@ CREATE TABLE `configuracoes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Despejando dados para a tabela `configuracoes`
+-- Extraindo dados da tabela `configuracoes`
 --
 
 INSERT INTO `configuracoes` (`id`, `chave`, `idusuario`, `ativo`, `cor`) VALUES
@@ -63,7 +75,7 @@ INSERT INTO `configuracoes` (`id`, `chave`, `idusuario`, `ativo`, `cor`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `contato`
+-- Estrutura da tabela `contato`
 --
 
 CREATE TABLE `contato` (
@@ -75,7 +87,7 @@ CREATE TABLE `contato` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Despejando dados para a tabela `contato`
+-- Extraindo dados da tabela `contato`
 --
 
 INSERT INTO `contato` (`id`, `Nome`, `Email`, `Assunto`, `data_envio`) VALUES
@@ -84,7 +96,7 @@ INSERT INTO `contato` (`id`, `Nome`, `Email`, `Assunto`, `data_envio`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `produto`
+-- Estrutura da tabela `produto`
 --
 
 CREATE TABLE `produto` (
@@ -96,7 +108,7 @@ CREATE TABLE `produto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Despejando dados para a tabela `produto`
+-- Extraindo dados da tabela `produto`
 --
 
 INSERT INTO `produto` (`id`, `nome`, `descricao`, `img`, `valor`) VALUES
@@ -110,7 +122,7 @@ INSERT INTO `produto` (`id`, `nome`, `descricao`, `img`, `valor`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuario`
+-- Estrutura da tabela `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -122,20 +134,20 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Despejando dados para a tabela `usuario`
+-- Extraindo dados da tabela `usuario`
 --
 
 INSERT INTO `usuario` (`id_user`, `nome`, `senha`, `nivel_autoridade`, `img`) VALUES
-(53, 'admin     ', '21232f297a57a5a743894a0e4a801fc3', 0, '5155657ab766319c2915414c1e524743.jpg'),
+(53, 'admin     ', '21232f297a57a5a743894a0e4a801fc3', 0, '97c9f09bc9b0f7c1a8ce59a6dc4359af.png'),
 (128, 'root', '63a9f0ea7bb98050796b649e85481845', 0, '53d7d1c2665aceeb9f448eff5723f379.jpg'),
-(132, 'mateus', 'e10adc3949ba59abbe56e057f20f883e', 0, NULL);
+(132, 'mateus', 'e10adc3949ba59abbe56e057f20f883e', 1, NULL);
 
 --
--- Índices de tabelas apagadas
+-- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `carrinho`
+-- Índices para tabela `carrinho`
 --
 ALTER TABLE `carrinho`
   ADD PRIMARY KEY (`id`),
@@ -143,39 +155,52 @@ ALTER TABLE `carrinho`
   ADD KEY `FK_IDUSUARIO` (`idusuario`);
 
 --
--- Índices de tabela `configuracoes`
+-- Índices para tabela `carteira`
+--
+ALTER TABLE `carteira`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_usuario` (`idUsuario`);
+
+--
+-- Índices para tabela `configuracoes`
 --
 ALTER TABLE `configuracoes`
   ADD PRIMARY KEY (`id`),
   ADD KEY `idusuario` (`idusuario`);
 
 --
--- Índices de tabela `contato`
+-- Índices para tabela `contato`
 --
 ALTER TABLE `contato`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `produto`
+-- Índices para tabela `produto`
 --
 ALTER TABLE `produto`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `usuario`
+-- Índices para tabela `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id_user`),
   ADD UNIQUE KEY `nome` (`nome`);
 
 --
--- AUTO_INCREMENT de tabelas apagadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `carrinho`
 --
 ALTER TABLE `carrinho`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `carteira`
+--
+ALTER TABLE `carteira`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -200,21 +225,27 @@ ALTER TABLE `produto`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;
 
 --
--- Restrições para dumps de tabelas
+-- Restrições para despejos de tabelas
 --
 
 --
--- Restrições para tabelas `carrinho`
+-- Limitadores para a tabela `carrinho`
 --
 ALTER TABLE `carrinho`
   ADD CONSTRAINT `FK_IDPRODUTO` FOREIGN KEY (`idproduto`) REFERENCES `produto` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `FK_IDUSUARIO` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`id_user`) ON DELETE CASCADE;
 
 --
--- Restrições para tabelas `configuracoes`
+-- Limitadores para a tabela `carteira`
+--
+ALTER TABLE `carteira`
+  ADD CONSTRAINT `fk_usuario` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`id_user`) ON DELETE CASCADE;
+
+--
+-- Limitadores para a tabela `configuracoes`
 --
 ALTER TABLE `configuracoes`
   ADD CONSTRAINT `configuracoes_ibfk_1` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`id_user`) ON DELETE CASCADE;
