@@ -61,6 +61,12 @@ if($at != 1 && empty($cor)){
                         </a>
                         <div class="dropdown-menu" style="background: #0e0033 !important;" aria-labelledby="dropdownContaNormal">
                           <!-- <a class="dropdown-item" href="#">outra opção</a> -->
+                          <a class="dropdown-item ">R$:<?php $money = mysqli_query($cx,"SELECT * FROM carteira where idUsuario = '{$_SESSION['id']}'");
+                              while($moneyzinho = mysqli_fetch_array($money))
+                                {
+                                  echo $moneyzinho["dinheiro"];
+                                }
+                            ?></a>
                           <a class="dropdown-item " href="?page=usuario_foto">Perfil</a>
                           <a class="dropdown-item" href="?page=usuario_editar_conta">Editar Conta</a>
                           <a class="dropdown-item login" title="Sair" href="pages/forms/sair.php"><i class="fa fa-sign-out-alt  p-1" ></i>Logout </a>
@@ -115,6 +121,8 @@ if($at != 1 && empty($cor)){
                                 <div class="dropdown-menu" style="background:<?php echo $cor ?>!important;" aria-labelledby="dropdownConta">
                                   <!-- <a class="dropdown-item" href="#">outra opção</a> -->
                                   <a class="dropdown-item " href="?page=usuario_foto">Perfil</a>
+                  
+
                                   <a class="dropdown-item " href="?page=configuracoes"><i class="fas fa-cog"></i>Configurações</a>
 
                                   <a class="dropdown-item" href="?page=usuario_editar_conta">Editar Conta</a>
