@@ -81,7 +81,15 @@ class Usuario {
 
         return $query;
     }
-
-
-
+    public function UsuarioCompleto($id){
+        global $cx;
+        $query = mysqli_query($cx,"SELECT u.id_user as Id,u.nome as Nome,c.dinheiro,p.nome as Carrinho,
+        conf.chave,conf.ativo,conf.cor 
+        from usuario u 
+        LEFT JOIN carteira c on c.idUsuario = u.id_user 
+        LEFT JOIN carrinho car on car.idusuario = u.id_user 
+        LEFT JOIN produto p on p.id = car.idproduto LEFT JOIN configuracoes
+        conf on conf.idusuario = u.id_user WHERE u.id_user = $id");
+       return $query;
+    }
 }
