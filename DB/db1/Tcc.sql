@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 02-Jul-2019 às 15:58
--- Versão do servidor: 10.3.16-MariaDB
--- versão do PHP: 7.3.6
+-- Host: 127.0.0.1:3306
+-- Generation Time: 07-Ago-2019 às 00:35
+-- Versão do servidor: 5.7.24
+-- versão do PHP: 7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `tcc`
+-- Database: `tcc`
 --
 
 -- --------------------------------------------------------
@@ -28,11 +28,15 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `carrinho`
 --
 
-CREATE TABLE `carrinho` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `carrinho`;
+CREATE TABLE IF NOT EXISTS `carrinho` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `idproduto` int(11) NOT NULL,
-  `idusuario` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `idusuario` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_IDPRODUTO` (`idproduto`),
+  KEY `FK_IDUSUARIO` (`idusuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -40,11 +44,37 @@ CREATE TABLE `carrinho` (
 -- Estrutura da tabela `carteira`
 --
 
-CREATE TABLE `carteira` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `carteira`;
+CREATE TABLE IF NOT EXISTS `carteira` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `dinheiro` decimal(10,0) DEFAULT NULL,
-  `idUsuario` int(11) DEFAULT NULL
+  `idUsuario` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_usuario` (`idUsuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `comprado`
+--
+
+DROP TABLE IF EXISTS `comprado`;
+CREATE TABLE IF NOT EXISTS `comprado` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_usuario` int(11) DEFAULT NULL,
+  `id_produto` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `fk_IdUsuario` (`id_usuario`),
+  KEY `fk_IdProduto` (`id_produto`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `comprado`
+--
+
+INSERT INTO `comprado` (`Id`, `id_usuario`, `id_produto`) VALUES
+(1, 132, 30);
 
 -- --------------------------------------------------------
 
@@ -52,13 +82,16 @@ CREATE TABLE `carteira` (
 -- Estrutura da tabela `configuracoes`
 --
 
-CREATE TABLE `configuracoes` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `configuracoes`;
+CREATE TABLE IF NOT EXISTS `configuracoes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `chave` varchar(255) DEFAULT NULL,
   `idusuario` int(11) DEFAULT NULL,
   `ativo` int(11) DEFAULT NULL,
-  `cor` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `cor` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idusuario` (`idusuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `configuracoes`
@@ -78,13 +111,15 @@ INSERT INTO `configuracoes` (`id`, `chave`, `idusuario`, `ativo`, `cor`) VALUES
 -- Estrutura da tabela `contato`
 --
 
-CREATE TABLE `contato` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `contato`;
+CREATE TABLE IF NOT EXISTS `contato` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `Nome` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
   `Assunto` varchar(255) NOT NULL,
-  `data_envio` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `data_envio` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `contato`
@@ -99,13 +134,15 @@ INSERT INTO `contato` (`id`, `Nome`, `Email`, `Assunto`, `data_envio`) VALUES
 -- Estrutura da tabela `produto`
 --
 
-CREATE TABLE `produto` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `produto`;
+CREATE TABLE IF NOT EXISTS `produto` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
   `descricao` varchar(255) DEFAULT NULL,
   `img` varchar(255) DEFAULT NULL,
-  `valor` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `valor` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `produto`
@@ -125,13 +162,16 @@ INSERT INTO `produto` (`id`, `nome`, `descricao`, `img`, `valor`) VALUES
 -- Estrutura da tabela `usuario`
 --
 
-CREATE TABLE `usuario` (
-  `id_user` int(11) NOT NULL,
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL,
   `nivel_autoridade` tinyint(1) NOT NULL,
-  `img` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `img` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_user`),
+  UNIQUE KEY `nome` (`nome`)
+) ENGINE=InnoDB AUTO_INCREMENT=140 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `usuario`
@@ -143,92 +183,7 @@ INSERT INTO `usuario` (`id_user`, `nome`, `senha`, `nivel_autoridade`, `img`) VA
 (132, 'mateus', 'e10adc3949ba59abbe56e057f20f883e', 1, NULL);
 
 --
--- Índices para tabelas despejadas
---
-
---
--- Índices para tabela `carrinho`
---
-ALTER TABLE `carrinho`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `FK_IDPRODUTO` (`idproduto`),
-  ADD KEY `FK_IDUSUARIO` (`idusuario`);
-
---
--- Índices para tabela `carteira`
---
-ALTER TABLE `carteira`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_usuario` (`idUsuario`);
-
---
--- Índices para tabela `configuracoes`
---
-ALTER TABLE `configuracoes`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `idusuario` (`idusuario`);
-
---
--- Índices para tabela `contato`
---
-ALTER TABLE `contato`
-  ADD PRIMARY KEY (`id`);
-
---
--- Índices para tabela `produto`
---
-ALTER TABLE `produto`
-  ADD PRIMARY KEY (`id`);
-
---
--- Índices para tabela `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id_user`),
-  ADD UNIQUE KEY `nome` (`nome`);
-
---
--- AUTO_INCREMENT de tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `carrinho`
---
-ALTER TABLE `carrinho`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de tabela `carteira`
---
-ALTER TABLE `carteira`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `configuracoes`
---
-ALTER TABLE `configuracoes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
---
--- AUTO_INCREMENT de tabela `contato`
---
-ALTER TABLE `contato`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
-
---
--- AUTO_INCREMENT de tabela `produto`
---
-ALTER TABLE `produto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
-
---
--- AUTO_INCREMENT de tabela `usuario`
---
-ALTER TABLE `usuario`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=140;
-
---
--- Restrições para despejos de tabelas
+-- Constraints for dumped tables
 --
 
 --

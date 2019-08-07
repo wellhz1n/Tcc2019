@@ -13,7 +13,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
 
 
 ?>
-<div class="" style="width:100%; height: 100%; align-items: center; justify-content: center; display:inline;">
+<div class="" style="align-items: center; justify-content: center; display:inline;">
 <div class='row my-5 p-5 w-75' style=" position:relative;  margin-left:15%;    box-shadow: 1px 2px 14px 5px rgba(0,0,0,0.75);">
 <div class="col-12 text-center ">
   <h1>Mudar cor</h1>
@@ -38,7 +38,7 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
 </div>
 </div>
 <hr>
-<div class="" style="width:100%; height: 100%; align-items: center; justify-content: center; display:inline;">
+<div class="" style="align-items: center; justify-content: center; display:inline;">
 <div class='row my-5 p-5 w-75' style=" position:relative;  margin-left:15%;    box-shadow: 1px 2px 14px 5px rgba(0,0,0,0.75);">
 <div class="col-12 text-center">
   <h1>Desabilitar Contato</h1>
