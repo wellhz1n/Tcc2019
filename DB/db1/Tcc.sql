@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 07-Ago-2019 às 00:35
+-- Generation Time: 08-Ago-2019 às 01:27
 -- Versão do servidor: 5.7.24
 -- versão do PHP: 7.2.14
 
@@ -36,7 +36,32 @@ CREATE TABLE IF NOT EXISTS `carrinho` (
   PRIMARY KEY (`id`),
   KEY `FK_IDPRODUTO` (`idproduto`),
   KEY `FK_IDUSUARIO` (`idusuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `cartao`
+--
+
+DROP TABLE IF EXISTS `cartao`;
+CREATE TABLE IF NOT EXISTS `cartao` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Numero` varchar(255) NOT NULL,
+  `Tipo` int(11) DEFAULT NULL,
+  `validade` varchar(255) DEFAULT NULL,
+  `Codigo` varchar(255) DEFAULT NULL,
+  `Id_Usuario` int(11) NOT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `Id_Usuario` (`Id_Usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `cartao`
+--
+
+INSERT INTO `cartao` (`Id`, `Numero`, `Tipo`, `validade`, `Codigo`, `Id_Usuario`) VALUES
+(1, '123456', 0, '22/55', '123', 132);
 
 -- --------------------------------------------------------
 
@@ -62,19 +87,12 @@ CREATE TABLE IF NOT EXISTS `carteira` (
 DROP TABLE IF EXISTS `comprado`;
 CREATE TABLE IF NOT EXISTS `comprado` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_usuario` int(11) DEFAULT NULL,
-  `id_produto` int(11) DEFAULT NULL,
+  `Id_Usuario` int(11) NOT NULL,
+  `Id_Produto` int(11) NOT NULL,
   PRIMARY KEY (`Id`),
-  KEY `fk_IdUsuario` (`id_usuario`),
-  KEY `fk_IdProduto` (`id_produto`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `comprado`
---
-
-INSERT INTO `comprado` (`Id`, `id_usuario`, `id_produto`) VALUES
-(1, 132, 30);
+  KEY `Id_Usuario` (`Id_Usuario`),
+  KEY `Id_Produto` (`Id_Produto`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -91,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `configuracoes` (
   `cor` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `idusuario` (`idusuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `configuracoes`
@@ -159,6 +177,29 @@ INSERT INTO `produto` (`id`, `nome`, `descricao`, `img`, `valor`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `tipo_cartao`
+--
+
+DROP TABLE IF EXISTS `tipo_cartao`;
+CREATE TABLE IF NOT EXISTS `tipo_cartao` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Tipo` int(1) NOT NULL,
+  `Descricao` varchar(255) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `tipo_cartao`
+--
+
+INSERT INTO `tipo_cartao` (`Id`, `Tipo`, `Descricao`) VALUES
+(1, 0, 'Visa'),
+(2, 1, 'MasterCard'),
+(3, 2, 'Elo');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `usuario`
 --
 
@@ -169,18 +210,20 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `senha` varchar(255) NOT NULL,
   `nivel_autoridade` tinyint(1) NOT NULL,
   `img` varchar(255) DEFAULT NULL,
+  `email` varchar(255) NOT NULL,
+  `cpf` varchar(11) NOT NULL,
   PRIMARY KEY (`id_user`),
   UNIQUE KEY `nome` (`nome`)
-) ENGINE=InnoDB AUTO_INCREMENT=140 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=133 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`id_user`, `nome`, `senha`, `nivel_autoridade`, `img`) VALUES
-(53, 'admin     ', '21232f297a57a5a743894a0e4a801fc3', 0, '97c9f09bc9b0f7c1a8ce59a6dc4359af.png'),
-(128, 'root', '63a9f0ea7bb98050796b649e85481845', 0, '53d7d1c2665aceeb9f448eff5723f379.jpg'),
-(132, 'mateus', 'e10adc3949ba59abbe56e057f20f883e', 1, NULL);
+INSERT INTO `usuario` (`id_user`, `nome`, `senha`, `nivel_autoridade`, `img`, `email`, `cpf`) VALUES
+(53, 'admin     ', '21232f297a57a5a743894a0e4a801fc3', 0, '97c9f09bc9b0f7c1a8ce59a6dc4359af.png', '', ''),
+(128, 'root', '63a9f0ea7bb98050796b649e85481845', 0, '53d7d1c2665aceeb9f448eff5723f379.jpg', '', ''),
+(132, 'mateus', 'e10adc3949ba59abbe56e057f20f883e', 1, NULL, '', '');
 
 --
 -- Constraints for dumped tables
@@ -194,10 +237,23 @@ ALTER TABLE `carrinho`
   ADD CONSTRAINT `FK_IDUSUARIO` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`id_user`) ON DELETE CASCADE;
 
 --
+-- Limitadores para a tabela `cartao`
+--
+ALTER TABLE `cartao`
+  ADD CONSTRAINT `cartao_ibfk_1` FOREIGN KEY (`Id_Usuario`) REFERENCES `usuario` (`id_user`);
+
+--
 -- Limitadores para a tabela `carteira`
 --
 ALTER TABLE `carteira`
   ADD CONSTRAINT `fk_usuario` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`id_user`) ON DELETE CASCADE;
+
+--
+-- Limitadores para a tabela `comprado`
+--
+ALTER TABLE `comprado`
+  ADD CONSTRAINT `comprado_ibfk_1` FOREIGN KEY (`Id_Usuario`) REFERENCES `usuario` (`id_user`),
+  ADD CONSTRAINT `comprado_ibfk_2` FOREIGN KEY (`Id_Produto`) REFERENCES `produto` (`id`);
 
 --
 -- Limitadores para a tabela `configuracoes`

@@ -62,7 +62,6 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
               echo 'hidden';
             } ?>><i class="fa fa-trash"></i>Deletar</button></td>
 
-
             </tr>
             <?php } else {
 } ?>
