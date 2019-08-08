@@ -1,20 +1,75 @@
-$(document).ready(()=>{
+$(document).ready(() => {
 
-        $(".login-form").addClass('sumir');
-$("#fechar").click(()=>{
-     $(".content").removeClass('hidden');
+    $(".login-form").addClass('sumir');
+    $("#fechar").click(() => {
+        $(".content").removeClass('hidden');
 
-    setTimeout( ()=>{$("#mod-edit").removeClass('hidden').fadeOut("fast");},250);
+        setTimeout(() => { $("#mod-edit").removeClass('hidden').fadeOut("fast"); }, 250);
+
+
+    });
+    // $("#Enviar").click(()=>{
+    //     $(".content").removeClass('hidden');
+    //
+    //    setTimeout( ()=>{$("#mod-edit").removeClass('hidden').fadeOut("fast");},250);
+    //
+    //
+    // });
+
 
 
 });
-// $("#Enviar").click(()=>{
-//     $(".content").removeClass('hidden');
-//
-//    setTimeout( ()=>{$("#mod-edit").removeClass('hidden').fadeOut("fast");},250);
-//
-//
-// });
+
+
+
+
+$("#pesquisar").keyup(() => {
+
+
+    $("#pesquisa").submit(() => {
+
+        var dados = $("#pesquisar").val();
+
+        $.ajax({
+            url: 'pages/forms/busca_produto.php',
+            type: 'POST',
+            async: true,
+            dataType: 'html',
+            data: { 'pesqui': dados },
+
+            beforeSend: () => {
+
+
+
+
+                loading_show("#resultado");
+                // $("#resultado").html("Carregando");
+
+            },
+
+            success: (data) => {
+
+
+
+                $("#resultado").empty().html(data).fadeIn('slow');
+                // $("#resultado").empty();
+
+            }
+
+
+        });
+
+        return false;
+
+
+
+
+
+    });
+
+
+
+    $("#pesquisa").trigger('submit');
 
 
 
@@ -23,176 +78,121 @@ $("#fechar").click(()=>{
 
 
 
-    $("#pesquisar").keyup(()=>{
-
-
-     $("#pesquisa").submit(()=>{
-
-            var dados = $("#pesquisar").val();
-
-            $.ajax({
-                    url:'pages/forms/busca_produto.php',
-                    type: 'POST',
-                    async:true,
-                    dataType:'html',
-                    data: {'pesqui': dados} ,
-
-                    beforeSend:()=>{
 
 
 
-
-                        loading_show("#resultado");
-                        // $("#resultado").html("Carregando");
-
-                    },
-
-                    success:(data)=>{
-
-
-
-                        $("#resultado").empty().html(data).fadeIn('slow');
-                        // $("#resultado").empty();
-
-                    }
-
-
-            });
-
-            return false;
-
-
-
-
-
-     });
-
-
-
-     $("#pesquisa").trigger('submit');
-
-
-
-  });
-
-
-
-
-
-
-
-function ProdutoDel(id){
+function ProdutoDel(id) {
     var Id = id;
 
     $.ajax({
-        url:'pages/forms/adm_produto_del.php',
+        url: 'pages/forms/adm_produto_del.php',
         type: 'POST',
-        dataType:'html',
-        data: {'ID': Id} ,
-        success: (data)=>{
+        dataType: 'html',
+        data: { 'ID': Id },
+        success: (data) => {
 
             $.get("http://localhost:8081/Tcc/public/?page=adm_produto", {},
-             function (returndata) {
+                function (returndata) {
 
-                var headline = $(returndata).find('#resultado');
+                    var headline = $(returndata).find('#resultado');
 
-                 $("#resultado").html(headline);
-            });
+                    $("#resultado").html(headline);
+                });
 
         }
 
 
-});
+    });
 };
 
 // Usuario =======================================================
 
-function LevaUsuarioId(id,nome,autoridade){
+function LevaUsuarioId(id, nome, autoridade) {
     var Id = id;
     var Nome = nome;
     var Autoridade = autoridade;
 
-        $.ajax({
-            url:'pages/forms/adm_usuario_edit.php',
-            type: 'POST',
-            data: {id: Id ,nome: ''+Nome+'',nivel_autoridade: Autoridade    } ,
-            success: (data)=>{
-                $("#mod-edit").addClass('hidden').fadeIn('fast');
-                $(".content").addClass('hidden').fadeIn('fast');
-                $("#result").html(data);
+    $.ajax({
+        url: 'pages/forms/adm_usuario_edit.php',
+        type: 'POST',
+        data: { id: Id, nome: '' + Nome + '', nivel_autoridade: Autoridade },
+        success: (data) => {
+            $("#mod-edit").addClass('hidden').fadeIn('fast');
+            $(".content").addClass('hidden').fadeIn('fast');
+            $("#result").html(data);
 
 
-            }
+        }
 
-        });
+    });
 
 
 };
 //
-function DeleteUsuario(id){
+function DeleteUsuario(id) {
     var Id = id;
     console.log(id);
     $.ajax({
-        url:'pages/forms/adm_form_usuario_delete.php',
+        url: 'pages/forms/adm_form_usuario_delete.php',
         type: 'POST',
-        dataType:'html',
-        data: {'id': Id}
+        dataType: 'html',
+        data: { 'id': Id }
 
-      }).done((data)=>{
-                  $.get("http://localhost:8081/Tcc/public/?page=adm_usuario", {},
-                  function (returndata) {
-                      var headline = $(returndata).find('#resultado');
-                      $("#resultado").html(headline);
-
-                  });
-
-        }).fail((data)=>{
-
-                $("#erro").show('fast');
+    }).done((data) => {
+        $.get("http://localhost:8081/Tcc/public/?page=adm_usuario", {},
+            function (returndata) {
+                var headline = $(returndata).find('#resultado');
+                $("#resultado").html(headline);
 
             });
 
-        };
+    }).fail((data) => {
+
+        $("#erro").show('fast');
+
+    });
+
+};
 
 
 
 
-function NovoUsuario(){
+function NovoUsuario() {
 
     var Nome = $("#nome").val();
     var Senha = $("#senha").val();
-    var Autoridade ;
-    if($("#check").is(':checked')){
-            Autoridade = 0;
+    var Autoridade;
+    if ($("#check").is(':checked')) {
+        Autoridade = 0;
     }
-    else{
+    else {
         Autoridade = 1;
     }
 
 
 
-        $.ajax({
-            url:'pages/forms/adm_form_usuario_new.php',
-            type: 'POST',
-            data: {nome: ''+Nome+'',senha:''+Senha+'',nivel_autoridade: Autoridade    }
-        }).done((data)=>{
+    $.ajax({
+        url: 'pages/forms/adm_form_usuario_new.php',
+        type: 'POST',
+        data: { nome: '' + Nome + '', senha: '' + Senha + '', nivel_autoridade: Autoridade }
+    }).done((data) => {
 
 
-                  $("#exampleModal").modal('hide');
-                  $("#form1")[0].reset();
+        $("#exampleModal").modal('hide');
+        $("#form1")[0].reset();
 
-                  $.get("http://localhost:8081/Tcc/public/?page=adm_usuario", {},
-                  function (returndata) {
-                      var headline = $(returndata).find('#resultado');
-                      $("#resultado").html(headline);
-
-                  });
-                  $("#form1")[0].reset();
-        }).fail((data)=>{
-
-                $("#erro").show('fast');
+        $.get("http://localhost:8081/Tcc/public/?page=adm_usuario", {},
+            function (returndata) {
+                var headline = $(returndata).find('#resultado');
+                $("#resultado").html(headline);
 
             });
+        $("#form1")[0].reset();
+    }).fail((data) => {
+
+        $("#erro").show('fast');
+
+    });
 
 
 
@@ -201,26 +201,26 @@ function NovoUsuario(){
 
 
 
-$("#nome").keyup(()=>{
+$("#nome").keyup(() => {
 
-    $("#login").submit(()=>{
+    $("#login").submit(() => {
         var dados = $("#nome").val();
 
-    $.ajax({
+        $.ajax({
 
-          url:'pages/forms/busca_usuario.php',
-                    type: 'POST',
-                    async:true,
-                    data: {'nome': dados}
-                }).done((data)=>{
+            url: 'pages/forms/busca_usuario.php',
+            type: 'POST',
+            async: true,
+            data: { 'nome': dados }
+        }).done((data) => {
 
 
-                    $("#erro").empty().html(data);
+            $("#erro").empty().html(data);
 
-                });
-                return false;
-            });
-     $("#nome").trigger('submit');
+        });
+        return false;
+    });
+    $("#nome").trigger('submit');
 
 
 
@@ -231,7 +231,7 @@ $("#nome").keyup(()=>{
 });
 
 
-$(".bt-login").click(()=>{
+$(".bt-login").click(() => {
 
 
     $(".login-form").removeClass("sumir");
@@ -240,72 +240,72 @@ $(".bt-login").click(()=>{
 });
 
 
-$("#usuarios").keyup(async()=>{
+$("#usuarios").keyup(async () => {
 
 
-        var dados = $("#usuarios").val();
+    var dados = $("#usuarios").val();
 
-   await $.ajax({
+    await $.ajax({
 
-          url:'pages/forms/busca_usuario.php',
-                    type: 'POST',
-                    async:true,
-                    data: {'nome': dados}
-                }).done((data)=>{
+        url: 'pages/forms/busca_usuario.php',
+        type: 'POST',
+        async: true,
+        data: { 'nome': dados }
+    }).done((data) => {
 
-                    $("#errado").html(data).fadeIn('slow');
+        $("#errado").html(data).fadeIn('slow');
 
-                });
+    });
 
-               $("#usuarios").trigger('ajax');
-            });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function loading_show(div){
-    $(div).html("<img src='https://i.gifer.com/4V0b.gif'/>").fadeIn('fast');
-};
-function loading_hide(div){
-    $(div).fadeOut('slow');
-}  ;
-
-
-
-$("#selecionar").change(()=>{
-
-
-        $("#selec").submit();
-        $("#selec")[0].reset();
-
-
-        $("#selecionar").trigger('submit');
+    $("#usuarios").trigger('ajax');
 });
 
 
-$("#btncor").click(()=>{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function loading_show(div) {
+    $(div).html("<img src='https://i.gifer.com/4V0b.gif'/>").fadeIn('fast');
+};
+function loading_hide(div) {
+    $(div).fadeOut('slow');
+};
+
+
+
+$("#selecionar").change(() => {
+
+
+    $("#selec").submit();
+    $("#selec")[0].reset();
+
+
+    $("#selecionar").trigger('submit');
+});
+
+
+$("#btncor").click(() => {
     $('#formdcor').submit();
 
 
 });
-$("#btncontato").click(()=>{
+$("#btncontato").click(() => {
     $('#formdcontato').submit();
 
 
@@ -316,13 +316,13 @@ $("#btncontato").click(()=>{
 
 
 
-$("#check").change(()=>{
-      var checado = $("#check").is(":checked");
-    if(checado){
+$("#check").change(() => {
+    var checado = $("#check").is(":checked");
+    if (checado) {
         $("#cor").removeAttr('disabled');
     }
-    else{
-      $("#cor").attr("disabled","disabled");
+    else {
+        $("#cor").attr("disabled", "disabled");
     }
 
 });
@@ -353,38 +353,56 @@ $("#check").change(()=>{
 // });
 
 //
-$(document).on('click','#editmodprod',()=>{
+$(document).on('click', '#editmodprod', () => {
 
 
-var modalEditarNome = $('#nomemod').val();
-var modalEditarDescricao = $('#descmod').val();
-var modalEditarPreco = $('#valmod').val();
-var ID = $('#idmod').val();
+    var modalEditarNome = $('#nomemod').val();
+    var modalEditarDescricao = $('#descmod').val();
+    var modalEditarPreco = $('#valmod').val();
+    var ID = $('#idmod').val();
 
-  
-  
+
+
     $.ajax({
 
-        url:'pages/forms/adm_produto_editar.php',
-                  type: 'POST',
-                  async:true,
-                  data: {'ID': ID,'modalEditarNome': modalEditarNome,'modalEditarDescricao': modalEditarDescricao,'modalEditarPreco': modalEditarPreco}
-              }).done((data)=>{
-                   
+        url: 'pages/forms/adm_produto_editar.php',
+        type: 'POST',
+        async: true,
+        data: { 'ID': ID, 'modalEditarNome': modalEditarNome, 'modalEditarDescricao': modalEditarDescricao, 'modalEditarPreco': modalEditarPreco }
+    }).done((data) => {
 
-                  $.get("http://localhost:8081/Tcc/public/?page=adm_produto", {},
-                  function (returndata) {
-                      var headline = $(returndata).find('#resultado');
-                      $("#resultado").html(headline);
 
-                  });
+        $.get("http://localhost:8081/Tcc/public/?page=adm_produto", {},
+            function (returndata) {
+                var headline = $(returndata).find('#resultado');
+                $("#resultado").html(headline);
 
-                    $('#ModalEditar').modal('hide');
+            });
 
-              });
+        $('#ModalEditar').modal('hide');
 
-         
-     
+    });
 
+
+
+
+
+});
+$(document).on("click", "#btnConfiguracoesgerar", () => {
+    let acao = 'gerar';
+    $("#btnConfiguracoesgerar").prop("disabled",true);
+    debugger;
+    $.ajax({
+
+        url: '../app/function/DB.php',
+        type: 'POST',
+        async: true,
+        data: { 'action': acao },
+        success: (output) => {
+
+            alert("Banco Criado");
+           $("#btnConfiguracoesgerar").prop("disabled",false);
+        }
+    })
 
 });
