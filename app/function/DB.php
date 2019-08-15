@@ -1,16 +1,16 @@
 <?php
 
 $acao = $_POST['action'] ?? null;
-
 $cx = mysqli_connect("127.0.0.1", "root", "");
 function GerarDB($path)
 {
   
   if ($path == null)
-    $path = "../DB/db1/Tcc.sql";
+  $path = "../DB/db1/Tcc.sql";
   else
-    $path = $path;
+  $path = $path;
   
+  // GerarAquivo($path);
   $cx = mysqli_connect("127.0.0.1", "root", "");
   mysqli_query($cx, "Drop Database tcc");
   $arq = file_get_contents($path);
@@ -36,10 +36,29 @@ function GerarDB($path)
           }
           // //criando a query de consulta à tabela criada
           //caso haja um erro na consulta
-          
+        
+          // function GerarAquivo($path){
+          //   if ($path == null)
+          //   $path = "../DB/db1/Tcc.sql";
+          // else
+          //   $path = $path;
+          //   $senha = "";
+          //   $host = "127.0.0.1";
+          //   $comando = "mysqldump --single-transaction -h $host-u root -p$senha Tcc > $path ";
+          //   system($comando);
+          //   if ($comando == '') {
+          //       echo "Deu Ruim";
+          //   }
+          //   else{
+          //     echo "Criou";
+          //   }
+
+          // }
+
+
           switch ($acao) {
             case 'gerar':
-              GerarDB("../../DB/db1/Tcc.sql");
+               GerarDB("../../DB/db1/Tcc.sql");
               break;
 
             default:
