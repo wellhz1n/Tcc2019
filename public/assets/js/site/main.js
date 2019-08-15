@@ -34,3 +34,6 @@ function guardarNome(nomeGuardado,descguardado,valorguardado,id,imgprod) {
 
 
 }
+function Bloqueartela() {
+  
+}

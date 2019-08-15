@@ -864,26 +864,42 @@ margin: 10px auto;
 }
 
 #imguserhover{
-
-
   z-index: 10000;
-
-
-
 }
 
 #imguserhover:hover #cameraHoverimg{
   visibility: visible;
   cursor: pointer;
-
-
 }
 #imguserhover:hover #cameraIconimg {
     visibility: visible;
-
-
 }
 #imgUpload {
 visibility: hidden;
   position: absolute;
+}
+#Bloqueiotela{
+  
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffffd5;
+  z-index: 2000;
+}
+
+
+#Bloqueiotela > div{
+  position: relative;
+  left: 42%;
+  top: 20%;
+  height: 40%;
+  width: 40%;
+  background: url(../../img/log/loading.gif);
+  background-repeat: no-repeat;
+}
+#Bloqueiotela > div>p{
+  position: relative;
+left: 15%;
+  top: 110%;
 }
