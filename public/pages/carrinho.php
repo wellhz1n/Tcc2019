@@ -1,5 +1,8 @@
-<?php 
-$select = mysqli_query($cx,"select idproduto from carrinho where idusuario = '{$_SESSION['id']}'");
+<?php
+$select = mysqli_query($cx,"select c.id,c.idproduto,c.idusuario,p.nome as nome
+                            from carrinho as c
+                            inner join produto 
+                            as p on p.id = c.idproduto WHERE c.idusuario = '{$_SESSION['id']}'");
 
 while($b = mysqli_Fetch_Array($select)){
 
@@ -7,8 +10,8 @@ while($b = mysqli_Fetch_Array($select)){
  $prod =$produtoDAO->selectID($id);
 
 while($a = mysqli_Fetch_Array($prod)){
-    
-    
+
+
     echo "<br>". $a['nome']."";
 
 
@@ -20,7 +23,7 @@ while($a = mysqli_Fetch_Array($prod)){
 
     <button type="submit">X</button>
     <form>
-<?php } 
+<?php }
 
 
 

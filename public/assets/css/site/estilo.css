@@ -879,7 +879,7 @@ visibility: hidden;
   position: absolute;
 }
 #Bloqueiotela{
-  
+
   position: fixed;
   top: 0;
   width: 100%;
@@ -902,4 +902,39 @@ visibility: hidden;
   position: relative;
 left: 15%;
   top: 110%;
+}
+
+
+
+
+
+/* CENTRALIZAR DIV */
+
+.centralizar {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+.centralizar-pai {
+  text-align: center;
+  height:100%;
+  width:100%;
+}
+
+
+
+
+/* Pagina de Comprar */
+
+#produtosSemelhantes {
+  width:25%;
+  position: absolute;
+  margin-left: 10%;
+  background-color: blue;
+  height: 300px !important;
+}
+
+
+#leftMenuComprar {
+  
 }

@@ -37,11 +37,11 @@ require "../bootstrap.php" ?>
 
     <?php require 'pages/header.php' ?>
     <div  class="corp">
-        <div id="Bloqueiotela">
+        <!-- <div id="Bloqueiotela">
             <div>
                 <p>Carregando<p>
             </div>
-        </div>
+        </div> -->
         <?php  require load();?>
     </div>
     <?php require "pages/modal.php" ?>

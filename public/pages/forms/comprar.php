@@ -17,14 +17,14 @@ if( isset($_SESSION['login'], $_SESSION['id']) ){
             }
     switch ($op) {
       case "INS":
-            
+
             $insert = mysqli_query($cx,"insert into carrinho(idproduto,idusuario) values('{$idproduto}','{$iduser}')");
 
             if($insert){
             header("Location: http://localhost:8081/Tcc/public/?page=carrinho");
             die();
             }
-        
+
         break;
         case "DEL":
             $del = mysqli_query($cx,"delete from carrinho where idproduto = '{$idproduto}'");
