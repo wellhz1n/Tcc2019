@@ -3,7 +3,6 @@
 class Usuario {
     private $Nome;
     private $Senha;
-  
     private $Img;
     private $Nivel;
   public  function setUsuario($n,$s,$ni,$i){

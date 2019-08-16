@@ -3,7 +3,7 @@
 require '../../../bootstrap.php';
 
 $id = $_SESSION['id'];
-$busca = $usuarioDAO->select($id);
+$busca = $usuarioDAO->select($id,null);
     while($usuario = mysqli_fetch_array($busca)):
 
 
