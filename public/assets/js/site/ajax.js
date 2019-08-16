@@ -354,7 +354,7 @@ $("#check").change(() => {
 // });
 
 //
-$(document).on('click', '#editmodprod', () => {
+$(document).on('click', '#editmodprod', async() => {
 
 
     var modalEditarNome = $('#nomemod').val();
@@ -364,43 +364,43 @@ $(document).on('click', '#editmodprod', () => {
 
     bloquearTela();
 
-    $.ajax({
+   await $.ajax({
 
         url: 'pages/forms/adm_produto_editar.php',
         type: 'POST',
         async: true,
         data: { 'ID': ID, 'modalEditarNome': modalEditarNome, 'modalEditarDescricao': modalEditarDescricao, 'modalEditarPreco': modalEditarPreco }
-    }).done((data) => {
+    }).done(async (data) => {
 
 
-        $.get("http://localhost:8081/Tcc/public/?page=adm_produto", {},
+      await  $.get("http://localhost:8081/Tcc/public/?page=adm_produto", {},
             function (returndata) {
                 var headline = $(returndata).find('#resultado');
                 $("#resultado").html(headline);
 
             });
-
         $('#ModalEditar').modal('hide');
 
     });
+     desbloquearTela();
 
 
 
 
 
 });
-$(document).on("click", "#btnConfiguracoesgerar", () => {
+$(document).on("click", "#btnConfiguracoesgerar", async() => {
     bloquearTela();
     let acao = 'gerar';
     $("#btnConfiguracoesgerar").prop("disabled",true);
     debugger;
-    $.ajax({
+  await  $.ajax({
 
         url: '../app/function/DB.php',
         type: 'POST',
         async: true,
         data: { 'action': acao },
-        success: (output) => {
+        success: async (output) => {
             $("#btnConfiguracoesgerar").prop("disabled",false);
             alert("Banco Criado");
             desbloquearTela();
@@ -428,8 +428,8 @@ function pesquisaProduto(dados) {
         },
         success:async (data) => {
             // await loading_hide();
-            await $("#resultado").empty();
-            $("#resultado").html(data).fadeIn('slow');
+            await $("#resultadoproduto").empty();
+            $("#resultadoproduto").html(data).fadeIn('slow');
             // $("#resultado").empty();
         },
         

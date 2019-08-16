@@ -35,7 +35,7 @@ function guardarNome(nomeGuardado,descguardado,valorguardado,id,imgprod) {
 
 }
 function bloquearTela() {
-  $("#Bloqueiotela").fadeIn("fast");
+  // $("#Bloqueiotela").fadeIn("fast");
   $("#Bloqueiotela").removeAttr("hidden");
   $("#content").click(false);
   

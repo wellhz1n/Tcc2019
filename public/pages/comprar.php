@@ -20,7 +20,7 @@ while($produto = mysqli_Fetch_Array($saida)):
 
           <div id="produtosSemelhantes">
             <span id="produtosComprar">Produtos</span>
-            <div id="resultado">
+            <div id="resultadoproduto">
               
             </div>
           </div>
