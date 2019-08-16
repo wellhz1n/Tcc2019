@@ -34,6 +34,15 @@ function guardarNome(nomeGuardado,descguardado,valorguardado,id,imgprod) {
 
 
 }
-function Bloqueartela() {
+function bloquearTela() {
+  $("#Bloqueiotela").fadeIn("fast");
+  $("#Bloqueiotela").removeAttr("hidden");
+  $("#content").click(false);
+  
+}
+function desbloquearTela(params) {
+  $("#Bloqueiotela").fadeOut("slow");
+  $("#content").click(true);
+  $("#Bloqueiotela").attr("hidden");
   
 }

@@ -1,5 +1,5 @@
 $(document).ready(() => {
-
+    
     $(".login-form").addClass('sumir');
     $("#fechar").click(() => {
         $(".content").removeClass('hidden');
@@ -158,7 +158,6 @@ function DeleteUsuario(id) {
 
 
 function NovoUsuario() {
-
     var Nome = $("#nome").val();
     var Senha = $("#senha").val();
     var Autoridade;
@@ -361,7 +360,7 @@ $(document).on('click', '#editmodprod', () => {
     var modalEditarPreco = $('#valmod').val();
     var ID = $('#idmod').val();
 
-
+    bloquearTela();
 
     $.ajax({
 
@@ -389,6 +388,7 @@ $(document).on('click', '#editmodprod', () => {
 
 });
 $(document).on("click", "#btnConfiguracoesgerar", () => {
+    bloquearTela();
     let acao = 'gerar';
     $("#btnConfiguracoesgerar").prop("disabled",true);
     debugger;
@@ -399,9 +399,9 @@ $(document).on("click", "#btnConfiguracoesgerar", () => {
         async: true,
         data: { 'action': acao },
         success: (output) => {
-
+            $("#btnConfiguracoesgerar").prop("disabled",false);
             alert("Banco Criado");
-           $("#btnConfiguracoesgerar").prop("disabled",false);
+            desbloquearTela();
         }
     })
 

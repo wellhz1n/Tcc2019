@@ -37,12 +37,14 @@ require "../bootstrap.php" ?>
 
     <?php require 'pages/header.php' ?>
     <div  class="corp">
-        <!-- <div id="Bloqueiotela">
+         <div id="Bloqueiotela" hidden>
             <div>
                 <p>Carregando<p>
             </div>
-        </div> -->
+        </div>
+        <div id="content">
         <?php  require load();?>
+        </div>
     </div>
     <?php require "pages/modal.php" ?>
     <?php if($page == "login"||isset($_SESSION['login']) && $_SESSION['nivel'] == 0 || $page = 'registrese' ){
