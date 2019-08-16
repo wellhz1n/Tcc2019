@@ -92,7 +92,6 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) {
 
 
 
-
                 </tr>
               </form>
           <?php endwhile; ?>

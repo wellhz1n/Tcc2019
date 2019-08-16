@@ -4,8 +4,9 @@ require '../../../bootstrap.php';
 
 if( isset($_SESSION['login'], $_SESSION['id']) ){
     $idproduto = $_POST['ID'];
-    $op = $_POST['OP'];
     echo $idproduto;
+    $op = $_POST['OP'];
+    
 
     $iduser = $_SESSION['id'];
     echo $iduser;
@@ -27,6 +28,7 @@ if( isset($_SESSION['login'], $_SESSION['id']) ){
 
         break;
         case "DEL":
+             echo $idproduto;
             $del = mysqli_query($cx,"delete from carrinho where idproduto = '{$idproduto}'");
 
             if($del){
