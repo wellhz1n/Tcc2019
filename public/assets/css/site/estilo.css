@@ -961,3 +961,22 @@ left: 15%;
   font-weight: bold;
   font-size: 30px;
 }
+/* Produtinho */
+.produtinho{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin-top: 10px;
+  border: 2px solid black;
+
+}
+.produtinho >div > a{
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+
+}
+.produtinho >p {
+  margin-bottom: -2px;
+
+}

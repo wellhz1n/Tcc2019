@@ -8,6 +8,8 @@ $(document).ready(() => {
 
 
     });
+  pesquisaProduto('');
+    
     // $("#Enviar").click(()=>{
     //     $(".content").removeClass('hidden');
     //
@@ -42,7 +44,7 @@ $("#pesquisar").keyup(() => {
 
 
 
-                loading_show("#resultado");
+                // loading_show("#resultado");
                 // $("#resultado").html("Carregando");
 
             },
@@ -280,7 +282,7 @@ $("#usuarios").keyup(async () => {
 
 
 function loading_show(div) {
-    $(div).html("<img src='https://i.gifer.com/4V0b.gif'/>").fadeIn('fast');
+    $(div).html("<img src='assets/img/log/loading.gif'/>").fadeIn('fast');
 };
 function loading_hide(div) {
     $(div).fadeOut('slow');
@@ -406,3 +408,30 @@ $(document).on("click", "#btnConfiguracoesgerar", () => {
     })
 
 });
+
+//PesquisaProduto
+$("#pesquisaComprarCampo").keyup(async() => {
+        let dados = $("#pesquisaComprarCampo").val();
+       pesquisaProduto(dados);
+    });
+function pesquisaProduto(dados) {
+     $.ajax({
+        url: 'pages/forms/busca_produto.php',
+        type: 'POST',
+        async: true,
+        dataType: 'html',
+        data: {'pesquisaCompra': dados },
+
+        beforeSend: async() => {
+        //    await loading_show("#resultado");
+            // $("#resultado").html("Carregando");
+        },
+        success:async (data) => {
+            // await loading_hide();
+            await $("#resultado").empty();
+            $("#resultado").html(data).fadeIn('slow');
+            // $("#resultado").empty();
+        },
+        
+    });
+}

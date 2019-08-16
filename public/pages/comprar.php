@@ -12,14 +12,17 @@ while($produto = mysqli_Fetch_Array($saida)):
 
         <div id="leftMenuComprar" class="col-xs-3">
           <div id="pesquisaComprar">
-            <form action="" method="post">
-              <input type="text" name="pesquisaComprar" value="">
-              <input type="submit" value="Colocar lupa aqui">
-            </form>
+            
+              <input type="text" id="pesquisaComprarCampo"name="pesquisaComprar" aria-autocomplete="none" value="">
+              <input type="button" value="Colocar lupa aqui">
+            
           </div>
 
           <div id="produtosSemelhantes">
             <span id="produtosComprar">Produtos</span>
+            <div id="resultado">
+              
+            </div>
           </div>
         </div>
 
