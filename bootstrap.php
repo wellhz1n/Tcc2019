@@ -16,7 +16,7 @@ require "app/function/DAO/UsuarioDAO.php";
 
 $produtoDAO = new Produto();
 $usuarioDAO = new Usuario();
-
+$carteiraDAO = new CarteiraDAO();
 
 
 
