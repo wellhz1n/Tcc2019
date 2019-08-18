@@ -12,6 +12,7 @@ require 'app/function/validate.php';
 require "app/function/pages.php";
 require "app/function/DAO/ProdutoDAO.php";
 require "app/function/DAO/UsuarioDAO.php";
+require "app/function/DAO/CarteiraDAO.php";
 
 
 $produtoDAO = new Produto();

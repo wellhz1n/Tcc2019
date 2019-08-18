@@ -1,5 +1,5 @@
 <?php
-require('../Entidades/CarteiraEntidade.php');
+// require('../Entidades/CarteiraEntidade.php');
 $cx = mysqli_connect("127.0.0.1", "root", "", "Tcc");
 class CarteiraDAO
 {
