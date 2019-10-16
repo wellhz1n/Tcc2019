@@ -120,7 +120,7 @@
                     </a>
                   </li>
                   <li class="list-inline-item">
-                    <a class="btn btn-dark rounded rgba-white-slight mx-1" target="blank" href="https://github.com/wellhz1n/teste">
+                    <a class="btn btn-dark rounded rgba-white-slight mx-1" target="blank" href="https://github.com/wellhz1n/Tcc2019">
                     <i class="fab fa-github"></i>                    </a>
                   </li>
                 </ul>
