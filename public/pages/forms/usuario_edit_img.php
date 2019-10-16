@@ -94,7 +94,7 @@ if (isset($_POST["envia"])){
 
 			// Se os dados forem inseridos com sucesso
 			if ($newP){
-				header("Location: http://localhost:8081/Tcc/public/?page=usuario_foto");
+				header("Location: http://localhost:8081/Tcc2019/public/?page=usuario_foto");
 				die();
 			}
 		}

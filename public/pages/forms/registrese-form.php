@@ -12,7 +12,7 @@ $senha = md5($_POST['senha']);
         if ($Criar) {
                 session_start();
                 $_SESSION['sucesso'] = 'Usuario Registrado';
-            header("Location: http://localhost:8081/Tcc/public/?page=login");
+            header("Location: http://localhost:8081/Tcc2019/public/?page=login");
             die();
             }
               
@@ -21,7 +21,7 @@ $senha = md5($_POST['senha']);
 
             http_response_code(502);
                 $_SESSION[erro] = "Falha Usuario Existente";
-            header("Location: http://localhost:8081/Tcc/public/?page=registrese");
+            header("Location: http://localhost:8081/Tcc2019/public/?page=registrese");
             die();
         }
     }
@@ -31,7 +31,7 @@ $senha = md5($_POST['senha']);
 
         http_response_code(502);
             $_SESSION[erro] = "Nome e Senha nao podem ser nulos";
-        header("Location: http://localhost:8081/Tcc/public/?page=registrese");
+        header("Location: http://localhost:8081/Tcc2019/public/?page=registrese");
         die();
     }
 

@@ -20,7 +20,7 @@ $message = $dados->message;
 $sql = mysqli_query($cx,"INSERT INTO contato (Nome,Email,Assunto,data_envio)
 Values( '{$nome}','{$email}','{$assunto}','{$date}')");
 
-header("Location: http://localhost:8081/Tcc/public/?page=home");
+header("Location: http://localhost:8081/Tcc2019/public/?page=home");
 die();
 
 ?>

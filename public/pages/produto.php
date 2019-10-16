@@ -26,5 +26,5 @@ Foto de exibição:<br />
 </form>
 </div>
 <?php } else{
-    header("Location: http://localhost:8081/Tcc/public/?page=home");
+    header("Location: http://localhost:8081/Tcc2019/public/?page=home");
     die(); }?>

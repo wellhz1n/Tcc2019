@@ -10,7 +10,7 @@ $update = "UPDATE contato SET Nome = '$nome' , Email = '$email' , Assunto = '$as
 $up =mysqli_query($cx,$update);
 
 
-    header("Location: http://localhost:8081/Tcc/public/?page=adm_contato");
+    header("Location: http://localhost:8081/Tcc2019/public/?page=adm_contato");
     die();
 
 

@@ -12,7 +12,7 @@ if( isset($_SESSION['login'], $_SESSION['id']) ){
    <i style="color: #62377e; background: #fff; border-radius:100%; border: solid #fff 4px" class=" my-5 fas fa-user-circle fa-10x" aria-hidden></i>
 <?php } ?>
     <h1>Bem Vindo <label class="text-danger"><?php echo $usuario['nome']; ?></label> </h1>
-    <button type="button" onclick="window.location.href ='http://localhost:8081/Tcc/public/?page=usuario_editar_conta ' "  href="?page=usuario_foto" class='btn btn-primary '>Mudar Imagem de perfil</button>
+    <button type="button" onclick="window.location.href ='http://localhost:8081/Tcc2019/public/?page=usuario_editar_conta ' "  href="?page=usuario_foto" class='btn btn-primary '>Mudar Imagem de perfil</button>
 
 
 

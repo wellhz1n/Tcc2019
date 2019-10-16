@@ -71,7 +71,7 @@ if (isset($_POST['cadastrar'])) {
 
 			// Se os dados forem inseridos com sucesso
 			if ($newP){
-				header("Location: http://localhost:8081/Tcc/public/?page=adm_produto");
+				header("Location: http://localhost:8081/Tcc2019/public/?page=adm_produto");
 				die();
 			}
 		}

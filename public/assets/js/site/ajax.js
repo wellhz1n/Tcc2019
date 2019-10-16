@@ -93,7 +93,7 @@ function ProdutoDel(id) {
         data: { 'ID': Id },
         success: (data) => {
 
-            $.get("http://localhost:8081/Tcc/public/?page=adm_produto", {},
+            $.get("http://localhost:8081/Tcc2019/public/?page=adm_produto", {},
                 function (returndata) {
 
                     var headline = $(returndata).find('#resultado');
@@ -141,7 +141,7 @@ function DeleteUsuario(id) {
         data: { 'id': Id }
 
     }).done((data) => {
-        $.get("http://localhost:8081/Tcc/public/?page=adm_usuario", {},
+        $.get("http://localhost:8081/Tcc2019/public/?page=adm_usuario", {},
             function (returndata) {
                 var headline = $(returndata).find('#resultado');
                 $("#resultado").html(headline);
@@ -182,7 +182,7 @@ function NovoUsuario() {
         $("#exampleModal").modal('hide');
         $("#form1")[0].reset();
 
-        $.get("http://localhost:8081/Tcc/public/?page=adm_usuario", {},
+        $.get("http://localhost:8081/Tcc2019/public/?page=adm_usuario", {},
             function (returndata) {
                 var headline = $(returndata).find('#resultado');
                 $("#resultado").html(headline);
@@ -373,7 +373,7 @@ $(document).on('click', '#editmodprod', async() => {
     }).done(async (data) => {
 
 
-      await  $.get("http://localhost:8081/Tcc/public/?page=adm_produto", {},
+      await  $.get("http://localhost:8081/Tcc2019/public/?page=adm_produto", {},
             function (returndata) {
                 var headline = $(returndata).find('#resultado');
                 $("#resultado").html(headline);

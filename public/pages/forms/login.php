@@ -29,7 +29,7 @@ if (mysqli_num_rows($consulta) == 1) {
     }
 
 
-    header("Location: http://localhost:8081/Tcc/public/?page=adm_inicio");
+    header("Location: http://localhost:8081/Tcc2019/public/?page=adm_inicio");
     die();
 }
 else{
@@ -37,7 +37,7 @@ else{
 
     http_response_code(502);
         $_SESSION[err] = "Nome ou Senha Incorretos";
-    header("Location: http://localhost:8081/Tcc/public/?page=login");
+    header("Location: http://localhost:8081/Tcc2019/public/?page=login");
     die();
 }
 

@@ -36,7 +36,7 @@ $nivel = $_POST['nivel_autoridade'];
 </section>
 <?php }else{ 
 
-header("Location: http://localhost:8081/Tcc/public/?page=home");
+header("Location: http://localhost:8081/Tcc2019/public/?page=home");
 die();
 }
   ?>

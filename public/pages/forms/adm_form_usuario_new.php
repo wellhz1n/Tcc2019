@@ -6,7 +6,7 @@ $nivel = $_POST['nivel_autoridade'] ?? 1 ;
 
 $create = $usuarioDAO->inserir($nome,$senha,$nivel);
 if($create){
-    header("Location: http://localhost:8081/Tcc/public/?page=adm_usuario");
+    header("Location: http://localhost:8081/Tcc2019/public/?page=adm_usuario");
     die();
 
 }

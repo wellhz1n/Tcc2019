@@ -20,7 +20,7 @@ switch ($Nome) {
 
         if($inserir|| $update){
 
-          header("Location: http://localhost:8081/Tcc/public/?page=configuracoes");
+          header("Location: http://localhost:8081/Tcc2019/public/?page=configuracoes");
           die();
 
         }
@@ -47,7 +47,7 @@ switch ($Nome) {
 
           if($inserir|| $update){
 
-            header("Location: http://localhost:8081/Tcc/public/?page=configuracoes");
+            header("Location: http://localhost:8081/Tcc2019/public/?page=configuracoes");
             die();
 
           }
