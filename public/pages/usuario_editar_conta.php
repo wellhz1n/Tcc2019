@@ -28,6 +28,6 @@ while($user = mysqli_fetch_array($con)):
 
 </div>
 <?php endwhile; } else{
-       header("Location: http://localhost:8081/2019/public/?page=home");
+       header("Location: http://localhost:8081/Tcc2019/public/?page=home");
        die();
 }?>
