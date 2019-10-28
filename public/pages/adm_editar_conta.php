@@ -29,6 +29,6 @@ if (isset($_SESSION['login'])) {
 </div>
 <?php endwhile;
 } else {
-    header("Location: http://localhost:8081/Tcc2019/public/?page=home");
+    header("Location:$location/Tcc2019/public/?page=home");
     die();
 }?>

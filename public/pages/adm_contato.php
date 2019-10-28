@@ -1,4 +1,6 @@
 <?php
+require '../../../bootstrap.php';
+
 if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
 
  <section class="col-12">
@@ -52,11 +54,11 @@ if (isset($_SESSION["login"])&& $_SESSION["nivel"] == 0) { ?>
 
 <?php }elseif (isset($_SESSION["login"])&& $_SESSION["nivel"] == 1) {
 
-    header("Location: http://localhost:8081/Tcc2019/public/?page=home");
+    header("Location:$location/Tcc2019/public/?page=home");
     die();
 ?>
 <?php } else{
-    header("Location: http://localhost:8081/Tcc2019/public/?page=home");
+    header("Location:$location/Tcc2019/public/?page=home");
     die();
 
 } ?>

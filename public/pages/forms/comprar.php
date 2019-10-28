@@ -22,7 +22,7 @@ if( isset($_SESSION['login'], $_SESSION['id']) ){
             $insert = mysqli_query($cx,"insert into carrinho(idproduto,idusuario) values('{$idproduto}','{$iduser}')");
 
             if($insert){
-            header("Location: http://localhost:8081/Tcc2019/public/?page=carrinho");
+            header("Location:$location/Tcc2019/public/?page=carrinho");
             die();
             }
 
@@ -32,12 +32,12 @@ if( isset($_SESSION['login'], $_SESSION['id']) ){
             $del = mysqli_query($cx,"delete from carrinho where idproduto = '{$idproduto}'");
 
             if($del){
-            header("Location: http://localhost:8081/Tcc2019/public/?page=carrinho");
+            header("Location:$location/Tcc2019/public/?page=carrinho");
             die();
             }
         break;
       default:
-            header("Location: http://localhost:8081/Tcc2019/public/?page=carrinho");
+            header("Location:$location/Tcc2019/public/?page=carrinho");
             die();
         break;
     }
@@ -45,7 +45,7 @@ if( isset($_SESSION['login'], $_SESSION['id']) ){
 
 }
 else {
-    header("Location: http://localhost:8081/Tcc2019/public/?page=home");
+    header("Location:$location/Tcc2019/public/?page=home");
     die();
 }
 ?>

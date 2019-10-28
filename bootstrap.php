@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('America/Sao_Paulo');
 $date = date('Y-m-d H:i');
-
+$location = "http://localhost:8081";
 session_start();
 
 

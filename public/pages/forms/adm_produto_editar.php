@@ -7,7 +7,7 @@ $precoEditado = (int) $_POST['modalEditarPreco'];
 $create = $produtoDAO->update($nomeEditado, $descricaoEditado, $precoEditado, $id);
 /* No futuro, mudar valores para double no sql.*/
 if($create){
-    header("Location: http://localhost:8081/Tcc2019/public/?page=adm_produto");
+    header("Location:$location/Tcc2019/public/?page=adm_produto");
     die();
 }
 else{
